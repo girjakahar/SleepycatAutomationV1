@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="IncorrectLoginTest">
+    <classes>
+      <class name="Login.IncorrectLoginTest"/>
+          </classes>
+           </test> 
+           
+   <test name="CorrectLoginTest"> 
+      <classes>  
+      <class name="Login.CorrectLoginTest"/>
+       </classes>
+        </test> 
+        
+   <test name="BannerLinking"> 
+    <classes>  
+      <class name="Homepage.BannerLinking"/>
+    </classes>
+  </test> 
+</suite> <!-- Suite -->
