@@ -3,19 +3,19 @@
 <suite name="Suite">
   <test name="IncorrectLoginTest">
     <classes>
-      <class name="Login.IncorrectLoginTest"/>
+      <class name="login.IncorrectLoginTest"/>
           </classes>
            </test> 
            
    <test name="CorrectLoginTest"> 
       <classes>  
-      <class name="Login.CorrectLoginTest"/>
+      <class name="login.CorrectLoginTest"/>
        </classes>
         </test> 
         
    <test name="BannerLinking"> 
     <classes>  
-      <class name="Homepage.BannerLinking"/>
+      <class name="homepage.BannerLinking"/>
     </classes>
   </test> 
 </suite> <!-- Suite -->
