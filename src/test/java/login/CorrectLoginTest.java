@@ -62,6 +62,8 @@ public class CorrectLoginTest extends BaseSleepycat {
 
 		wait.until(ExpectedConditions.visibilityOf((landingPage.myAccount())));
 		log.info("My account is displayed");
+		System.out.println("Customer is logged in");
+
 
 		}
 
