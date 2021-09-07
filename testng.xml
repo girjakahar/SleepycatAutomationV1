@@ -12,10 +12,5 @@
       <class name="login.CorrectLoginTest"/>
        </classes>
         </test> 
-        
-   <test name="BannerLinking"> 
-    <classes>  
-      <class name="homepage.BannerLinking"/>
-    </classes>
-  </test> 
+
 </suite> <!-- Suite -->
