@@ -66,6 +66,7 @@ public class CartHandling extends BaseSleepycat {
   	   Thread.sleep(2000L);
   	   cart.removeProduct().click();
   	   log.info("Clicked on remove product icon from cart slider ");
+	   System.out.println("Product is removed from cart");
 
 }
     
