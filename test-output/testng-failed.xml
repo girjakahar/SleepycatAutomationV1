@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="order.CartHandling">
+      <class name="homepage.SocialMedia">
         <methods>
-          <include name="closeDriver"/>
+          <include name="Instagramlink"/>
+          <include name="Twitterlink"/>
           <include name="startingDriver"/>
-          <include name="cartHandling"/>
+          <include name="close"/>
         </methods>
-      </class> <!-- order.CartHandling -->
+      </class> <!-- homepage.SocialMedia -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
