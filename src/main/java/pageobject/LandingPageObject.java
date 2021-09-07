@@ -67,7 +67,6 @@ public class LandingPageObject {
 	
 	
 	
-	
 	By LandTxt = By.xpath("//div[@class='desktop_header']//div[3]");
 	By MyAccount = By.xpath("//a[text()='My Account']");
 
@@ -112,6 +111,23 @@ public class LandingPageObject {
 	By Instagram = By.xpath("//i[@class='fab fa-instagram']");
 	By Youtube = By.xpath("//i[@class='fab fa-youtube ']");
 	By Twitter = By.xpath("//i[@class='fab fa-twitter']");
+	
+	// Social media links on Homepage
+		public WebElement facebook() {
+			return driver.findElement(Facebook);
+		}
+
+		public WebElement instagram() {
+			return driver.findElement(Instagram);
+		}
+
+		public WebElement youtube() {
+			return driver.findElement(Youtube);
+		}
+
+		public WebElement twitter() {
+			return driver.findElement(Twitter);
+		}
 
 	public LandingPageObject(RemoteWebDriver driver) // to provide life to driver in different test cases where this Landing page
 	{ 
@@ -250,22 +266,6 @@ public class LandingPageObject {
 		return driver.findElement(ComforterText);
 	}
 
-	// Social media links on Homepage
-	public WebElement facebook() {
-		return driver.findElement(Facebook);
-	}
-
-	public WebElement instagram() {
-		return driver.findElement(Instagram);
-	}
-
-	public WebElement youtube() {
-		return driver.findElement(Youtube);
-	}
-
-	public WebElement twitter() {
-		return driver.findElement(Twitter);
-	}
 
 	public void maattheader() {
 		WebElement scrollmatt = driver.findElement(By.xpath("//a[text()='Mattress']"));

@@ -21,7 +21,7 @@ public class BaseSleepycat {
 	//public static final String AUTOMATE_KEY = "GWisE2vkz9cr2qDDg2nD";
 	public static String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
 	public static String AUTOMATE_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
-	
+
 	public static final String URL1 = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 	public RemoteWebDriver initializeChrome() throws IOException {

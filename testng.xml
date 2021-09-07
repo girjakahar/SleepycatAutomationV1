@@ -12,5 +12,5 @@
       <class name="login.CorrectLoginTest"/>
        </classes>
         </test> 
- 
+
 </suite> <!-- Suite -->
