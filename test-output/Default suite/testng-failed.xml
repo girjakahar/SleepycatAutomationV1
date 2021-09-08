@@ -5,8 +5,7 @@
     <classes>
       <class name="homepage.SocialMedia">
         <methods>
-          <include name="Instagramlink"/>
-          <include name="Twitterlink"/>
+          <include name="facebooklink"/>
           <include name="startingDriver"/>
           <include name="close"/>
         </methods>
