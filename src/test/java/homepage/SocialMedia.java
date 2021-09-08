@@ -77,6 +77,8 @@ public class SocialMedia extends BaseSleepycat
 	   verifyLinkActive(url);
 	   log.info("Verifying the opened URL Response code");
 	   
+	   System.out.println("Link verified");
+	   
 	}
 	
 }
