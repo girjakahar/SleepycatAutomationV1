@@ -7,21 +7,50 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class CartSlider {
 	
 	static RemoteWebDriver driver;
-	
-	
-	   
-	    // Cross selling products in cart slider
-		By CrossSellingComforter = By.xpath("//a[@href='https://sleepycat.in/bedding/reversible-comforter/']//img[@class='img-responsive alsoBuy-image']");
-		By CrossSellingMemoryPillow = By.xpath("//a[@href='https://sleepycat.in/pillow/memory-foam-pillow/']//img[@class='img-responsive alsoBuy-image']");
-		By CrossSellingProtector = By.xpath("//a[@href='https://sleepycat.in/bedding/mattress-protector/']//img[@class='img-responsive alsoBuy-image']");
-		By CrossSellingCloudPillow = By.xpath("//a[@href='https://sleepycat.in/pillow/cloud-microfiber-pillow/']//img[@class='img-responsive alsoBuy-image']");
-		By CrossSellingWeightedBlanket = By.xpath("//a[@href='https://sleepycat.in/bedding/weighted-blanket/']//img[@class='img-responsive alsoBuy-image']");
-		By CrossSellingCuddlePillow = By.xpath("//a[@href='https://sleepycat.in/pillow/pregnancy-body-pillow/']//img[@class='img-responsive alsoBuy-image']");
-		By CrossSellingPillowCase = By.xpath("//a[@href='https://sleepycat.in/pillow/pillow-cases/']//img[@class='img-responsive alsoBuy-image']");
+
+	    // Cross selling products image link xpath in cart slider
+		By CrossSellingComforter = By.xpath("//a[@href='https://sleepycat.in/product/comforter/']//img[@class='img-responsive alsoBuy-image']");
+		By CrossSellingMemoryPillow = By.xpath("//a[@href='https://sleepycat.in/product/pillow-memory-foam-pillow/']//img[@class='img-responsive alsoBuy-image']");
+		By CrossSellingProtector = By.xpath("//a[@href='https://sleepycat.in/product/mattress-protector/']//img[@class='img-responsive alsoBuy-image']");
+		By CrossSellingCloudPillow = By.xpath("//a[@href='https://sleepycat.in/product/cloud-pillow/']//img[@class='img-responsive alsoBuy-image']");
+		By CrossSellingWeightedBlanket = By.xpath("//a[@href='https://sleepycat.in/product/weighted-blanket/']//img[@class='img-responsive alsoBuy-image']");
+		By CrossSellingCuddlePillow = By.xpath("//a[@href='https://sleepycat.in/product/pillow-pregnancy-body-pillow/']//img[@class='img-responsive alsoBuy-image']");
+		By CrossSellingPillowCase = By.xpath("//a[@href='https://sleepycat.in/product/pillow-case/']//img[@class='img-responsive alsoBuy-image']");
 		
+	    //Web element for Cross selling products image link in cart slider
+		public WebElement crossSellingComforter() {
+			return driver.findElement(CrossSellingComforter);
+		}
+		
+		public WebElement crossSellingMemoryPillow() {
+			return driver.findElement(CrossSellingMemoryPillow);
+		}
+		
+		public WebElement crossSellingProtector() {
+			return driver.findElement(CrossSellingProtector);
+		}
+		
+		public WebElement crossSellingCloudPillow() {
+			return driver.findElement(CrossSellingCloudPillow);
+		}
+		
+		public WebElement crossSellingWeightedBlanket() {
+			return driver.findElement(CrossSellingWeightedBlanket);
+		}
+		
+		public WebElement crossSellingCuddlePillow() {
+			return driver.findElement(CrossSellingCuddlePillow);
+		}
+		
+		public WebElement crossSellingPillowCase() {
+			return driver.findElement(CrossSellingPillowCase);
+		}
+		
+		//next and previous icon xpath in cart slider
         By NextCrossProduct = By.xpath("//div[@class='cart-cross-sell-section-wrap cross-selling-section']//a[@class='lSNext']");
         By PreviousCrossProduct = By.xpath("//div[@class='cart-cross-sell-section-wrap cross-selling-section']//a[@class='lSPrev']");
         
+		//next and previous icon webelement in cart slider
         public WebElement nextCrossProduct() {
 			return driver.findElement(NextCrossProduct);
 		}
@@ -82,6 +111,15 @@ public class CartSlider {
 		public WebElement removeProduct() {
 			return driver.findElement(RemoveProduct);
 		}
+		
+		//Securecheckout button xpath in cart slider 
+		By SecureCheckout = By.xpath("//button[@id='secure_checkout']");
+		
+		//Securecheckout button webelement in cart slider 
+	    public WebElement secureCheckout() {
+			return driver.findElement(SecureCheckout);
+		}
+	    
 		
 		public CartSlider(RemoteWebDriver driver) 
 		{

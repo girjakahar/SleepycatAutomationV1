@@ -66,7 +66,19 @@ public class ProductDetailsPage {
 	public WebElement sizeDropdown() {
 		return driver.findElement(SizeDropdown);
 	}
-
+	
+	// Qunatity dropdown selection section
+	By QuantityField = By.xpath("//div[@data-name='quantity']");
+	
+    
+	// Webelement for single original mattress
+	public WebElement quantityField() {
+		return driver.findElement(QuantityField);
+	}	
+	
+	
+	
+    // Original mattress size section on product details page
 	// Dropdown option when Inch is selected in original mattress
 	By SingleOriginal72x30x6 = By.xpath("//ul[@class='original']//li[@data-sku='SC-ORIG-S-72x30x6']");
 	By SingleOriginal72x36x6 = By.xpath("//ul[@class='original']//li[@data-sku='SC-ORIG-S-72x36x6']");
@@ -81,12 +93,12 @@ public class ProductDetailsPage {
 	public WebElement singleOriginal78x36x6() {
 		return driver.findElement(SingleOriginal78x36x6);
 	}
-
+	
+	
+     //Plus mattress size section on product details page
 	// Dropdown option when Inch is selected in Plus mattress and when category is Single
 	By SinglePlus72x30x8 = By.xpath("//ul[@class='plus']//li[@data-sku='SC-PLUS-S-72x30x8']");
 	By SinglePlus72x36x8 = By.xpath("//ul[@class='plus']//li[@data-sku='SC-PLUS-S-72x36x8']");
-	// By SinglePlus72x30x8 =By.xpath("//ul[@class='original']//li[@data-sku='SC-ORIG-S-75x36x6']");
-	// By SinglePlus72x30x8 =By.xpath("//ul[@class='original']//li[@data-sku='SC-ORIG-S-78x36x6']");
 
 	// Webelement when Inch is selected in Plus mattress and when category is Single
 	public WebElement singlePlus72x30x8() {
@@ -111,6 +123,21 @@ public class ProductDetailsPage {
 	public WebElement queenPlus75x60x8() {
 		return driver.findElement(QueenPlus75x60x8);
 	}
+	
+	// Dropdown option when cm is selected as dimensions in Plus mattress and when category is King
+    By KingPlus190x182x20 = By.xpath("//span[text()='190 x 182 x 20']");
+	By KingPlus198x182x20 = By.xpath("//span[text()='198 x 182 x 20']");
+		
+	// Webelement option when cm is selected as dimensions in Plus mattress and when category is King
+	public WebElement kingPlus190x182x20() {
+		return driver.findElement(KingPlus190x182x20);
+	}
+
+	public WebElement kingPlus198x182x20() {
+		return driver.findElement(KingPlus198x182x20);
+	}
+	
+	
 
 	public void pageScroll() {
 		JavascriptExecutor Matt = (JavascriptExecutor) driver;
@@ -135,6 +162,6 @@ public class ProductDetailsPage {
 	public ProductDetailsPage(RemoteWebDriver driver) // to provide life to driver in different test cases where this
 														// Landing page object is used we have added this method
 	{
-		this.driver = driver; // this vaiable is created to give life to driver
+		this.driver = driver; // this variable is created to give life to driver
 	}
 }

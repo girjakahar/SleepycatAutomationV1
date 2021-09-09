@@ -18,12 +18,13 @@ public class LoginPageObject {
 		By NewAccount = By.xpath("//span[text()=' Create new account ']");
 		By ForgetPassword = By.xpath("//span[text()=' Forgot password? ']");
 		By ForgetEmail = By.xpath("//input[@id='forgot-password-email']");
+		By ResetPassword = By.xpath("//*[@id='forgotPasswordDiv']//*[contains(@class, 'button')]");
+		By EmailSentText = By.xpath("//form[@id='forgotPasswordDiv']//div[@class='login-success-txt']");
 
 		public LoginPageObject(RemoteWebDriver driver) //to provide life to driver in different test cases where this Landing page object is used we have added this method
 		{ 
 			this.driver=driver;                        
 		}
-		
 		
 		public void switchingWindow() 
 		{
@@ -32,10 +33,7 @@ public class LoginPageObject {
 			String parentWindow = It.next();
 			String childWindow = It.next();
 			driver.switchTo().window(childWindow);
-			WebDriverWait wait = new WebDriverWait(driver, 20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#login-email")));
 		 }
-		
 		
 		public WebElement email()
 		{
@@ -65,6 +63,16 @@ public class LoginPageObject {
 		public WebElement forgetEmail()
 		{
 			return driver.findElement(ForgetEmail);
+		}
+		
+		public WebElement resetPassword()
+		{
+			return driver.findElement(ResetPassword);
+		}
+		
+		public WebElement EmailSentText()
+		{
+			return driver.findElement(EmailSentText);
 		}
 
 	}
