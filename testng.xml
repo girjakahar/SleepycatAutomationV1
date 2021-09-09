@@ -12,29 +12,5 @@
       <class name="login.CorrectLoginTest"/>
        </classes>
         </test> 
-        
-   <test name="BannerLinking"> 
-    <classes>  
-      <class name="homepage.BannerLinking"/>
-    </classes>
-  </test> 
-  
-     <test name="AddToCartFlow"> 
-    <classes>  
-      <class name="order.AddToCartFlow"/>
-    </classes>
-  </test> 
-  
-     <test name="CartHandling"> 
-    <classes>  
-      <class name="order.CartHandling"/>
-    </classes>
-  </test> 
-  
-     <test name="RazorPayPaymentGateway"> 
-    <classes>  
-      <class name="order.RazorPayPaymentGateway"/>
-    </classes>
-  </test> 
   
 </suite> <!-- Suite -->
