@@ -15,27 +15,26 @@ import pageobject.LandingPageObject;
 import pageobject.LoginPageObject;
 import resources.BaseSleepycat;
 
-public class CorrectLoginTest extends BaseSleepycat {
+public class ForgetPasswordFlow extends BaseSleepycat {
 	
-	public static Logger log =LogManager.getLogger(CorrectLoginTest.class);
-	
+	public static Logger log =LogManager.getLogger(ForgetPasswordFlow.class);
+
+
 	@BeforeTest
-	public void startingDriver() throws IOException
+	public void logi() throws IOException
 	{
 		driver=initializeSafari();
-		log.info("Browser is startred");		
 	}
 	
-	@Test	
-	public void correctLogin() throws Exception
+	@Test
+	public void forgetflow() throws Exception
 	{
-		
 		driver.get(property.getProperty("url"));
 		log.info("website is opened");
-		
+
 		driver.manage().window().maximize();
-		log.info("Website Window is maxmized");
-		
+		log.info("website is opened");
+
 		LandingPageObject landingPage = new LandingPageObject(driver);
 		landingPage.offerModal();
 		log.info("Offer modal is closed");
@@ -49,33 +48,40 @@ public class CorrectLoginTest extends BaseSleepycat {
         
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#login-email")));
-		loginpage.email().sendKeys(property.getProperty("Email"));
+		
+		loginpage.forgetPassword().click();
+		log.info("Clicked on forgetPassword link");
+		
+		wait.until(ExpectedConditions.visibilityOf(loginpage.forgetEmail()));
+		loginpage.forgetEmail().sendKeys("kahargirja789@gmail.com");
 		log.info("Email id is added");
+		
+		loginpage.resetPassword().click();
+		log.info("Clicked on reset password button");
 
-		loginpage.password().sendKeys(property.getProperty("pass1"));
-		log.info("Password is added");
-
-		loginpage.submit().click();
-		log.info("Click on submit button");
-
-		Thread.sleep(2000);
-		driver.navigate().refresh();
-		log.info("Refreshing the page");
-
-		wait.until(ExpectedConditions.visibilityOf((landingPage.myAccount())));
-		log.info("My account is displayed");
-		System.out.println("Customer is logged in");
-
-
-		}
-
-    @AfterTest
-    public void close() 
-    	{
-    		driver.quit();
-    		log.info("Driver is closed");
-
-    	}
+		wait.until(ExpectedConditions.visibilityOf(loginpage.EmailSentText()));
+		boolean SentText = loginpage.EmailSentText().isDisplayed();
+		
+		if(SentText) 
+		{
+			System.out.println("Reset Password Email is Sent");
+			log.info("Reset Password Email is Sent");
+		}else
+		{
+			System.out.println("Reset Password Email is not Sent");
+			log.info("Reset Password Email is not Sent");
+		}	
 		
 	}
+		
+		 @AfterTest
+		  public void close() 
+		   {
+		     driver.quit();
+		     log.info("Driver is closed");
+
+		   }		
+	
+}
+
 

@@ -47,7 +47,9 @@ public class IncorrectLoginTest extends BaseSleepycat {
 			LoginPageObject loginpage = new LoginPageObject(driver);
 			loginpage.switchingWindow();
 			log.info("Switching to login tab");
-
+            
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#login-email")));
 			loginpage.email().sendKeys(property.getProperty("Email"));
 			log.info("Email id is added");
 
@@ -57,7 +59,6 @@ public class IncorrectLoginTest extends BaseSleepycat {
 			loginpage.submit().click();
 			log.info("Click on submit button");
 
-			WebDriverWait wait = new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Incorrect Email or Password']")));
 			log.info("Waiting for visibility Of error message");
 

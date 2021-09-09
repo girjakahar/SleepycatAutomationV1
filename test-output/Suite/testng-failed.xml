@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="secondBanner(failed)">
+  <test thread-count="5" name="Twitter(failed)">
     <classes>
-      <class name="Homepage.BannerLinking">
+      <class name="homepage.SocialMedia">
         <methods>
           <include name="startingDriver"/>
-          <include name="closeDriver"/>
-          <include name="secondBanner"/>
+          <include name="close"/>
+          <include name="twitterlink"/>
         </methods>
-      </class> <!-- Homepage.BannerLinking -->
+      </class> <!-- homepage.SocialMedia -->
     </classes>
-  </test> <!-- secondBanner(failed) -->
+  </test> <!-- Twitter(failed) -->
 </suite> <!-- Failed suite [Suite] -->
