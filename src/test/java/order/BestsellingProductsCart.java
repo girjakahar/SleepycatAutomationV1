@@ -128,9 +128,6 @@ public class BestsellingProductsCart extends BaseSleepycat {
  	    		log.info("Driver is closed");
 
  	    	}
-
-      
-	
 }
 
 

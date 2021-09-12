@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-09-12T14:42:58 IST" name="Default suite" finished-at="2021-09-12T14:44:06 IST" duration-ms="68502">
+  <suite started-at="2021-09-12T22:23:21 IST" name="Default suite" finished-at="2021-09-12T22:23:58 IST" duration-ms="36903">
     <groups>
     </groups>
-    <test started-at="2021-09-12T14:42:58 IST" name="Default test" finished-at="2021-09-12T14:44:06 IST" duration-ms="68502">
-      <class name="order.RazorPayPaymentGateway">
-        <test-method is-config="true" signature="startingDriver()[pri:0, instance:order.RazorPayPaymentGateway@2141a12]" started-at="2021-09-12T14:42:58 IST" name="startingDriver" finished-at="2021-09-12T14:43:05 IST" duration-ms="7310" status="PASS">
+    <test started-at="2021-09-12T22:23:21 IST" name="Default test" finished-at="2021-09-12T22:23:58 IST" duration-ms="36903">
+      <class name="order.CartHandling">
+        <test-method is-config="true" signature="startingDriver()[pri:0, instance:order.CartHandling@573906eb]" started-at="2021-09-12T22:23:21 IST" name="startingDriver" finished-at="2021-09-12T22:23:30 IST" duration-ms="8738" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startingDriver -->
-        <test-method signature="razorPayPaymentGateway()[pri:0, instance:order.RazorPayPaymentGateway@2141a12]" started-at="2021-09-12T14:43:05 IST" name="razorPayPaymentGateway" finished-at="2021-09-12T14:44:05 IST" duration-ms="59352" status="PASS">
+        <test-method signature="cartHandling()[pri:0, instance:order.CartHandling@573906eb]" started-at="2021-09-12T22:23:30 IST" name="cartHandling" finished-at="2021-09-12T22:23:56 IST" duration-ms="26787" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- razorPayPaymentGateway -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:order.RazorPayPaymentGateway@2141a12]" started-at="2021-09-12T14:44:05 IST" name="closeDriver" finished-at="2021-09-12T14:44:06 IST" duration-ms="1756" status="PASS">
+        </test-method> <!-- cartHandling -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:order.CartHandling@573906eb]" started-at="2021-09-12T22:23:56 IST" name="closeDriver" finished-at="2021-09-12T22:23:58 IST" duration-ms="1325" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
-      </class> <!-- order.RazorPayPaymentGateway -->
+      </class> <!-- order.CartHandling -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
