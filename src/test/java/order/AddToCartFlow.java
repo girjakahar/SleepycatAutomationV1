@@ -45,8 +45,8 @@ public class AddToCartFlow extends BaseSleepycat {
   	   landingPage.maattheader();
 	   log.info("Submenu link is opened");
 	   
-	   wait.until(ExpectedConditions.visibilityOf(landingPage.originalMattressHeader()));
-	   landingPage.originalMattressHeader().click();
+	   wait.until(ExpectedConditions.visibilityOf(landingPage.originalMattressMenu()));
+	   landingPage.originalMattressMenu().click();
 	   log.info("Clicked on first submenu option");
 	   
   	   landingPage.offerModal();

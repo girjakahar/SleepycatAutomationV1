@@ -50,8 +50,8 @@ public class RazorPayPaymentGateway extends BaseSleepycat {
 	  	   landingPage.maattheader();
 		   log.info("Submenu link is opened");
 		   
-		   wait.until(ExpectedConditions.visibilityOf(landingPage.plusMattressHeader()));
-		   landingPage.plusMattressHeader().click();
+		   wait.until(ExpectedConditions.visibilityOf(landingPage.plusMattressMenu()));
+		   landingPage.plusMattressMenu().click();
 		   log.info("Clicked on Plus mattress submenu option");
 		   
 	  	   landingPage.offerModal();

@@ -14,35 +14,35 @@ public class LandingPageObject {
 	
 	//Mattress and its products dropdown links
 	By MattressHeader = By.xpath("//a[text()='Mattress']");
-	By OriginalMattressHeader = By.xpath("//a[text()='Original Mattress – 6″']");
-	By LatexMattressHeader = By.xpath("//a[text()='Latex Mattress – 7″']");
-	By PlusMattressHeader = By.xpath("//a[text()='Plus Mattress – 8″ & 10″']");
-	By BabyMattressHeader = By.xpath("//a[text()='Baby Mattress']");
-	By CompareMattressHeader = By.xpath("//a[text()='Compare Page']");
+	By OriginalMattressMenu = By.xpath("//a[text()='Original Mattress – 6″']");
+	By LatexMattressMenu = By.xpath("//a[text()='Latex Mattress – 7″']");
+	By PlusMattressMenu = By.xpath("//a[text()='Plus Mattress – 8″ & 10″']");
+	By BabyMattressMenu = By.xpath("//a[text()='Baby Mattress']");
+	By CompareMattressMenu = By.xpath("//a[text()='Compare Page']");
 	
 	//Webelements for Mattress and its products dropdown links
 	public WebElement MattressHeader() {
 		return driver.findElement(MattressHeader);
 	}
 	
-	public WebElement originalMattressHeader() {
-		return driver.findElement(OriginalMattressHeader);
+	public WebElement originalMattressMenu() {
+		return driver.findElement(OriginalMattressMenu);
 	}
 	
-	public WebElement latexMattressHeader() {
-		return driver.findElement(LatexMattressHeader);
+	public WebElement latexMattressMenu() {
+		return driver.findElement(LatexMattressMenu);
 	}
 	
-	public WebElement plusMattressHeader() {
-		return driver.findElement(PlusMattressHeader);
+	public WebElement plusMattressMenu() {
+		return driver.findElement(PlusMattressMenu);
 	}
     
-	public WebElement babyMattressHeader() {
-		return driver.findElement(BabyMattressHeader);
+	public WebElement babyMattressMenu() {
+		return driver.findElement(BabyMattressMenu);
 	}
 	
-	public WebElement compareMattressHeader() {
-		return driver.findElement(CompareMattressHeader);
+	public WebElement compareMattressMenu() {
+		return driver.findElement(CompareMattressMenu);
 	}
 	
 	// Cross selling products in cart slider

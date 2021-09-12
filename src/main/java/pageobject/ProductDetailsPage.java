@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -135,6 +134,37 @@ public class ProductDetailsPage {
 
 	public WebElement kingPlus198x182x20() {
 		return driver.findElement(KingPlus198x182x20);
+	}
+	
+	//Cross selling section product Add to cart button xpath section on product details page
+    By CrossSellSingleComforter = By.xpath("//div[@class='container_cross_sell comforter ']//span[@data-sku='SC-COMF-S-90x60']");
+	By CrossSellCuddlePillow = By.xpath("//div[@class='container_cross_sell body_pillow ']//span[@data-sku='SC-GRBDPILWSET-S-50x19']");
+	By CrossCloudPillow = By.xpath("//div[@class='container_cross_sell cloud_pillow ']//span[@data-sku='SC-CLPILW-S-27x18']");
+
+	// Webelement option when cm is selected as dimensions in Plus mattress and when category is King
+	public WebElement crossSellSingleComforter() {
+		return driver.findElement(CrossSellSingleComforter);
+	}
+
+	public WebElement crossSellCuddlePillow() {
+		return driver.findElement(CrossSellCuddlePillow);
+	}
+	
+	public WebElement crossCloudPillow() {
+		return driver.findElement(CrossCloudPillow);
+	}
+	
+	//Cross selling next and previous product icon xpath section on product details page
+    By CrossSellNextproduct = By.xpath("//div[@class='product_cross_sell_wrap cross-selling-section']//a[@class='lSNext']");
+	By CrossSellPreviousProduct = By.xpath("//div[@class='product_cross_sell_wrap cross-selling-section']//a[@class='lSPrev']");
+		
+	// Webelement option for Cross selling next and previous product icon on product details page
+	public WebElement CrossSellNextproduct() {
+		return driver.findElement(CrossSellNextproduct);
+	}
+
+	public WebElement CrossSellPreviousProduct() {
+		return driver.findElement(CrossSellPreviousProduct);
 	}
 	
 	
