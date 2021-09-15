@@ -25,8 +25,8 @@ public class BaseSleepycat {
 	public static final String URL1 = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 	public RemoteWebDriver initializeChrome() throws IOException {
-		property = new Properties();
-		FileInputStream filePath = new FileInputStream("/var/lib/jenkins/workspace/Scheduled Smoke Testing/src/main/java/resources/WebsiteData.properties");
+		property = new Properties();SleepycatAutomationV1
+		FileInputStream filePath = new FileInputStream("/SleepycatAutomationV1/src/main/java/resources/WebsiteData.properties");
 		property.load(filePath);
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("os", "Windows");
@@ -52,7 +52,7 @@ public class BaseSleepycat {
 	
 	    public RemoteWebDriver initializeSafari() throws IOException {
 	    property = new Properties();
-		FileInputStream filePath = new FileInputStream("/var/lib/jenkins/workspace/Scheduled Smoke Testing/src/main/java/resources/WebsiteData.properties");
+		FileInputStream filePath = new FileInputStream("/SleepycatAutomationV1/src/main/java/resources/WebsiteData.properties");
 		property.load(filePath);
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("os", "OS X");
