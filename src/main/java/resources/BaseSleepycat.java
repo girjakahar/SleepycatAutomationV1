@@ -25,7 +25,7 @@ public class BaseSleepycat {
 	public static final String URL1 = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 	public RemoteWebDriver initializeChrome() throws IOException {
-		property = new Properties();SleepycatAutomationV1
+		property = new Properties();
 		FileInputStream filePath = new FileInputStream("/SleepycatAutomationV1/src/main/java/resources/WebsiteData.properties");
 		property.load(filePath);
 		DesiredCapabilities caps = new DesiredCapabilities();
