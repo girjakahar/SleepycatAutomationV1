@@ -26,7 +26,7 @@ public class BaseSleepycat {
 
 	public RemoteWebDriver initializeChrome() throws IOException {
 		property = new Properties();
-		FileInputStream filePath = new FileInputStream("C:\\Users\\user\\eclipse-workspaceNew\\SleepycatAutomationV1\\src\\main\\java\\resources\\WebsiteData.properties");
+		FileInputStream filePath = new FileInputStream("/var/lib/jenkins/workspace/Scheduled Smoke Testing/src/main/java/resources/WebsiteData.properties");
 		property.load(filePath);
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("os", "Windows");
@@ -52,7 +52,7 @@ public class BaseSleepycat {
 	
 	    public RemoteWebDriver initializeSafari() throws IOException {
 	    property = new Properties();
-		FileInputStream filePath = new FileInputStream("C:\\Users\\user\\eclipse-workspaceNew\\SleepycatAutomationV1\\src\\main\\java\\resources\\WebsiteData.properties");
+		FileInputStream filePath = new FileInputStream("/var/lib/jenkins/workspace/Scheduled Smoke Testing/src/main/java/resources/WebsiteData.properties");
 		property.load(filePath);
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("os", "OS X");
@@ -76,7 +76,7 @@ public class BaseSleepycat {
 	}
 	    public RemoteWebDriver initializeFirefox() throws IOException {
 		    property = new Properties();
-			FileInputStream filePath = new FileInputStream("C:\\Users\\user\\eclipse-workspaceNew\\SleepycatAutomationV1\\src\\main\\java\\resources\\WebsiteData.properties");
+			FileInputStream filePath = new FileInputStream("/home/girja/SleepycatAutomationV1/src/main/java/resources/WebsiteData.properties");
 			property.load(filePath);
 			DesiredCapabilities caps = new DesiredCapabilities();
 			caps.setCapability("os", "Windows");

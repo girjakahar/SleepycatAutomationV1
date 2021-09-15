@@ -72,6 +72,8 @@ public class AddToCartFlow extends BaseSleepycat {
 	   
 	   productDetails.addToCart();
 	   log.info("Clicked on add to cart button");
+		
+	   System.out.println("Product is added in cart");
 	   
 	}
     

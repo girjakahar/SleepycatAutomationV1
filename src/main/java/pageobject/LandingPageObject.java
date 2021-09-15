@@ -50,10 +50,8 @@ public class LandingPageObject {
 			
 	public WebElement cartIcon() {
 		return driver.findElement(CartIcon);
-	}
-			
+	}	
 
-	
 	//Bed And its products dropdown list
 	By Bedding = By.xpath("//h3[text()=' Bedding ']");
 	
