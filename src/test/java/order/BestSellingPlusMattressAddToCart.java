@@ -21,11 +21,11 @@ import pageobject.LandingPageObject;
 import pageobject.ProductDetailsPage;
 import resources.BaseSleepycat;
 
-public class BestsellingProductsCart extends BaseSleepycat {
+public class BestSellingPlusMattressAddToCart extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(BestsellingProductsCart.class);
+	public static Logger log =LogManager.getLogger(BestSellingPlusMattressAddToCart.class);
 
 	
 	@BeforeTest
@@ -36,9 +36,9 @@ public class BestsellingProductsCart extends BaseSleepycat {
 	}
 	
     @Test
-	public void addtocart() throws Exception
+	public void bestsellingPlusMattressAddToCart() throws Exception
 	{
-       driver.get(property.getProperty("url"));
+ 	   driver.get("https://sleepycat.in/");
        log.info("Website opened Successfully");
      
  	   driver.manage().window().maximize();
@@ -63,16 +63,20 @@ public class BestsellingProductsCart extends BaseSleepycat {
  	   productdetails.pageScroll();
  	   log.info("Scrolled down to size section");
  	   
+ 	   landingPage.offerModal();
  	   productdetails.cmDimension().click();
  	   log.info("Clicked on cm option");
  	   
+ 	   landingPage.offerModal();
  	   productdetails.sizeDropdown().click();
  	   log.info("Clicked on sizedropdown field");
  	   
+ 	   landingPage.offerModal();
  	   wait.until(ExpectedConditions.visibilityOf(productdetails.kingPlus198x182x20()));
  	   productdetails.kingPlus198x182x20().click();
  	   log.info("Clicked on one size option from the dropdown");
  	   
+ 	   landingPage.offerModal();
  	   productdetails.quantityField().click();
  	   log.info("Clicked on quantity field");
  	   
@@ -120,7 +124,7 @@ public class BestsellingProductsCart extends BaseSleepycat {
  		}	
  		
 	}		
- 		
+    
  		@AfterTest
  	    public void close() 
  	    	{
@@ -132,6 +136,3 @@ public class BestsellingProductsCart extends BaseSleepycat {
       
 	
 }
-
-
-

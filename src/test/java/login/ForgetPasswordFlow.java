@@ -29,7 +29,7 @@ public class ForgetPasswordFlow extends BaseSleepycat {
 	@Test
 	public void forgetflow() throws Exception
 	{
-		driver.get(property.getProperty("url"));
+		driver.get("https://sleepycat.in/");
 		log.info("website is opened");
 
 		driver.manage().window().maximize();
@@ -83,5 +83,3 @@ public class ForgetPasswordFlow extends BaseSleepycat {
 		   }		
 	
 }
-
-

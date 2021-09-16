@@ -31,7 +31,7 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 		@Test
 		public void homepageLink() throws Exception
 		{
-			driver.get(property.getProperty("url"));
+		    driver.get("https://sleepycat.in/");
 		    log.info("Website opened Successfully");
 
 			LandingPageObject landingpage = new LandingPageObject(driver);
@@ -58,7 +58,7 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 		@Test
 		public void headerLink() throws Exception
 		{
-			driver.get(property.getProperty("url"));
+		    driver.get("https://sleepycat.in/");
 			log.info("Website opened Successfully");
 			
 			LandingPageObject landingpage = new LandingPageObject(driver);
@@ -86,7 +86,7 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 		@Test
 		public void menuLink() throws Exception
 		{
-			driver.get(property.getProperty("url"));
+		    driver.get("https://sleepycat.in/");
 			log.info("Website opened Successfully");
 
 			LandingPageObject landingpage = new LandingPageObject(driver);
@@ -114,7 +114,7 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 		@Test
 		public void Footerlink() throws Exception
 		{
-			driver.get(property.getProperty("url"));
+		    driver.get("https://sleepycat.in/");
 			log.info("Website opened Successfully");
 
 			LandingPageObject landingpage = new LandingPageObject(driver);

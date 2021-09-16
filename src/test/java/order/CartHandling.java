@@ -32,7 +32,7 @@ public class CartHandling extends BaseSleepycat {
 	public void cartHandling() throws Exception
 	{
     	
-       driver.get(property.getProperty("url"));
+ 	   driver.get("https://sleepycat.in/");
        log.info("Website opened Successfully");
        
   	   driver.manage().window().maximize();

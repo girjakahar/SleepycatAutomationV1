@@ -12,7 +12,13 @@
       <class name="login.CorrectLoginTest"/>
        </classes>
         </test> 
-  
+        
+      <test name="ForgetPasswordFlow"> 
+      <classes>  
+      <class name="login.ForgetPasswordFlow"/>
+       </classes>
+        </test> 
+        
 <test name="BannerLinking"> 
     <classes>  
       <class name="homepage.BannerLinking"/>
@@ -34,6 +40,18 @@
      <test name="RazorPayPaymentGateway"> 
     <classes>  
       <class name="order.RazorPayPaymentGateway"/>
+    </classes>
+      </test> 
+    
+    <test name="BestsellingProductsCart"> 
+    <classes>  
+      <class name="order.BestsellingProductsCart"/>
+    </classes>
+  </test> 
+  
+  <test name="BabyMattressCrossSelling"> 
+    <classes>  
+      <class name="order.BabyMattressCrossSelling"/>
     </classes>
   </test> 
 

@@ -26,7 +26,7 @@ public class BannerLinking extends BaseSleepycat {
 	@Test
 	public void firstBanner() throws Exception 
 	{
-		driver.get(property.getProperty("url"));
+	    driver.get("https://sleepycat.in/");
 		log.info("Website is opened");
 
 		LandingPageObject landingPage = new LandingPageObject(driver);
@@ -50,7 +50,7 @@ public class BannerLinking extends BaseSleepycat {
 	@Test
 	public void secondBanner() throws Exception {
 
-		driver.get(property.getProperty("url"));
+	    driver.get("https://sleepycat.in/");
 		log.info("Website is opened");
 
 		LandingPageObject landingPage = new LandingPageObject(driver);
@@ -77,7 +77,7 @@ public class BannerLinking extends BaseSleepycat {
 	@Test
 	public void thirdBanner() throws Exception {
 
-		driver.get(property.getProperty("url"));
+	    driver.get("https://sleepycat.in/");
 		log.info("Website is opened");
 
 		LandingPageObject landingPage = new LandingPageObject(driver);
@@ -107,7 +107,7 @@ public class BannerLinking extends BaseSleepycat {
 	@Test
 	public void fourthBanner() throws Exception {
 
-		driver.get(property.getProperty("url"));
+	    driver.get("https://sleepycat.in/");
 		log.info("Website is opened");
 
 		LandingPageObject landingPage = new LandingPageObject(driver);
@@ -141,7 +141,7 @@ public class BannerLinking extends BaseSleepycat {
 	@Test
 	public void fifthBanner() throws Exception {
 
-		driver.get(property.getProperty("url"));
+	    driver.get("https://sleepycat.in/");
 		log.info("Website is opened");
 
 		LandingPageObject landingPage = new LandingPageObject(driver);
