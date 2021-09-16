@@ -33,7 +33,7 @@ public class BabyMattressCrossSelling extends BaseSleepycat {
 	}
 	
     @Test
-    public void crossSelling() throws Exception
+    public void crossSellingBabyMattress() throws Exception
 	{
     	
        driver.get("https://sleepycat.in/");

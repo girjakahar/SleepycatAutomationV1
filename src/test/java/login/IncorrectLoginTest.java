@@ -31,7 +31,7 @@ public class IncorrectLoginTest extends BaseSleepycat {
 	public void incorrectLogin() throws Exception
 	{
 		
-			driver.get(property.getProperty("url"));
+		    driver.get("https://sleepycat.in/");
 			log.info("website is opened");
 
 			driver.manage().window().maximize();
@@ -50,10 +50,10 @@ public class IncorrectLoginTest extends BaseSleepycat {
             
 			WebDriverWait wait = new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#login-email")));
-			loginpage.email().sendKeys(property.getProperty("Email"));
+			loginpage.email().sendKeys("Kahargirja789@gmail.com");
 			log.info("Email id is added");
 
-			loginpage.password().sendKeys(property.getProperty("pass2"));
+			loginpage.password().sendKeys("ggfy");
 			log.info("Password is added");
 
 			loginpage.submit().click();

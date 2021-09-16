@@ -2,6 +2,7 @@ package order;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -38,7 +39,7 @@ public class RazorPayPaymentGateway extends BaseSleepycat {
 		public void razorPayPaymentGateway() throws Exception
 		{
 	    	
-	       driver.get(property.getProperty("url"));
+	 	   driver.get("https://sleepycat.in/");
 	       log.info("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
@@ -66,16 +67,18 @@ public class RazorPayPaymentGateway extends BaseSleepycat {
 	  	   productDetails.pageScroll();
 		   log.info("Scrolled down to size section");
 		   
-		   //pd.cm().click();
-		   //log.info("Clicked on cm option");
-		   
+	 	   landingPage.offerModal();
 	  	   productDetails.sizeDropdown().click();
 		   log.info("Clicked on sizedropdown field");
 		   
-		   wait.until(ExpectedConditions.visibilityOf(productDetails.queenPlus75x60x8()));
-		   productDetails.queenPlus75x60x8().click();
+	 	   landingPage.offerModal();
+	 	   Actions move =new Actions(driver);
+		   //wait.until(ExpectedConditions.visibilityOf(productDetails.queenPlus75x60x8()));
+	 	   move.moveToElement(productDetails.queenPlus75x60x8()).click().build().perform();
+		   //productDetails.queenPlus75x60x8().click();
 		   log.info("Clicked on one size option from the dropdown");
 		   
+	 	   landingPage.offerModal();
 		   productDetails.addToCart();
 		   log.info("Clicked on add to cart button");
 			   
@@ -164,6 +167,3 @@ public class RazorPayPaymentGateway extends BaseSleepycat {
 		 
 
 	}
-
-
-

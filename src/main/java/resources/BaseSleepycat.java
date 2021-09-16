@@ -16,7 +16,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class BaseSleepycat {
 
 	public RemoteWebDriver driver;
-	public Properties property;
 	//public static final String USERNAME = "girjakahar_4kEVqO";
 	//public static final String AUTOMATE_KEY = "GWisE2vkz9cr2qDDg2nD";
 	public static String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
@@ -25,9 +24,6 @@ public class BaseSleepycat {
 	public static final String URL1 = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 	public RemoteWebDriver initializeChrome() throws IOException {
-		property = new Properties();
-		FileInputStream filePath = new FileInputStream("/home/girja/SleepycatAutomationV1/src/main/java/resources/WebsiteData.properties");
-		property.load(filePath);
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("os", "Windows");
 		caps.setCapability("os_version", "10");
@@ -51,9 +47,6 @@ public class BaseSleepycat {
 	}
 	
 	    public RemoteWebDriver initializeSafari() throws IOException {
-	    property = new Properties();
-		FileInputStream filePath = new FileInputStream("/home/girja/SleepycatAutomationV1/src/main/java/resources/WebsiteData.properties");
-		property.load(filePath);
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("os", "OS X");
 		caps.setCapability("os_version", "Catalina");
@@ -75,9 +68,6 @@ public class BaseSleepycat {
 
 	}
 	    public RemoteWebDriver initializeFirefox() throws IOException {
-		    property = new Properties();
-			FileInputStream filePath = new FileInputStream("/home/girja/SleepycatAutomationV1/src/main/java/resources/WebsiteData.properties");
-			property.load(filePath);
 			DesiredCapabilities caps = new DesiredCapabilities();
 			caps.setCapability("os", "Windows");
 			caps.setCapability("os_version", "10");

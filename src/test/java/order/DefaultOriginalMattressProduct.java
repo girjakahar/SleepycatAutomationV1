@@ -1,9 +1,9 @@
 package order;
 
 import java.io.IOException;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,11 +15,11 @@ import pageobject.LandingPageObject;
 import pageobject.ProductDetailsPage;
 import resources.BaseSleepycat;
 
-public class AddToCartFlow extends BaseSleepycat {
+public class DefaultOriginalMattressProduct extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(AddToCartFlow.class);
+	public static Logger log =LogManager.getLogger(DefaultOriginalMattressProduct.class);
 
 	
 	@BeforeTest
@@ -30,10 +30,10 @@ public class AddToCartFlow extends BaseSleepycat {
 	}
 	
     @Test
-	public void addtocart() throws Exception
+	public void defaultOriginalMattessAddToCart() throws Exception
 	{
     	
-       driver.get(property.getProperty("url"));
+	   driver.get("https://sleepycat.in/");
        log.info("Website opened Successfully");
        
   	   driver.manage().window().maximize();
@@ -51,29 +51,26 @@ public class AddToCartFlow extends BaseSleepycat {
 	   
   	   landingPage.offerModal();
 	   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
-	   wait.until(ExpectedConditions.visibilityOf(productDetails.queenCategory()));
-	   //pd.Scroll();
-	   //pd.Queen().click();
-	   log.info("Category is displayed");
 	   
   	   landingPage.offerModal();
   	   productDetails.pageScroll();
 	   log.info("Scrolled down to size section");
 	   
-	   //pd.cm().click();
-	   //log.info("Clicked on cm option");
-	   
-  	   productDetails.sizeDropdown().click();
-	   log.info("Clicked on sizedropdown field");
-	   
-	   wait.until(ExpectedConditions.visibilityOf(productDetails.singleOriginal78x36x6()));
-	   productDetails.singleOriginal78x36x6().click();
-	   log.info("Clicked on one size option from the dropdown");
-	   
 	   productDetails.addToCart();
 	   log.info("Clicked on add to cart button");
+	   
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-ORIG-S-72x30x6']")));
 		
-	   System.out.println("Product is added in cart");
+		boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-ORIG-S-72x30x6']")).isDisplayed();
+		if(productname) 
+		{
+			System.out.println("Product is added in cart");
+			log.info("Product is added in cart");
+		}else
+		{
+			System.out.println("Product is not added in cart");
+			log.info("Product is not added in cart");
+		}	
 	   
 	}
     
@@ -84,6 +81,4 @@ public class AddToCartFlow extends BaseSleepycat {
 		log.info("Driver is closed");
 
 	  }
-	 
-
 }

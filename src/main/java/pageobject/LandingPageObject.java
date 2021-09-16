@@ -279,13 +279,13 @@ public class LandingPageObject {
 			driver.findElement(By.xpath("//*[@class='soundest-form-without-image-close ']")).click();// get upto 30% modal
 		} catch (Exception e)
 		{
-			System.out.println("Model 1 error :" + e);
+			//System.out.println("Model 1 error :" + e);
 		}
 		try { 
 			driver.findElement(By.xpath("//*[@class='soundest-form-without-image-close ']")).click();// liked what you saw
 		} catch (Exception e) 
 		{
-			System.out.println("Model 2 error :" + e);
+			//System.out.println("Model 2 error :" + e);
 		}
 
 	}
