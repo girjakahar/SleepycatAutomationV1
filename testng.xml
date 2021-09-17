@@ -27,25 +27,25 @@
   
      <test name="DefaultOriginalMattressProduct"> 
     <classes>  
-      <class name="order.DefaultOriginalMattressProduct"/>
+      <class name="addtocartproductflow.DefaultOriginalMattressProduct"/>
     </classes>
   </test> 
   
   <test name="OriginalMattessProductDetailsChanges"> 
     <classes>  
-      <class name="order.OriginalMattessProductDetailsChanges"/>
+      <class name="addtocartproductflow.OriginalMattessProductDetailsChanges"/>
     </classes>
   </test> 
   
   <test name="DefaultLatexMattressProduct"> 
     <classes>  
-      <class name="order.DefaultLatexMattressProduct"/>
+      <class name="addtocartproductflow.DefaultLatexMattressProduct"/>
     </classes>
   </test> 
   
   <test name="LatexMattressProductDetailsChanges"> 
     <classes>  
-      <class name="order.LatexMattressProductDetailsChanges"/>
+      <class name="addtocartproductflow.LatexMattressProductDetailsChanges"/>
     </classes>
   </test> 
   
@@ -63,13 +63,13 @@
     
     <test name="BestSellingPlusMattressAddToCart"> 
     <classes>  
-      <class name="order.BestSellingPlusMattressAddToCart"/>
+      <class name="addtocartproductflow.BestSellingPlusMattressAddToCart"/>
     </classes>
   </test> 
   
   <test name="BabyMattressCrossSelling"> 
     <classes>  
-      <class name="order.BabyMattressCrossSelling"/>
+      <class name="addtocartproductflow.BabyMattressCrossSelling"/>
     </classes>
   </test> 
 

@@ -1,4 +1,4 @@
-package order;
+package addtocartproductflow;
 
 import java.io.IOException;
 import java.util.List;
@@ -62,6 +62,7 @@ public class OriginalMattessProductDetailsChanges extends BaseSleepycat {
   	   productDetails.pageScroll();
 	   log.info("Scrolled down to size section");
 	   
+  	   landingPage.offerModal();
 	   wait.until(ExpectedConditions.visibilityOf(productDetails.cmDimension()));
 	   productDetails.cmDimension().click();
 	   log.info("Clicked on cm dimension option");
@@ -70,6 +71,7 @@ public class OriginalMattessProductDetailsChanges extends BaseSleepycat {
   	   productDetails.sizeDropdown().click();
 	   log.info("Clicked on sizedropdown field");
 	   
+  	   landingPage.offerModal();
 	   wait.until(ExpectedConditions.visibilityOf(productDetails.doubleOriginal75x48x6()));
 	   productDetails.doubleOriginal75x48x6().click();
 	   log.info("Clicked on one size option from the dropdown");

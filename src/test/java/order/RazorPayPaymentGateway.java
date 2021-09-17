@@ -69,6 +69,7 @@ public class RazorPayPaymentGateway extends BaseSleepycat {
 		   
 	 	   landingPage.offerModal();
 	  	   productDetails.sizeDropdown().click();
+	 	   landingPage.offerModal();
 		   log.info("Clicked on sizedropdown field");
 		   
 	 	   landingPage.offerModal();
