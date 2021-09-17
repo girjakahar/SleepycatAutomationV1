@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-09-12T22:23:21 IST" name="Default suite" finished-at="2021-09-12T22:23:58 IST" duration-ms="36903">
+  <suite started-at="2021-09-17T16:39:37 IST" name="Default suite" finished-at="2021-09-17T16:41:06 IST" duration-ms="88290">
     <groups>
     </groups>
-    <test started-at="2021-09-12T22:23:21 IST" name="Default test" finished-at="2021-09-12T22:23:58 IST" duration-ms="36903">
-      <class name="order.CartHandling">
-        <test-method is-config="true" signature="startingDriver()[pri:0, instance:order.CartHandling@573906eb]" started-at="2021-09-12T22:23:21 IST" name="startingDriver" finished-at="2021-09-12T22:23:30 IST" duration-ms="8738" status="PASS">
+    <test started-at="2021-09-17T16:39:37 IST" name="Default test" finished-at="2021-09-17T16:41:06 IST" duration-ms="88290">
+      <class name="addtocartproductflow.OriginalMattessProductDetailsChanges">
+        <test-method is-config="true" signature="startingDriver()[pri:0, instance:addtocartproductflow.OriginalMattessProductDetailsChanges@2141a12]" started-at="2021-09-17T16:39:37 IST" name="startingDriver" finished-at="2021-09-17T16:39:52 IST" duration-ms="14702" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startingDriver -->
-        <test-method signature="cartHandling()[pri:0, instance:order.CartHandling@573906eb]" started-at="2021-09-12T22:23:30 IST" name="cartHandling" finished-at="2021-09-12T22:23:56 IST" duration-ms="26787" status="PASS">
+        <test-method signature="originalMattessAddToCart()[pri:0, instance:addtocartproductflow.OriginalMattessProductDetailsChanges@2141a12]" started-at="2021-09-17T16:39:52 IST" name="originalMattessAddToCart" finished-at="2021-09-17T16:41:04 IST" duration-ms="71652" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cartHandling -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:order.CartHandling@573906eb]" started-at="2021-09-12T22:23:56 IST" name="closeDriver" finished-at="2021-09-12T22:23:58 IST" duration-ms="1325" status="PASS">
+        </test-method> <!-- originalMattessAddToCart -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:addtocartproductflow.OriginalMattessProductDetailsChanges@2141a12]" started-at="2021-09-17T16:41:04 IST" name="closeDriver" finished-at="2021-09-17T16:41:06 IST" duration-ms="1910" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
-      </class> <!-- order.CartHandling -->
+      </class> <!-- addtocartproductflow.OriginalMattessProductDetailsChanges -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

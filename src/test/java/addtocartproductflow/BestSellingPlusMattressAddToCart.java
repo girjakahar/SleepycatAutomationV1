@@ -1,4 +1,4 @@
-package order;
+package addtocartproductflow;
 
 import java.io.IOException;
 import java.util.List;
@@ -69,6 +69,7 @@ public class BestSellingPlusMattressAddToCart extends BaseSleepycat {
  	   
  	   landingPage.offerModal();
  	   productdetails.sizeDropdown().click();
+ 	   landingPage.offerModal();
  	   log.info("Clicked on sizedropdown field");
  	   
  	   landingPage.offerModal();
@@ -101,8 +102,11 @@ public class BestSellingPlusMattressAddToCart extends BaseSleepycat {
  	   wait.until(ExpectedConditions.visibilityOf(cart.addtocartSingleComforter()));
  	   cart.addtocartSingleComforter().click();
  	   log.info("Click on Add to cart button for single comforter");
+ 	   landingPage.offerModal();
  	   
- 	   wait.until(ExpectedConditions.visibilityOf(cart.incrementQuantity()));
+ 	   Actions move =new Actions(driver);
+	   move.moveToElement(cart.incrementQuantity()).build().perform();
+	   log.info("Scrolled up to product section");   
  	   cart.incrementQuantity().click();
  	   log.info("Increment product quantity");
  	   

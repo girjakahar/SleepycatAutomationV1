@@ -1,4 +1,4 @@
-package order;
+package addtocartproductflow;
 
 import java.io.IOException;
 
@@ -18,11 +18,11 @@ import pageobject.LandingPageObject;
 import pageobject.ProductDetailsPage;
 import resources.BaseSleepycat;
 
-public class BabyMattressCrossSelling extends BaseSleepycat {
+public class PlusMattressCrossSell extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(BabyMattressCrossSelling.class);
+	public static Logger log =LogManager.getLogger(OriginalMattessProductDetailsChanges.class);
 
 	
 	@BeforeTest
@@ -32,8 +32,8 @@ public class BabyMattressCrossSelling extends BaseSleepycat {
 	   log.info("Starting driver");
 	}
 	
-    @Test
-    public void crossSellingBabyMattress() throws Exception
+	@Test
+	public void crossSellingPlus() throws Exception
 	{
     	
        driver.get("https://sleepycat.in/");
@@ -44,36 +44,56 @@ public class BabyMattressCrossSelling extends BaseSleepycat {
   	   
   	   wait = new WebDriverWait(driver, 20);
   	   LandingPageObject landingpage = new LandingPageObject(driver);
-	   landingpage.offerModal();
-	   landingpage.maattheader();
+  	   landingpage.offerModal();
+  	   landingpage.maattheader();
 	   log.info("Submenu link is opened");
 	   
-	   wait.until(ExpectedConditions.visibilityOf(landingpage.babyMattressMenu()));
-	   landingpage.babyMattressMenu().click();
-	   log.info("Clicked on first submenu option");
+	   wait.until(ExpectedConditions.visibilityOf(landingpage.plusMattressMenu()));
+	   landingpage.plusMattressMenu().click();
+	   log.info("Clicked on Plus mattress menu option");
 	   
-	   landingpage.offerModal();
-	   ProductDetailsPage productdetail = new ProductDetailsPage(driver);
+  	   landingpage.offerModal();
+  	   ProductDetailsPage productdetail = new ProductDetailsPage(driver);
 	   wait.until(ExpectedConditions.visibilityOf(productdetail.singleCategory()));
 	   
 	   WebElement CrossSellSection = driver.findElement(By.xpath("//span[text()='10 years warranty']"));
 	   Actions move =new Actions(driver);
 	   move.moveToElement(CrossSellSection).build().perform();
 	   log.info("Scrolled down to cross selling product section");
+  	   landingpage.offerModal();
 	   
-	   productdetail.crossSellSingleComforter().click();
-	   log.info("Click on add to cart product button pf Comforter");
-
+  	   productdetail.crossSellCloudPillowCategoryField().click();
+	   log.info("Clicked on category field for cloud pillow");
+	   
+	   wait.until(ExpectedConditions.visibilityOf(productdetail.crossSellPresidentCategoryCloudPillow()));
+	   productdetail.crossSellPresidentCategoryCloudPillow().click();
+	   log.info("Clicked on President type option from the dropdown");
+	   
+	   wait.until(ExpectedConditions.visibilityOf(productdetail.crossSellPresidentCloudPillowSet1()));
+	   productdetail.crossSellPresidentCloudPillowSet1().click();
+	   log.info("Click on add to cart product button of Cloud pillow");
+	   
 	   Thread.sleep(2000);
-	   landingpage.offerModal();
-	   log.info("closed the offer modal");
-
 	   productdetail.CrossSellNextproduct().click();
 	   log.info("Click on next product icon in cross selling product section");
+	   
+	   Thread.sleep(2000);
+	   productdetail.crossSellSingleComforter().click();
+	   log.info("Click on add to cart product button of Comforter");
+	   
+	   Thread.sleep(2000);
+	   productdetail.crossSellSingleProtector75x36().click();
+	   log.info("Click on add to cart product button of Protector");
+       
+	   Thread.sleep(2000);
+	   productdetail.CrossSellNextproduct().click();
+	   log.info("Click on next product icon in cross selling product section");
+       
+	   Thread.sleep(2000);
+	   productdetail.crossSellCuddlePillow().click();
+	   log.info("Click on add to cart product button of cuddle pillow");
 
-	   productdetail.crossCloudPillow().click();
-	   log.info("Click on add to cart product button of cloud pillow");
-
+  	   landingpage.offerModal();
 	   Thread.sleep(2000);
 	   landingpage.cartIcon().click();
 	   log.info("Click on cart icon");
@@ -91,13 +111,12 @@ public class BabyMattressCrossSelling extends BaseSleepycat {
 			log.info("Product is not added in cart");
 		}	
 	}
-    
-      @AfterTest 
-	  public void closeDriver() throws IOException 
+	
+	@AfterTest 
+	public void closeDriver() throws IOException 
 	  {
 	    driver.quit();	  
 		log.info("Driver is closed");
 
 	  }
-
 }

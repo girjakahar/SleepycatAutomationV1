@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="CartHandling(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="order.CartHandling">
+      <class name="addtocartproductflow.LatexMattressCrossSell">
         <methods>
-          <include name="cartHandling"/>
           <include name="closeDriver"/>
+          <include name="crossSellingLatexMattress"/>
           <include name="startingDriver"/>
         </methods>
-      </class> <!-- order.CartHandling -->
+      </class> <!-- addtocartproductflow.LatexMattressCrossSell -->
     </classes>
-  </test> <!-- CartHandling(failed) -->
-  <test thread-count="5" name="BestsellingProductsCart(failed)">
-    <classes>
-      <class name="order.BestsellingProductsCart">
-        <methods>
-          <include name="startingDriver"/>
-          <include name="close"/>
-          <include name="addtocart"/>
-        </methods>
-      </class> <!-- order.BestsellingProductsCart -->
-    </classes>
-  </test> <!-- BestsellingProductsCart(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

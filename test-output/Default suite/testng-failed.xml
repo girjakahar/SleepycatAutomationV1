@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="login.ForgetPasswordFlow">
+      <class name="addtocartproductflow.LatexMattressCrossSell">
         <methods>
-          <include name="forgetflow"/>
-          <include name="logi"/>
+          <include name="closeDriver"/>
+          <include name="crossSellingLatexMattress"/>
+          <include name="startingDriver"/>
         </methods>
-      </class> <!-- login.ForgetPasswordFlow -->
+      </class> <!-- addtocartproductflow.LatexMattressCrossSell -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
