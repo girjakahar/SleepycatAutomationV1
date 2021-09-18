@@ -64,12 +64,12 @@ public class DefaultOriginalMattressProduct extends BaseSleepycat {
 		boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-ORIG-S-72x30x6']")).isDisplayed();
 		if(productname) 
 		{
-			System.out.println("Product is added in cart");
-			log.info("Product is added in cart");
+			System.out.println("Single category Original mattress Product is added in cart");
+			log.info("Single category Original mattress Product is added in cart");
 		}else
 		{
-			System.out.println("Product is not added in cart");
-			log.info("Product is not added in cart");
+			System.out.println("Single category Original mattress Product is not added in cart");
+			log.info("Single category Original mattress Product is not added in cart");
 		}	
 	   
 	}

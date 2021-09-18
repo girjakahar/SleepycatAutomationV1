@@ -23,7 +23,7 @@ public class LatexMattressCrossSell extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(OriginalMattessProductDetailsChanges.class);
+	public static Logger log =LogManager.getLogger(LatexMattressCrossSell.class);
 
 	
 	@BeforeTest
@@ -152,12 +152,12 @@ public class LatexMattressCrossSell extends BaseSleepycat {
 			boolean productname = driver.findElement(By.xpath("//a[text()='Reversible Comforter']")).isDisplayed();
 			if(productname) 
 			{
-				System.out.println("Product is added in cart");
-				log.info("Product is added in cart");
+				System.out.println("King category latex Mattress and cross sell products are added in cart");
+				log.info("King category latex Mattress and cross sell products are added in cart");
 			}else
 			{
-				System.out.println("Product is not added in cart");
-				log.info("Product is not added in cart");
+				System.out.println("King category latex Mattress and cross sell products are not added in cart");
+				log.info("King category latex Mattress and cross sell products are not added in cart");
 			}	
 		}
 	 

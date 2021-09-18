@@ -18,11 +18,11 @@ import pageobject.LandingPageObject;
 import pageobject.ProductDetailsPage;
 import resources.BaseSleepycat;
 
-public class LatexMattressProductDetailsChanges extends BaseSleepycat {
+public class BabyMattressProductDetailsChanges extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(LatexMattressProductDetailsChanges.class);
+	public static Logger log =LogManager.getLogger(BabyMattressProductDetailsChanges.class);
 
 	
 	@BeforeTest
@@ -33,7 +33,7 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 	}
 	
 	    @Test
-		public void latexMattressAddToCart() throws Exception
+		public void babyMattressAddToCart() throws Exception
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
@@ -48,31 +48,27 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 	  	   landingpage.maattheader();
 		   log.info("Submenu link is opened");
 		   
-		   wait.until(ExpectedConditions.visibilityOf(landingpage.plusMattressMenu()));
-		   landingpage.latexMattressMenu().click();
-		   log.info("Clicked on latex mattress menu option");
+		   wait.until(ExpectedConditions.visibilityOf(landingpage.babyMattressMenu()));
+		   landingpage.babyMattressMenu().click();
+		   log.info("Clicked on Baby mattress menu option");
 		   
 		   landingpage.offerModal();
 		   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
-		   wait.until(ExpectedConditions.visibilityOf(productDetails.queenCategory()));
-		   productDetails.queenCategory().click();
-		   log.info("Clicked on Queen category option");
+		   wait.until(ExpectedConditions.visibilityOf(productDetails.customCategory()));
+		   productDetails.customCategory().click();
+		   log.info("Clicked on Custom category option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.pageScroll();
-		   log.info("Scrolled down to size section");
+		   log.info("Scrolled down on page");
 		   
-		   wait.until(ExpectedConditions.visibilityOf(productDetails.cmDimension()));
-		   productDetails.feetDimension().click();
-		   log.info("Clicked on Feet dimension option");
+		   landingpage.offerModal();
+	  	   productDetails.customLength().sendKeys("45");
+		   log.info("Length value is entered");
 		   
-	  	   landingpage.offerModal();
-	  	   productDetails.sizeDropdown().click();
-		   log.info("Clicked on sizedropdown field");
-		   
-		   wait.until(ExpectedConditions.visibilityOf(productDetails.queenLatex75x60x7()));
-		   productDetails.queenLatex75x60x7().click();
-		   log.info("Clicked on one size option from the dropdown");
+		   landingpage.offerModal();
+	  	   productDetails.customWidth().sendKeys("25");
+		   log.info("Width value is entered");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.quantityField()));
@@ -98,17 +94,17 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 		   productDetails.addToCart();
 		   log.info("Clicked on add to cart button");
 		   
-		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-LATEX-Q-75x60x7']")));
+		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-BABY-S-52x28x4']")));
 			
-			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-LATEX-Q-75x60x7']")).isDisplayed();
+			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-BABY-S-52x28x4']")).isDisplayed();
 			if(productname) 
 			{
-				System.out.println("Queen category latex mattress Product is added in cart");
-				log.info("Queen category latex mattress Product is added in cart");
+				System.out.println("Custome Baby mattress Product is added in cart");
+				log.info("Custome Baby mattress Product is added in cart");
 			}else
 			{
-				System.out.println("Queen category latex mattress Product is not added in cart");
-				log.info("Queen category latex mattress Product is not added in cart");
+				System.out.println("Custome Baby mattress Product is not added in cart");
+				log.info("Custome Baby mattress Product is not added in cart");
 			}	
 		}
 	    
@@ -118,5 +114,5 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 		    driver.quit();	  
 			log.info("Driver is closed");
 
-		  }    
-}    
+		  }
+}

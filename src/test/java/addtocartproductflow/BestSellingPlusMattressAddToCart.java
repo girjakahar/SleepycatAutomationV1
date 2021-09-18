@@ -104,9 +104,7 @@ public class BestSellingPlusMattressAddToCart extends BaseSleepycat {
  	   log.info("Click on Add to cart button for single comforter");
  	   landingPage.offerModal();
  	   
- 	   Actions move =new Actions(driver);
-	   move.moveToElement(cart.incrementQuantity()).build().perform();
-	   log.info("Scrolled up to product section");   
+	   wait.until(ExpectedConditions.visibilityOf(cart.incrementQuantity()));
  	   cart.incrementQuantity().click();
  	   log.info("Increment product quantity");
  	   
@@ -119,12 +117,12 @@ public class BestSellingPlusMattressAddToCart extends BaseSleepycat {
  		
  		if(firstname) 
  		{
- 			System.out.println("checkout page is opened");
- 			log.info("checkout page is opened");
+ 			System.out.println("checkout page is opened with Plus mattress and comforter product");
+ 			log.info("checkout page is opened with Plus mattress and comforter product");
  		}else
  		{
- 			System.out.println("checkout page is not opened");
- 			log.info("checkout page is not opened");
+ 			System.out.println("checkout page is not opened with Plus mattress and comforter product");
+ 			log.info("checkout page is not opened with Plus mattress and comforter product");
  		}	
  		
 	}		
@@ -135,8 +133,5 @@ public class BestSellingPlusMattressAddToCart extends BaseSleepycat {
  	    		driver.quit();
  	    		log.info("Driver is closed");
 
- 	    	}
-
-      
-	
+ 	    	}	
 }

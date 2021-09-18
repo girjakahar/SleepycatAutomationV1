@@ -22,7 +22,7 @@ public class PlusMattressCrossSell extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(OriginalMattessProductDetailsChanges.class);
+	public static Logger log =LogManager.getLogger(PlusMattressCrossSell.class);
 
 	
 	@BeforeTest
@@ -103,12 +103,12 @@ public class PlusMattressCrossSell extends BaseSleepycat {
 		boolean productname = driver.findElement(By.xpath("//a[text()='Reversible Comforter']")).isDisplayed();
 		if(productname) 
 		{
-			System.out.println("Product is added in cart");
-			log.info("Product is added in cart");
+			System.out.println("Cross sell products present on Plus mattress page is added in cart");
+			log.info("Cross sell products present on Plus mattress page is added in cart");
 		}else
 		{
-			System.out.println("Product is not added in cart");
-			log.info("Product is not added in cart");
+			System.out.println("Cross sell products present on Plus mattress page is not added in cart");
+			log.info("Cross sell products present on Plus mattress page is not added in cart");
 		}	
 	}
 	

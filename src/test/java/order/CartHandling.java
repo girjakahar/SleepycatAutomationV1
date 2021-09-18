@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -48,13 +49,12 @@ public class CartHandling extends BaseSleepycat {
 	   landingPage.cartIcon().click();
   	   log.info("Clicked on Cart icon");
        
-  	   Thread.sleep(2000L);
+       Thread.sleep(2000);
 	   wait.until(ExpectedConditions.visibilityOf(cart.addtocartSingleComforter()));
   	   cart.addtocartSingleComforter().click();
   	   log.info("Click on Add to cart button for single comforter");
   	   
-  	   Thread.sleep(2000L);
-	   wait.until(ExpectedConditions.visibilityOf(cart.incrementQuantity()));
+	   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-COMF-S-90x60']")));
   	   cart.incrementQuantity().click();
   	   log.info("Increment product quantity");
        

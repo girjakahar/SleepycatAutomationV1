@@ -62,7 +62,7 @@ public class BabyMattressCrossSelling extends BaseSleepycat {
 	   log.info("Scrolled down to cross selling product section");
 	   
 	   productdetail.crossSellSingleComforter().click();
-	   log.info("Click on add to cart product button pf Comforter");
+	   log.info("Click on add to cart product button of Comforter");
 
 	   Thread.sleep(2000);
 	   landingpage.offerModal();
@@ -84,12 +84,12 @@ public class BabyMattressCrossSelling extends BaseSleepycat {
 		boolean productname = driver.findElement(By.xpath("//a[text()='Reversible Comforter']")).isDisplayed();
 		if(productname) 
 		{
-			System.out.println("Product is added in cart");
-			log.info("Product is added in cart");
+			System.out.println("Comforter and Cloud pillow Products is added in cart");
+			log.info("Comforter and Cloud pillow Products is added in cart");
 		}else
 		{
-			System.out.println("Product is not added in cart");
-			log.info("Product is not added in cart");
+			System.out.println("Comforter and Cloud pillow Products is not added in cart");
+			log.info("Comforter and Cloud pillow Products is not added in cart");
 		}	
 	}
     

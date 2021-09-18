@@ -16,11 +16,11 @@ import pageobject.LandingPageObject;
 import pageobject.ProductDetailsPage;
 import resources.BaseSleepycat;
 
-public class DefaultLatexMattressProduct extends BaseSleepycat {
+public class DefaultProtectorProduct extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(DefaultLatexMattressProduct.class);
+	public static Logger log =LogManager.getLogger(DefaultProtectorProduct.class);
 
 	
 	@BeforeTest
@@ -31,7 +31,7 @@ public class DefaultLatexMattressProduct extends BaseSleepycat {
 	}
 	
 	 @Test
-		public void defaultLatexMattressAddToCart() throws Exception
+		public void defaultProtectorsAddToCart() throws Exception
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
@@ -43,12 +43,12 @@ public class DefaultLatexMattressProduct extends BaseSleepycat {
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
-	  	   landingpage.maattheader();
-		   log.info("Submenu link is opened");
+	  	   landingpage.beddingHeader();
+		   log.info("Bedding Submenu link is opened");
 		   
-		   wait.until(ExpectedConditions.visibilityOf(landingpage.latexMattressMenu()));
-		   landingpage.latexMattressMenu().click();
-		   log.info("Clicked on latex mattress menu option");
+		   wait.until(ExpectedConditions.visibilityOf(landingpage.protectorMenu()));
+		   landingpage.protectorMenu().click();
+		   log.info("Clicked on protector menu option");
 		   
 	  	   landingpage.offerModal();
 		   ProductDetailsPage productdetail = new ProductDetailsPage(driver);
@@ -60,17 +60,17 @@ public class DefaultLatexMattressProduct extends BaseSleepycat {
 		   productdetail.addToCart();
 		   log.info("Clicked on add to cart button");
 		   
-		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-LATEX-S-72x30x7']")));
+		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PROT-S-72x36']")));
 			
-			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-LATEX-S-72x30x7']")).isDisplayed();
+			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PROT-S-72x36']")).isDisplayed();
 			if(productname) 
 			{
-				System.out.println("Single category latex mattress product is added in cart");
-				log.info("Single category latex mattress product is added in cart");
+				System.out.println("Default protector Product is added in cart");
+				log.info("Default protector Product is added in cart");
 			}else
 			{
-				System.out.println("Single category latex mattress product is not added in cart");
-				log.info("Single category latex mattress product is not added in cart");
+				System.out.println("Default protector Product is not added in cart");
+				log.info("Default protector Product is not added in cart");
 			}	
 		}
 	 

@@ -105,12 +105,12 @@ public class OriginalMattessProductDetailsChanges extends BaseSleepycat {
 		boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-ORIG-D-75x48x6']")).isDisplayed();
 		if(productname) 
 		{
-			System.out.println("Product is added in cart");
-			log.info("Product is added in cart");
+			System.out.println("Double Category Original Mattress Product is added in cart");
+			log.info("Double Category Original Mattress Product is added in cart");
 		}else
 		{
-			System.out.println("Product is not added in cart");
-			log.info("Product is not added in cart");
+			System.out.println("Double Category Original Mattress Product is not added in cart");
+			log.info("Double Category Original Mattress Product is not added in cart");
 		}	
 	   
 	}
