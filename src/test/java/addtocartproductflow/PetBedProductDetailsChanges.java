@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,11 +19,11 @@ import pageobject.LandingPageObject;
 import pageobject.ProductDetailsPage;
 import resources.BaseSleepycat;
 
-public class LatexMattressProductDetailsChanges extends BaseSleepycat {
+public class PetBedProductDetailsChanges extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(LatexMattressProductDetailsChanges.class);
+	public static Logger log =LogManager.getLogger(PetBedProductDetailsChanges.class);
 
 	
 	@BeforeTest
@@ -33,7 +34,7 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 	}
 	
 	    @Test
-		public void latexMattressAddToCart() throws Exception
+		public void petBedAddToCart() throws Exception
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
@@ -45,33 +46,33 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
-	  	   landingpage.maattheader();
-		   log.info("Submenu link is opened");
+	  	   landingpage.beddingHeader();
+		   log.info("Bedding Submenu link is opened");
 		   
-		   wait.until(ExpectedConditions.visibilityOf(landingpage.plusMattressMenu()));
-		   landingpage.latexMattressMenu().click();
-		   log.info("Clicked on latex mattress menu option");
+		   wait.until(ExpectedConditions.visibilityOf(landingpage.petBedMenu()));
+		   landingpage.petBedMenu().click();
+		   log.info("Clicked on Pet Bed menu option");
 		   
 		   landingpage.offerModal();
 		   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
-		   wait.until(ExpectedConditions.visibilityOf(productDetails.queenCategory()));
-		   productDetails.queenCategory().click();
-		   log.info("Clicked on Queen category option");
+		   wait.until(ExpectedConditions.visibilityOf(productDetails.orthopedicCategory()));
+		   productDetails.orthopedicCategory().click();
+		   log.info("Clicked on orthopedic category option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.pageScroll();
 		   log.info("Scrolled down to size section");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.cmDimension()));
-		   productDetails.feetDimension().click();
-		   log.info("Clicked on Feet dimension option");
+		   productDetails.cmDimension().click();
+		   log.info("Clicked on cm dimension option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.sizeDropdown().click();
 		   log.info("Clicked on sizedropdown field");
 		   
-		   wait.until(ExpectedConditions.visibilityOf(productDetails.queenLatex75x60x7()));
-		   productDetails.queenLatex75x60x7().click();
+		   wait.until(ExpectedConditions.visibilityOf(productDetails.orthopedicPetBed48x24()));
+		   productDetails.orthopedicPetBed48x24().click();
 		   log.info("Clicked on one size option from the dropdown");
 		   
 	  	   landingpage.offerModal();
@@ -94,21 +95,38 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 	 			 break;
 	 		 }
 	 	   }
+	 	   
+	 	   landingpage.offerModal();
+		   wait.until(ExpectedConditions.visibilityOf(productDetails.personalizeNameSection()));
+		   productDetails.personalizeNameSection().click();
+		   log.info("Clicked on personalize Name Section");
+		   
+		   Actions name =new Actions(driver);
+		   name.moveToElement(productDetails.personalizeNameField()).build().perform();
+		   log.info("Move to Pet name field");
+		   
+		   wait.until(ExpectedConditions.visibilityOf(productDetails.personalizeNameField()));
+		   productDetails.personalizeNameField().sendKeys("OrthoTest");
+		   log.info("Enter the name in pet name field");
+           
+		   wait.until(ExpectedConditions.visibilityOf(productDetails.stitchButton()));
+		   productDetails.stitchButton().click();
+		   log.info("Clicked on Stitch button");
 		   
 		   productDetails.addToCart();
 		   log.info("Clicked on add to cart button");
 		   
-		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-LATEX-Q-75x60x7']")));
+		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PETBEDORTHO-L-48x24']")));
 			
-			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-LATEX-Q-75x60x7']")).isDisplayed();
+			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PETBEDORTHO-L-48x24']")).isDisplayed();
 			if(productname) 
 			{
-				System.out.println("Queen category latex mattress Product is added in cart");
-				log.info("Queen category latex mattress Product is added in cart");
+				System.out.println("Personalized Orthopedic category Pet Bed is added in cart");
+				log.info("Personalized Orthopedic category Pet Bed is added in cart");
 			}else
 			{
-				System.out.println("Queen category latex mattress Product is not added in cart");
-				log.info("Queen category latex mattress Product is not added in cart");
+				System.out.println("Personalized Orthopedic category Pet Bed is not added in cart");
+				log.info("Personalized Orthopedic category Pet Bed is not added in cart");
 			}	
 		}
 	    
@@ -118,5 +136,6 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 		    driver.quit();	  
 			log.info("Driver is closed");
 
-		  }    
-}    
+		  }  
+
+}

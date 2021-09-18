@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="addtocartproductflow.LatexMattressCrossSell">
+      <class name="addtocartproductflow.PetBedProductDetailsChanges">
         <methods>
+          <include name="petBedAddToCart"/>
           <include name="closeDriver"/>
-          <include name="crossSellingLatexMattress"/>
           <include name="startingDriver"/>
         </methods>
-      </class> <!-- addtocartproductflow.LatexMattressCrossSell -->
+      </class> <!-- addtocartproductflow.PetBedProductDetailsChanges -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

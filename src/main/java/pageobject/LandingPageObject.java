@@ -9,8 +9,14 @@ public class LandingPageObject {
 	
 	static RemoteWebDriver driver;
 	
-	// HeaderMenu links
+	// Xpath for login HeaderMenu link
 	By Login = By.xpath("//a[text()='Login']");
+	
+	//Webelement for login Menu links
+	public WebElement loginHeader() {
+		return driver.findElement(Login);
+	}
+
 	
 	//Mattress and its products dropdown links
 	By MattressHeader = By.xpath("//a[text()='Mattress']");
@@ -21,7 +27,7 @@ public class LandingPageObject {
 	By CompareMattressMenu = By.xpath("//a[text()='Compare Page']");
 	
 	//Webelements for Mattress and its products dropdown links
-	public WebElement MattressHeader() {
+	public WebElement mattressHeader() {
 		return driver.findElement(MattressHeader);
 	}
 	
@@ -45,115 +51,44 @@ public class LandingPageObject {
 		return driver.findElement(CompareMattressMenu);
 	}
 	
-	// Cross selling products in cart slider
+	
+	// Xpath for cart icon 
 	By CartIcon = By.xpath("//li[@class='crticn']//a");
-			
+		
+	//Webelement Xpath for cart icon
 	public WebElement cartIcon() {
 		return driver.findElement(CartIcon);
 	}	
-
-	//Bed And its products dropdown list
-	By Bedding = By.xpath("//h3[text()=' Bedding ']");
 	
-	//Bedding And its products dropdown list
-	By Pillows = By.xpath("//h3[text()='Pillows']");
+	//Xpath for Bedding and its products dropdown links
+	By ProtectorMenu = By.xpath("//ul[@class='sub-menu']//a[text()='Protector']");
+	By ComforterMenu = By.xpath("//ul[@class='sub-menu']//a[text()='Comforter']");
+	By WeightedBlanketMenu = By.xpath("//ul[@class='sub-menu']//a[text()='Weighted Blanket']");
+	By PetBedMenu = By.xpath("//ul[@class='sub-menu']//a[text()='Pet Bed']");
+		
+	//Webelements for Bedding products dropdown links	
+	public WebElement protectorMenu() {
+		return driver.findElement(ProtectorMenu);
+	}
+		
+	public WebElement comforterMenu() {
+		return driver.findElement(ComforterMenu);
+	}
+		
+	public WebElement weightedBlanketMenu() {
+		return driver.findElement(WeightedBlanketMenu);
+	}
 	
-	//Pillows And its products dropdown list
-	By OhayoBed = By.xpath("//h3[text()=' Ohayo Bed ']");
-	
-	//About us and its dropdown link list
-	
+	public WebElement petBedMenu() {
+		return driver.findElement(PetBedMenu);
+	}
 	
 	
+	//Xpath for Land and MYAccount xpath section
 	By LandTxt = By.xpath("//div[@class='desktop_header']//div[3]");
 	By MyAccount = By.xpath("//a[text()='My Account']");
-
-	// Banner section xpath
-	By FirstBanner = By.xpath("//li[@class='slide-2 regular regular lslide active']//a");
-	By SecondBanner = By.xpath("//a[@href='/mattress-recommender']");
-	By ThirdBanner = By.xpath("//li[@class='slide-4 regular regular lslide active']//a[@href='/bedding']");
-	By FourthBanner = By.xpath("//li[@class='slide-5 regular regular lslide active']//a[@href='/weighted-blanket']");
-	By FifthBanner = By.xpath("//li[@class='slide-6 regular regular lslide active']//a");
-	By Nextbanner = By.xpath("//div[@class='home-cover']//a[@class='lSNext']");
-	By PreviousBanner = By.xpath("//div[@class='home-cover']//a[@class='lSPrev']");
-
-	// Sound sleep image section xpath
-	By MattressImage = By.xpath("//img[@alt='Mattresses']");
-	By BeddingImage = By.xpath("//img[@alt='Bedding']");
-	By PillowImage = By.xpath("//img[@alt='Pillows']");
-	By OhayoBedImage = By.xpath("//img[@alt='Ohayo Bed']");
-
-	// sound sleep text section xpath
-	By TextMattress = By.xpath("//h3[text()=' Mattresses ']");
-	By TextBedding = By.xpath("//h3[text()=' Bedding ']");
-	By TextPillow = By.xpath("//h3[text()='Pillows']");
-	By TextOhayoBed = By.xpath("//h3[text()=' Ohayo Bed ']");
-
-	// sleepy cat banner
-	By BrowseButton = By.xpath("//a[text()='Browse All Products']");
-
-	// Shop from our bestsellers section links xpath for images
-	By PlusMattressImage = By.xpath("//a[@href='/plus-mattress']//img[@class='vin-lazy-load']");
-	By OriginalMattressImage = By.xpath("//a[@href='/original-mattress']//img[@class='vin-lazy-load']");
-	By MemoryFoamPillowImage = By.xpath("//a[@href='/pillow-memory-foam-pillow']//img[@class='vin-lazy-load']");
-	By ComforterImage = By.xpath("//a[@href='/comforter']//img[@class='vin-lazy-load']");
-
-	// Shop from our bestsellers section links xpath for shop now button
-	By PlusMattressText = By.xpath("//a[@href='/plus-mattress'][text()='Shop now']");
-	By OriginalMattressText = By.xpath("//a[@href='/original-mattress'][normalize-space()='Shop now']");
-	By MemoryFoamPillowText = By.xpath("//a[@href='/pillow-memory-foam-pillow'][normalize-space()='Shop now']");
-	By ComforterText = By.xpath("//a[@href='/comforter'][normalize-space()='Shop now']");
-
-	// Social media links on Homepage
-	By Facebook = By.xpath("//i[@class='fab fa-facebook-square']");
-	By Instagram = By.xpath("//i[@class='fab fa-instagram']");
-	By Youtube = By.xpath("//i[@class='fab fa-youtube ']");
-	By Twitter = By.xpath("//i[@class='fab fa-twitter']");
 	
-	// Social media links on Homepage
-		public WebElement facebook() {
-			return driver.findElement(Facebook);
-		}
-
-		public WebElement instagram() {
-			return driver.findElement(Instagram);
-		}
-
-		public WebElement youtube() {
-			return driver.findElement(Youtube);
-		}
-
-		public WebElement twitter() {
-			return driver.findElement(Twitter);
-		}
-
-	public LandingPageObject(RemoteWebDriver driver) // to provide life to driver in different test cases where this Landing page
-	{ 
-		this.driver = driver; // this vaiable is created to give life to driver
-	}
-
-	//Header Menu links
-	public WebElement loginHeader() {
-		return driver.findElement(Login);
-	}
-
-	public WebElement mattressHeader() {
-		return driver.findElement(MattressHeader);
-	}
-
-	public WebElement beddingHeader() {
-		return driver.findElement(Bedding);
-	}
-
-	public WebElement pillowHeader() {
-		return driver.findElement(Pillows);
-	}
-
-	public WebElement ohayoBedHeader() {
-		return driver.findElement(OhayoBed);
-	}
-
-
+	//Webelement for LandTxt and myaccount link
 	public WebElement landTxtHeader() {
 		return driver.findElement(LandTxt);
 	}
@@ -161,8 +96,18 @@ public class LandingPageObject {
 	public WebElement myAccount() {
 		return driver.findElement(MyAccount);
 	}
+	
 
-	// banner section
+	// Xpath for Banner section 
+	By FirstBanner = By.xpath("//li[@class='slide-2 regular regular lslide active']//a");
+	By SecondBanner = By.xpath("//a[@href='/mattress-recommender']");
+	By ThirdBanner = By.xpath("//li[@class='slide-4 regular regular lslide active']//a[@href='/bedding']");
+	By FourthBanner = By.xpath("//li[@class='slide-5 regular regular lslide active']//a[@href='/weighted-blanket']");
+	By FifthBanner = By.xpath("//li[@class='slide-6 regular regular lslide active']//a");
+	By Nextbanner = By.xpath("//div[@class='home-cover']//a[@class='lSNext']");
+	By PreviousBanner = By.xpath("//div[@class='home-cover']//a[@class='lSPrev']");
+	
+	// Webelement for banner section
 	public WebElement firstBanner() {
 		return driver.findElement(FirstBanner);
 	}
@@ -178,7 +123,7 @@ public class LandingPageObject {
 	public WebElement fourthBanner() {
 		return driver.findElement(FourthBanner);
 	}
-	
+		
 	public WebElement fifthBanner() {
 		return driver.findElement(FifthBanner);
 	}
@@ -190,8 +135,15 @@ public class LandingPageObject {
 	public WebElement previousBanner() {
 		return driver.findElement(PreviousBanner);
 	}
+	
 
-	// sound sleep image section xpath
+	// Sound sleep image section xpath
+	By MattressImage = By.xpath("//img[@alt='Mattresses']");
+	By BeddingImage = By.xpath("//img[@alt='Bedding']");
+	By PillowImage = By.xpath("//img[@alt='Pillows']");
+	By OhayoBedImage = By.xpath("//img[@alt='Ohayo Bed']");
+	
+	//Webelement for sound sleep image section 
 	public WebElement mattressImage() {
 		return driver.findElement(MattressImage);
 	}
@@ -208,7 +160,14 @@ public class LandingPageObject {
 		return driver.findElement(OhayoBedImage);
 	}
 
-	// Sound sleep text section
+	
+	// sound sleep text section xpath
+	By TextMattress = By.xpath("//h3[text()=' Mattresses ']");
+	By TextBedding = By.xpath("//h3[text()=' Bedding ']");
+	By TextPillow = By.xpath("//h3[text()='Pillows']");
+	By TextOhayoBed = By.xpath("//h3[text()=' Ohayo Bed ']");
+	
+	// Webelement for Sound sleep text section
 	public WebElement textMattress() {
 		return driver.findElement(TextMattress);
 	}
@@ -224,13 +183,24 @@ public class LandingPageObject {
 	public WebElement textOhayoBed() {
 		return driver.findElement(TextOhayoBed);
 	}
+	
 
-	// sleepy cat banner
+	// Xpath for Browse All Products banner
+	By BrowseButton = By.xpath("//a[text()='Browse All Products']");
+	
+	//Webelement for Browse All Products banner
 	public WebElement browseButton() {
 		return driver.findElement(BrowseButton);
 	}
+	
 
 	// Shop from our bestsellers section links xpath for images
+	By PlusMattressImage = By.xpath("//a[@href='/plus-mattress']//img[@class='vin-lazy-load']");
+	By OriginalMattressImage = By.xpath("//a[@href='/original-mattress']//img[@class='vin-lazy-load']");
+	By MemoryFoamPillowImage = By.xpath("//a[@href='/pillow-memory-foam-pillow']//img[@class='vin-lazy-load']");
+	By ComforterImage = By.xpath("//a[@href='/comforter']//img[@class='vin-lazy-load']");
+	
+	// Webelement Shop from our bestsellers section links xpath for images
 	public WebElement plusMattressImage() {
 		return driver.findElement(PlusMattressImage);
 	}
@@ -247,9 +217,15 @@ public class LandingPageObject {
 		return driver.findElement(ComforterImage);
 	}
 
-	// Shop from our bestsellers section links xpath for text
+	// Shop from our bestsellers section links xpath for shop now button text
+	By PlusMattressText = By.xpath("//a[@href='/plus-mattress'][text()='Shop now']");
+	By OriginalMattressText = By.xpath("//a[@href='/original-mattress'][normalize-space()='Shop now']");
+	By MemoryFoamPillowText = By.xpath("//a[@href='/pillow-memory-foam-pillow'][normalize-space()='Shop now']");
+	By ComforterText = By.xpath("//a[@href='/comforter'][normalize-space()='Shop now']");
+	
+	// Webelement for Shop from our bestsellers section links xpath for shop now button text
 	public WebElement plusMattressText() {
-		return driver.findElement(PlusMattressText);
+    	return driver.findElement(PlusMattressText);
 	}
 
 	public WebElement originalMattressText() {
@@ -265,12 +241,47 @@ public class LandingPageObject {
 	}
 
 
+	// Xpath for Social media links on Homepage
+	By Facebook = By.xpath("//i[@class='fab fa-facebook-square']");
+	By Instagram = By.xpath("//i[@class='fab fa-instagram']");
+	By Youtube = By.xpath("//i[@class='fab fa-youtube ']");
+	By Twitter = By.xpath("//i[@class='fab fa-twitter']");
+	
+	// Webelement for Social media links on Homepage
+	public WebElement facebook() {
+		return driver.findElement(Facebook);
+	}
+
+	public WebElement instagram() {
+		return driver.findElement(Instagram);
+	}
+
+	public WebElement youtube() {
+		return driver.findElement(Youtube);
+	}
+
+	public WebElement twitter() {
+		return driver.findElement(Twitter);
+	}
+
+	
+	public LandingPageObject(RemoteWebDriver driver) // to provide life to driver in different test cases where this Landing page
+	{ 
+		this.driver = driver; // this vaiable is created to give life to driver
+	}
+
+
 	public void maattheader() {
 		WebElement scrollmatt = driver.findElement(By.xpath("//a[text()='Mattress']"));
-		// WebElement mattresschild = driver.findElement(By.xpath("//a[text()='Original
-		// Mattress – 6 Inches']"));
 		Actions hovermenu = new Actions(driver);
 		hovermenu.moveToElement(scrollmatt).build().perform();
+
+	}
+	
+	public void beddingHeader() {
+		WebElement scrollbedding = driver.findElement(By.xpath("//a[text()='Bedding']"));
+		Actions hovermenu = new Actions(driver);
+		hovermenu.moveToElement(scrollbedding).build().perform();
 
 	}
 

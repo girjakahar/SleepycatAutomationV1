@@ -18,11 +18,11 @@ import pageobject.LandingPageObject;
 import pageobject.ProductDetailsPage;
 import resources.BaseSleepycat;
 
-public class LatexMattressProductDetailsChanges extends BaseSleepycat {
+public class ComforterProductDetailsChanges extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(LatexMattressProductDetailsChanges.class);
+	public static Logger log =LogManager.getLogger(ComforterProductDetailsChanges.class);
 
 	
 	@BeforeTest
@@ -33,7 +33,7 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 	}
 	
 	    @Test
-		public void latexMattressAddToCart() throws Exception
+		public void comforterAddToCart() throws Exception
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
@@ -45,34 +45,30 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
-	  	   landingpage.maattheader();
+	  	   landingpage.beddingHeader();
 		   log.info("Submenu link is opened");
 		   
-		   wait.until(ExpectedConditions.visibilityOf(landingpage.plusMattressMenu()));
-		   landingpage.latexMattressMenu().click();
-		   log.info("Clicked on latex mattress menu option");
+		   wait.until(ExpectedConditions.visibilityOf(landingpage.comforterMenu()));
+		   landingpage.comforterMenu().click();
+		   log.info("Clicked on Comforter menu option");
 		   
 		   landingpage.offerModal();
 		   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
-		   wait.until(ExpectedConditions.visibilityOf(productDetails.queenCategory()));
-		   productDetails.queenCategory().click();
-		   log.info("Clicked on Queen category option");
+		   wait.until(ExpectedConditions.visibilityOf(productDetails.doubleCategory()));
+		   productDetails.doubleCategory().click();
+		   log.info("Clicked on Double category option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.pageScroll();
 		   log.info("Scrolled down to size section");
 		   
-		   wait.until(ExpectedConditions.visibilityOf(productDetails.cmDimension()));
+		   landingpage.offerModal();
+	  	   productDetails.comforterCoffeeColor().click();
+		   log.info("Clicked on coffee color option");
+		      
+		   wait.until(ExpectedConditions.visibilityOf(productDetails.feetDimension()));
 		   productDetails.feetDimension().click();
 		   log.info("Clicked on Feet dimension option");
-		   
-	  	   landingpage.offerModal();
-	  	   productDetails.sizeDropdown().click();
-		   log.info("Clicked on sizedropdown field");
-		   
-		   wait.until(ExpectedConditions.visibilityOf(productDetails.queenLatex75x60x7()));
-		   productDetails.queenLatex75x60x7().click();
-		   log.info("Clicked on one size option from the dropdown");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.quantityField()));
@@ -98,17 +94,17 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 		   productDetails.addToCart();
 		   log.info("Clicked on add to cart button");
 		   
-		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-LATEX-Q-75x60x7']")));
+		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-CFCOMF-D-90x100']")));
 			
-			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-LATEX-Q-75x60x7']")).isDisplayed();
+			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-CFCOMF-D-90x100']")).isDisplayed();
 			if(productname) 
 			{
-				System.out.println("Queen category latex mattress Product is added in cart");
-				log.info("Queen category latex mattress Product is added in cart");
+				System.out.println("Double coffee color comforter Product is added in cart");
+				log.info("Double coffee color comforter Product is added in cart");
 			}else
 			{
-				System.out.println("Queen category latex mattress Product is not added in cart");
-				log.info("Queen category latex mattress Product is not added in cart");
+				System.out.println("Double coffee color comforter Product is not added in cart");
+				log.info("Double coffee color comforter Product is not added in cart");
 			}	
 		}
 	    
@@ -119,4 +115,5 @@ public class LatexMattressProductDetailsChanges extends BaseSleepycat {
 			log.info("Driver is closed");
 
 		  }    
-}    
+
+}

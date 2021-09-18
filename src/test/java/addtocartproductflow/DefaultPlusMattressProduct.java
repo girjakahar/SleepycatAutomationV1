@@ -65,12 +65,12 @@ public class DefaultPlusMattressProduct extends BaseSleepycat {
 		boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PLUS-S-72x30x8']")).isDisplayed();
 		if(productname) 
 		{
-			System.out.println("Product is added in cart");
-			log.info("Product is added in cart");
+			System.out.println("Single category Plus Mattress Product is added in cart");
+			log.info("Single category Plus Mattress Product is added in cart");
 		}else
 		{
-			System.out.println("Product is not added in cart");
-			log.info("Product is not added in cart");
+			System.out.println("Single category Plus Mattress Product is not added in cart");
+			log.info("Single category Plus Mattress Product is not added in cart");
 		}	
 	   
 	}

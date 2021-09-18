@@ -39,7 +39,21 @@ public class ProductDetailsPage {
 	public WebElement customCategory() {
 		return driver.findElement(CustomCategory);
 	}
+	
+	// Xpath for Pet Bed Category section on product details page
+	By OriginalCategory = By.xpath("//li[text()='Original']");
+	By OrthopedicCategory = By.xpath("//li[text()='Orthopedic']");
+	
+	// Webelement for Xpath for Pet Bed Category section on product details page
+	public WebElement originalCategory() {
+		return driver.findElement(OriginalCategory);
+	}
+	
+	public WebElement orthopedicCategory() {
+		return driver.findElement(OrthopedicCategory);
+	}
 
+	
 	// Dimension section of product details page
 	By InchDimension = By.xpath("//Span[text()=' inch ']");
 	By CmDimension = By.xpath("//Span[text()=' cm ']");
@@ -58,6 +72,7 @@ public class ProductDetailsPage {
 		return driver.findElement(FeetDimension);
 	}
 
+	
 	// Size dropdown section
 	By SizeDropdown = By.xpath("//div[@Class='variations attr']");// div[contains(@class,'prRightPadding')]//li[14]
 	
@@ -66,14 +81,15 @@ public class ProductDetailsPage {
 		return driver.findElement(SizeDropdown);
 	}
 	
+	
 	// Qunatity dropdown selection section
 	By QuantityField = By.xpath("//div[@data-name='quantity']");
-	
-    
+	   
 	// Webelement for single original mattress
 	public WebElement quantityField() {
 		return driver.findElement(QuantityField);
 	}	
+	
 	
     // Original mattress size section on product details page
 	// Dropdown option when Inch is selected in original mattress
@@ -90,6 +106,7 @@ public class ProductDetailsPage {
 	public WebElement singleOriginal78x36x6() {
 		return driver.findElement(SingleOriginal78x36x6);
 	}
+	
 	
 	// Original mattress size section on product details page when Double category is selected
     // Drop down option when Inch,cm or feet is selected in original mattress for double category
@@ -123,6 +140,7 @@ public class ProductDetailsPage {
 		return driver.findElement(SinglePlus72x36x8);
 	}
 
+	
 	// Dropdown option when Inch is selected in Plus mattress and when category is queen
 	By QueenPlus72x60x8 = By.xpath("//ul[@class='plus']//li[@data-sku='SC-PLUS-Q-72x60x8']");
 	By QueenPlus75x60x8 = By.xpath("//ul[@class='plus']//li[@data-sku='SC-PLUS-Q-75x60x8']");
@@ -138,6 +156,7 @@ public class ProductDetailsPage {
 		return driver.findElement(QueenPlus75x60x8);
 	}
 	
+	
 	// Dropdown option when cm is selected as dimensions in Plus mattress and when category is King
     By KingPlus190x182x20 = By.xpath("//span[text()='190 x 182 x 20']");
 	By KingPlus198x182x20 = By.xpath("//span[text()='198 x 182 x 20']");
@@ -151,6 +170,7 @@ public class ProductDetailsPage {
 		return driver.findElement(KingPlus198x182x20);
 	}
 	
+	
 	//Xpath for 10 inch Height on Plus mattress page
 	By TenInchHeight = By.xpath("//li[@data-value='10 inch']");
 	
@@ -158,6 +178,7 @@ public class ProductDetailsPage {
 	public WebElement tenInchHeight() {
 		return driver.findElement(TenInchHeight);
 	}
+	
 	
 	// Xpath for Dropdown option when category is Queen on Plus mattress and height is 10 inch
     By QueenPlus75x60x10 = By.xpath("//li[@data-sku='SC-PLUS-Q-75x60x10']");
@@ -171,6 +192,7 @@ public class ProductDetailsPage {
 	public WebElement queenPlus78x60x10() {
 		return driver.findElement(QueenPlus78x60x10);
 	}
+	
 	
 	//Latex mattress size section on product details page
 	// Dropdown option when feet is selected in Plus mattress and when category is King
@@ -196,6 +218,7 @@ public class ProductDetailsPage {
 		return driver.findElement(KingLatex78x72x7);
 	}
 	
+	
     // Drop down option when Inch,cm or feet is selected in original mattress for Queen category
 	By QueenLatex75x60x7 = By.xpath("//li[@data-sku='SC-LATEX-Q-75x60x7']");
 	//Above Xpath can also be used when cm or feet is selected as dimension for 190 x 152 x 17 cm and 6.25' x 5' x 0.58' feet
@@ -210,8 +233,111 @@ public class ProductDetailsPage {
 
 	public WebElement queenLatex78x60x7() {
 		return driver.findElement(QueenLatex78x60x7);
+	}//input[@name='custom_length']
+    
+	
+	// Xpath for custom lenght and width option when category is custom
+    By CustomLength = By.xpath("//input[@name='custom_length']");
+	By CustomWidth = By.xpath("//input[@name='custom_breath']");
+		
+	// Webelement option for Dropdown option when category is Queen on Plus mattress and height is 10 inch
+	public WebElement customLength() {
+		return driver.findElement(CustomLength);
 	}
 
+	public WebElement customWidth() {
+		return driver.findElement(CustomWidth);
+	}
+	
+	
+	//Mattress Protector size section on product details page
+	// Dropdown option when Inch is selected in Protector and when category is double
+	By DoubleProtector75x48 = By.xpath("//ul[@class='protector']//li[@data-sku='SC-PROT-D-75x48']");
+	//Above Xpath can also be used when cm or feet is selected as dimension for 190 x 121 cm and 6.25' x 4' feet
+
+	By DoubleProtector78x48 = By.xpath("//ul[@class='protector']//li[@data-sku='SC-PROT-D-78x48']");
+	//Above Xpath can also be used when cm or feet is selected as dimension for 198 x 121 cm and 6.5' x 4' feet
+
+	// Webelement when Inch is selected in Protector and when category is double
+	public WebElement doubleProtector75x48() {
+		return driver.findElement(DoubleProtector75x48);
+	}
+
+	public WebElement doubleProtector78x48() {
+		return driver.findElement(DoubleProtector78x48);
+	}
+	
+	
+	//Xpath for Color options of Comforter on product details page
+    By ComforterCoffeeColor = By.xpath("//div[@class='Color ']//li[@data-value='coffee']");
+    By ComforterPinkColor = By.xpath("//div[@class='Color ']//li[@data-value='pink']");
+	
+	// Webelement for Color options of Comforter on product details page
+	public WebElement comforterCoffeeColor() {
+		return driver.findElement(ComforterCoffeeColor);
+	}
+			
+	public WebElement comforterPinkColor() {
+		return driver.findElement(ComforterPinkColor);
+	}
+	
+	
+	//Xpath for Color options of Weighted Blanket on product details page
+    By WeightedBlanketGreyColor = By.xpath("//div[@class='Color ']//li[@data-value='wbgrey']");
+    By WeightedBlanketPinkColor = By.xpath("//div[@class='Color ']//li[@data-value='wbpink']");
+	
+	// Webelement for Color options of Weighted Blanket on product details page
+	public WebElement weightedBlanketGreyColor() {
+		return driver.findElement(WeightedBlanketGreyColor);
+	}
+			
+	public WebElement weightedBlanketPinkColor() {
+		return driver.findElement(WeightedBlanketPinkColor);
+	}
+	
+	
+	//Pet Bed size section on product details page
+	// Dropdown option when inch is selected in Pet Bed and when category is Orthopedic
+   	By OrthopedicPetBed28x26 = By.xpath("//li[@data-sku='SC-PETBEDORTHO-M-28x26']");
+	//Above xpath can also be used when cm or feet is selected as dimension for Medium - 71 x 66 cm and Medium - 2.33' x 2.17' feet
+				
+	By OrthopedicPetBed48x24 = By.xpath("//li[@data-sku='SC-PETBEDORTHO-L-48x24']");
+	//Above xpath can also be used when cm or feet is selected as dimension for Large - 121 x 60 cm and Large - 4' x 2' feet
+				
+    By OrthopedicPetBed52x28 = By.xpath("//li[@data-sku='SC-PETBEDORTHO-XL-52x28']");
+	//Above xpath can also be used when cm or feet is selected as dimension for Extra Large - 132 x 71 cm and Extra Large - 4.33' x 2.33' feet
+
+	// Webelement option when inch is selected in Pet Bed and when category is Orthopedic
+	public WebElement orthopedicPetBed28x26() {
+		return driver.findElement(OrthopedicPetBed28x26);
+	}
+
+	public WebElement orthopedicPetBed48x24() {
+		return driver.findElement(OrthopedicPetBed48x24);
+	}
+				
+	public WebElement orthopedicPetBed52x28() {
+		return driver.findElement(OrthopedicPetBed52x28);
+	}
+	
+	//Xpath for Personalize Name Section,Stitch it button and name field on product details page
+    By PersonalizeNameSection = By.xpath("//button[@id='personalize-toggle-btn']");
+    By PersonalizeNameField = By.xpath("//input[@id='personalize-initials']");
+    By StitchButton = By.xpath("//button[@id='stitch-it-btn']");
+
+	
+	// Webelement for Personalize Name Section,Stitch it button and name field on product details page
+	public WebElement personalizeNameSection() {
+		return driver.findElement(PersonalizeNameSection);
+	}
+	
+	public WebElement personalizeNameField() {
+		return driver.findElement(PersonalizeNameField);
+	}
+	
+	public WebElement stitchButton() {
+		return driver.findElement(StitchButton);
+	}
 	
 	//Cross selling section product Add to cart button xpath section on product details page
     By CrossSellSingleComforter = By.xpath("//div[@class='container_cross_sell comforter ']//span[@data-sku='SC-COMF-S-90x60']");
@@ -231,6 +357,7 @@ public class ProductDetailsPage {
 		return driver.findElement(CrossCloudPillow);
 	}
 	
+	
 	//Cross selling next and previous product icon xpath section on product details page
     By CrossSellNextproduct = By.xpath("//div[@class='product_cross_sell_wrap cross-selling-section']//a[@class='lSNext']");
 	By CrossSellPreviousProduct = By.xpath("//div[@class='product_cross_sell_wrap cross-selling-section']//a[@class='lSPrev']");
@@ -243,6 +370,7 @@ public class ProductDetailsPage {
 	public WebElement CrossSellPreviousProduct() {
 		return driver.findElement(CrossSellPreviousProduct);
 	}
+	
 	
 	//Cross selling section product Add to cart button xpath section on product details page of Original mattress page
     By CrossSellPresidentCloudPillowSet1 = By.xpath("//div[@class='container_cross_sell cloud_pillow ']//span[@data-sku='SC-CLPILW-P-32x20']");
@@ -272,6 +400,7 @@ public class ProductDetailsPage {
 		return driver.findElement(CrossSellStandardMemoryPillowSet1);
 	}
 	
+	
 	//Xpath for category field of cloud pillow cross selling product section
 	By CrossSellCloudPillowCategoryField= By.xpath("//div[@class='container_cross_sell cloud_pillow ']//div[@data-value='Standard']");
 
@@ -280,12 +409,14 @@ public class ProductDetailsPage {
 		return driver.findElement(CrossSellCloudPillowCategoryField);
 	}
 	
+	//Xpath for President category of cloud pillow cross selling product section
 	By CrossSellPresidentCategoryCloudPillow = By.xpath("//*[@id='product_cross_sell_wrap_slider']//span[text()='President']");
 	
-	// Webelement option for Cross selling next and previous product icon on product details page
+	// Webelement option for President category of cloud pillow cross selling product section
 	public WebElement crossSellPresidentCategoryCloudPillow() {
 		return driver.findElement(CrossSellPresidentCategoryCloudPillow);
 	}
+	
 	
 	//Xpath for pack field of cloud pillow in cross selling product section
     By CrossSellPackFieldOfCloudPillow = By.xpath("//div[@data-name='pack']//span[text()='Pack of 1']");
@@ -295,10 +426,10 @@ public class ProductDetailsPage {
 		return driver.findElement(CrossSellPackFieldOfCloudPillow);
 	}
 	
+	
 	//Xpath for pack field of cloud pillow in cross selling product section
     By CrossSellPackTwoOfCloudPillow = By.xpath("//*[@id='product_cross_sell_wrap_slider']//li[text()='Pack of 2']");
     By CrossSellPackFourOfCloudPillow = By.xpath("//*[@id='product_cross_sell_wrap_slider']//li[text()='Pack of 4']");
-
 	
 	// Webelement option for pack field of cloud pillow in cross selling product section
 	public WebElement crossSellPackFourOfCloudPillow() {
@@ -310,7 +441,6 @@ public class ProductDetailsPage {
 	}
 	
 	
-
 	public void pageScroll() {
 		JavascriptExecutor Matt = (JavascriptExecutor) driver;
 		// WebElement scrollmatt =
