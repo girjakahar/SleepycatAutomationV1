@@ -52,6 +52,15 @@ public class ProductDetailsPage {
 	public WebElement orthopedicCategory() {
 		return driver.findElement(OrthopedicCategory);
 	}
+	
+	
+	// Xpath for Cloud pillow President Category option on product details page
+    By PresidentCategory = By.xpath("//li[text()='President']");
+	
+	// Webelement for Cloud pillow President Category option on product details page
+	public WebElement presidentCategory() {
+		return driver.findElement(PresidentCategory);
+	}
 
 	
 	// Dimension section of product details page

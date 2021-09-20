@@ -284,6 +284,13 @@ public class LandingPageObject {
 		hovermenu.moveToElement(scrollbedding).build().perform();
 
 	}
+	
+	public void pillowHeader() {
+		WebElement scrollbedding = driver.findElement(By.xpath("//a[text()='Pillows']"));
+		Actions hovermenu = new Actions(driver);
+		hovermenu.moveToElement(scrollbedding).build().perform();
+
+	}
 
 	public void offerModal() throws Exception {
 		try { 
