@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="addtocartproductflow.PetBedProductDetailsChanges">
+      <class name="addtocartproductflow.MetalBedFrameProductDetailsChanges">
         <methods>
-          <include name="petBedAddToCart"/>
           <include name="closeDriver"/>
+          <include name="metalBedFrameAddToCart"/>
           <include name="startingDriver"/>
         </methods>
-      </class> <!-- addtocartproductflow.PetBedProductDetailsChanges -->
+      </class> <!-- addtocartproductflow.MetalBedFrameProductDetailsChanges -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

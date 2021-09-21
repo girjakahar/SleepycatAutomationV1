@@ -18,11 +18,11 @@ import pageobject.LandingPageObject;
 import pageobject.ProductDetailsPage;
 import resources.BaseSleepycat;
 
-public class CloudPillowProductDetailsChanges extends BaseSleepycat {
+public class CuddlePillowProductDetailsChanges extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(CloudPillowProductDetailsChanges.class);
+	public static Logger log =LogManager.getLogger(CuddlePillowProductDetailsChanges.class);
 
 	
 	@BeforeTest
@@ -33,7 +33,7 @@ public class CloudPillowProductDetailsChanges extends BaseSleepycat {
 	}
 	
 	 @Test
-		public void cloudPillowAddToCart() throws Exception
+		public void cuddlePillowAddToCart() throws Exception
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
@@ -48,23 +48,16 @@ public class CloudPillowProductDetailsChanges extends BaseSleepycat {
 	  	   landingpage.pillowHeader();
 		   log.info("Submenu link is opened");
 		   
-		   wait.until(ExpectedConditions.visibilityOf(landingpage.cloudPillowMenu()));
-		   landingpage.cloudPillowMenu().click();
-		   log.info("Clicked on Cloud pillow menu option");
+		   wait.until(ExpectedConditions.visibilityOf(landingpage.cuddlePillowMenu()));
+		   landingpage.cuddlePillowMenu().click();
+		   log.info("Clicked on cuddle Pillow Menu option");
 		   
 		   landingpage.offerModal();
 		   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
-		   wait.until(ExpectedConditions.visibilityOf(productDetails.presidentCategory()));
-		   productDetails.presidentCategory().click();
-		   log.info("Clicked on president category option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.pageScroll();
 		   log.info("Scrolled down to size section");
-		   
-		   wait.until(ExpectedConditions.visibilityOf(productDetails.twoPillowPackSize()));
-		   productDetails.twoPillowPackSize().click();
-		   log.info("Clicked on Two Pillow pack size option");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.feetDimension()));
 		   productDetails.feetDimension().click();
@@ -98,17 +91,17 @@ public class CloudPillowProductDetailsChanges extends BaseSleepycat {
 		   productDetails.addToCart();
 		   log.info("Clicked on add to cart button");
 		   
-		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-CLPILWSET2-P-32x20']")));
+		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-GRBDPILWSET-S-50x19']")));
 			
-			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-CLPILWSET2-P-32x20']")).isDisplayed();
+			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-GRBDPILWSET-S-50x19']")).isDisplayed();
 			if(productname) 
 			{
-				System.out.println("President category Cloud Pillow pack of 2 Product is added in cart");
-				log.info("President category Cloud Pillow pack of 2 Product is added in cart");
+				System.out.println("Standard category Cuddle Pillow cm Product is added in cart");
+				log.info("Standard category Cuddle Pillow cm Product is added in cart");
 			}else
 			{
-				System.out.println("President category Cloud Pillow pack of 2 Product is not added in cart");
-				log.info("President category Cloud Pillow pack of 2 Product is not added in cart");
+				System.out.println("Standard category Cuddle Pillow cm Product is not added in cart");
+				log.info("Standard category Cuddle Pillow cm Product is not added in cart");
 			}	
 		}
 	    
@@ -118,6 +111,5 @@ public class CloudPillowProductDetailsChanges extends BaseSleepycat {
 		    driver.quit();	  
 			log.info("Driver is closed");
 
-		  }    
-	  
+		  }  
 }

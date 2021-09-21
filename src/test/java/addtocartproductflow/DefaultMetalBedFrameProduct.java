@@ -16,11 +16,11 @@ import pageobject.LandingPageObject;
 import pageobject.ProductDetailsPage;
 import resources.BaseSleepycat;
 
-public class DefaultCloudPillowProduct extends BaseSleepycat {
+public class DefaultMetalBedFrameProduct extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(DefaultCloudPillowProduct.class);
+	public static Logger log =LogManager.getLogger(DefaultMetalBedFrameProduct.class);
 
 	
 	@BeforeTest
@@ -31,7 +31,7 @@ public class DefaultCloudPillowProduct extends BaseSleepycat {
 	}
 	
 	 @Test
-		public void defaultCloudPillowAddToCart() throws Exception
+		public void defaultMetalBedFrameAddToCart() throws Exception
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
@@ -43,12 +43,12 @@ public class DefaultCloudPillowProduct extends BaseSleepycat {
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
-	  	   landingpage.pillowHeader();
+	  	   landingpage.bedHeader();
 		   log.info("Submenu link is opened");
 		   
-		   wait.until(ExpectedConditions.visibilityOf(landingpage.cloudPillowMenu()));
-		   landingpage.cloudPillowMenu().click();
-		   log.info("Clicked on cloud Pillow Menu option");
+		   wait.until(ExpectedConditions.visibilityOf(landingpage.metalBedFrameMenu()));
+		   landingpage.metalBedFrameMenu().click();
+		   log.info("Clicked on metal Bed Frame Menu option");
 		   
 	  	   landingpage.offerModal();
 		   ProductDetailsPage productdetail = new ProductDetailsPage(driver);
@@ -60,17 +60,17 @@ public class DefaultCloudPillowProduct extends BaseSleepycat {
 		   productdetail.addToCart();
 		   log.info("Clicked on add to cart button");
 		   
-		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-CLPILW-S-27x18']")));
+		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-BED-S-78x36x16']")));
 			
-			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-CLPILW-S-27x18']")).isDisplayed();
+			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-BED-S-78x36x16']")).isDisplayed();
 			if(productname) 
 			{
-				System.out.println("Standard category Cloud pillow pack of one product is added in cart");
-				log.info("Standard category Cloud pillow pack of one product is added in cart");
+				System.out.println("Single category Metal bed Frame product is added in cart");
+				log.info("Single category Metal bed Frame product is added in cart");
 			}else
 			{
-				System.out.println("Standard category Cloud pillow pack of one product is Not added in cart");
-				log.info("Standard category Cloud pillow pack of one product is Not added in cart");
+				System.out.println("Single category Metal bed Frame product is not added in cart");
+				log.info("Single category Metal bed Frame product isnot added in cart");
 			}	
 		}
 	 
@@ -80,4 +80,5 @@ public class DefaultCloudPillowProduct extends BaseSleepycat {
 	    driver.quit();	  
 		log.info("Driver is closed");
 	  }
+
 }
