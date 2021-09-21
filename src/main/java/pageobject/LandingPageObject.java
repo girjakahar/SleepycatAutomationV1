@@ -84,6 +84,44 @@ public class LandingPageObject {
 	}
 	
 	
+	//Xpath for Pillow products dropdown links
+	By CloudPillowMenu = By.xpath("//ul[@class='sub-menu']//a[text()='Cloud Pillow']");
+	By MemoryFoamPillowMenu = By.xpath("//ul[@class='sub-menu']//a[text()='Memory Foam Pillow']");
+	By CuddlePillowMenu = By.xpath("//ul[@class='sub-menu']//a[text()='Cuddle Pillow']");
+	By PillowCaseMenu = By.xpath("//ul[@class='sub-menu']//a[text()='Pillow Case']");
+			
+	//Webelements for Pillow products dropdown links	
+	public WebElement cloudPillowMenu() {
+		return driver.findElement(CloudPillowMenu);
+	}
+			
+	public WebElement memoryFoamPillowMenu() {
+		return driver.findElement(MemoryFoamPillowMenu);
+	}
+			
+	public WebElement cuddlePillowMenu() {
+		return driver.findElement(CuddlePillowMenu);
+	}
+	
+	public WebElement pillowCaseMenu() {
+		return driver.findElement(PillowCaseMenu);
+	}
+	
+	
+	//Xpath for Bed products dropdown links
+	By OhayoBedMenu = By.xpath("//ul[@class='sub-menu']//a[text()='Ohayo Bed']");
+	By MetalBedFrameMenu = By.xpath("//ul[@class='sub-menu']//a[text()='Metal Bed Frame']");
+				
+	//Webelements for Bed products dropdown links	
+	public WebElement ohayoBedMenu() {
+		return driver.findElement(OhayoBedMenu);
+	}
+			
+	public WebElement metalBedFrameMenu() {
+		return driver.findElement(MetalBedFrameMenu);
+	}
+	
+	
 	//Xpath for Land and MYAccount xpath section
 	By LandTxt = By.xpath("//div[@class='desktop_header']//div[3]");
 	By MyAccount = By.xpath("//a[text()='My Account']");
@@ -287,6 +325,13 @@ public class LandingPageObject {
 	
 	public void pillowHeader() {
 		WebElement scrollbedding = driver.findElement(By.xpath("//a[text()='Pillows']"));
+		Actions hovermenu = new Actions(driver);
+		hovermenu.moveToElement(scrollbedding).build().perform();
+
+	}
+	
+	public void bedHeader() {
+		WebElement scrollbedding = driver.findElement(By.xpath("//a[text()='Bed']"));
 		Actions hovermenu = new Actions(driver);
 		hovermenu.moveToElement(scrollbedding).build().perform();
 

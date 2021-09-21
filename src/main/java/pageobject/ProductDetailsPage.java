@@ -348,6 +348,85 @@ public class ProductDetailsPage {
 		return driver.findElement(StitchButton);
 	}
 	
+	//Xpath for different Pack size on product details page of Cloud Pillow
+    By OnePillowPackSize = By.xpath("//div[@class='attr attr_Pack ']//li[@data-value='pillow-1']");
+    By TwoPillowPackSize = By.xpath("//div[@class='attr attr_Pack ']//li[@data-value='pillow-2']");
+    By FourPillowPackSize = By.xpath("//div[@class='attr attr_Pack ']//li[@data-value='pillow-4']");
+
+	
+	// Webelement for different Pack size on product details page of Cloud Pillow
+	public WebElement onePillowPackSize() {
+		return driver.findElement(OnePillowPackSize);
+	}
+	
+	public WebElement twoPillowPackSize() {
+		return driver.findElement(TwoPillowPackSize);
+	}
+	
+	public WebElement fourPillowPackSize() {
+		return driver.findElement(FourPillowPackSize);
+	}
+	
+	 //Pillow case Xpath and Webelement for different element on product details page
+	//Xpath for different Category on product details page of Pillow Cases
+    By CloudPillowCaseCategory = By.xpath("//div[@class='attr attr_Scategory ']//li[@data-value='Cloud Pillow Case']");
+    By MemoryFoamPillowCaseCategory = By.xpath("//div[@class='attr attr_Scategory ']//li[@data-value='Memory Foam Pillow Case']");
+    By CuddlePillowCaseCategory = By.xpath("//div[@class='attr attr_Scategory ']//li[@data-value='Cuddle Pillow Case']");
+
+	
+	// Webelement for different Category on product details page of Pillow Cases
+	public WebElement cloudPillowCaseCategory() {
+		return driver.findElement(CloudPillowCaseCategory);
+	}
+	
+	public WebElement memoryFoamPillowCaseCategory() {
+		return driver.findElement(MemoryFoamPillowCaseCategory);
+	}
+	
+	public WebElement cuddlePillowCaseCategory() {
+		return driver.findElement(CuddlePillowCaseCategory);
+	}
+	
+	
+	//Xpath for different Pack size options on product details page of Pillow Cases
+    By TwoPillowCasesPackSize = By.xpath("//div[@class='attr attr_Pack ']//li[@data-value='case-2']");
+    By FourPillowCasesPackSize = By.xpath("//div[@class='attr attr_Pack ']//li[@data-value='case-4']");
+    By EightPillowCasesPackSize = By.xpath("//div[@class='attr attr_Pack ']//li[@data-value='case-8']");
+
+	
+	// Webelement for different Pack size options on product details page of Pillow Cases
+	public WebElement twoPillowCasesPackSize() {
+		return driver.findElement(TwoPillowCasesPackSize);
+	}
+	
+	public WebElement fourPillowCasesPackSize() {
+		return driver.findElement(FourPillowCasesPackSize);
+	}
+	
+	public WebElement eightPillowCasesPackSize() {
+		return driver.findElement(EightPillowCasesPackSize);
+	}
+	
+	
+	//Pillow cases size section on product details page
+	// Size Dropdown option when memory foam pillow case category is selected on Pillow case product details page
+	By MemoryFoamFourCases28x18 = By.xpath("//ul[@class='pillow_case']//li[@data-sku='SC-GRPILWCSSET2-S-28x18']");
+	//Above xpath can also be used when cm or feet is selected as dimension for 182 x 182 x 17 cm and 6' x 6' x 0.58' feet
+				
+	By MemoryFoamFourCases33x21 = By.xpath("//ul[@class='pillow_case']//li[@data-sku='SC-GRPILWCSSET2-P-33x21']");
+	//Above xpath can also be used when cm or feet is selected as dimension for 190 x 182 x 17 cm and 6.5' x 6' x 0.58' feet
+				
+
+	// Webelement when Inch,cm or feet dimension is selected in latex mattress and when category is king
+	public WebElement memoryFoamFourCases28x18() {
+		return driver.findElement(MemoryFoamFourCases28x18);
+	}
+
+	public WebElement memoryFoamFourCases33x21() {
+		return driver.findElement(MemoryFoamFourCases33x21);
+	}
+	
+	
 	//Cross selling section product Add to cart button xpath section on product details page
     By CrossSellSingleComforter = By.xpath("//div[@class='container_cross_sell comforter ']//span[@data-sku='SC-COMF-S-90x60']");
 	By CrossSellCuddlePillow = By.xpath("//div[@class='container_cross_sell body_pillow ']//span[@data-sku='SC-GRBDPILWSET-S-50x19']");
