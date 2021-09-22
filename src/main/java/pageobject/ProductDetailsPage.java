@@ -54,12 +54,17 @@ public class ProductDetailsPage {
 	}
 	
 	
-	// Xpath for Cloud pillow President Category option on product details page
+	// Xpath for Cloud pillow Standard,President Category option on product details page
     By PresidentCategory = By.xpath("//li[text()='President']");
+    By StandardCategory = By.xpath("//li[text()='Standard']");
 	
 	// Webelement for Cloud pillow President Category option on product details page
 	public WebElement presidentCategory() {
 		return driver.findElement(PresidentCategory);
+	}
+	
+	public WebElement standardCategory() {
+		return driver.findElement(StandardCategory);
 	}
 
 	
@@ -182,10 +187,16 @@ public class ProductDetailsPage {
 	
 	//Xpath for 10 inch Height on Plus mattress page
 	By TenInchHeight = By.xpath("//li[@data-value='10 inch']");
+	By EightInchHeight = By.xpath("//li[@data-value='8 inch']");
+
 	
 	// Webelement option for 10 inch Height on Plus mattress page
 	public WebElement tenInchHeight() {
 		return driver.findElement(TenInchHeight);
+	}
+	
+	public WebElement eightInchHeight() {
+		return driver.findElement(EightInchHeight);
 	}
 	
 	
@@ -204,7 +215,7 @@ public class ProductDetailsPage {
 	
 	
 	//Latex mattress size section on product details page
-	// Dropdown option when feet is selected in Plus mattress and when category is King
+	// Dropdown option when feet is selected in latex mattress and when category is King
 	By KingLatex72x72x7 = By.xpath("//li[@data-sku='SC-LATEX-K-72x72x7']");
 	//Above xpath can also be used when cm or feet is selected as dimension for 182 x 182 x 17 cm and 6' x 6' x 0.58' feet
 			
@@ -228,6 +239,25 @@ public class ProductDetailsPage {
 	}
 	
 	
+	// Latex mattress size section on product details page
+	// Dropdown option when feet is selected in Plus mattress and when category is King
+	By SingleLatex72x36x7 = By.xpath("//li[@data-sku='SC-LATEX-S-72x36x7']");
+	//Above xpath can also be used when cm or feet is selected as dimension for 182 x 91 x 17 cm and 6' x 3' x 0.58' feet
+				
+	By SingleLatex75x36x7 = By.xpath("//li[@data-sku='SC-LATEX-S-75x36x7']");
+	//Above xpath can also be used when cm or feet is selected as dimension for 190 x 91 x 17 cm and 6.25' x 3' x 0.58' feet
+	
+
+	// Webelement when Inch,cm or feet dimension is selected in latex mattress and when category is king
+	public WebElement singleLatex72x36x7() {
+		return driver.findElement(SingleLatex72x36x7);
+	}
+
+	public WebElement singleLatex75x36x7() {
+		return driver.findElement(SingleLatex75x36x7);
+	}
+				
+	
     // Drop down option when Inch,cm or feet is selected in original mattress for Queen category
 	By QueenLatex75x60x7 = By.xpath("//li[@data-sku='SC-LATEX-Q-75x60x7']");
 	//Above Xpath can also be used when cm or feet is selected as dimension for 190 x 152 x 17 cm and 6.25' x 5' x 0.58' feet
@@ -243,6 +273,23 @@ public class ProductDetailsPage {
 	public WebElement queenLatex78x60x7() {
 		return driver.findElement(QueenLatex78x60x7);
 	}//input[@name='custom_length']
+	
+	 // Baby mattress Different Size sections
+	// Drop down option when Inch,cm or feet is selected in Baby mattress for Single category
+	By SingleBabyMattress52x28x4 = By.xpath("//li[@data-sku='SC-BABY-S-52x28x4']");
+	//Above Xpath can also be used when cm or feet is selected as dimension for 132 x 71 x 10 cm and 4.33' x 2.33' x 0.33' feet
+		
+	By SingleBabyMattress48x24x4 = By.xpath("//li[@data-sku='SC-BABY-S-48x24x4']");
+	//Above xpath can also be used when cm or feet is selected as dimension for 121 x 60 x 10 cm and 4' x 2' x 0.33' feet
+
+	// Webelement for Drop down option when Inch,cm or feet is selected in Baby mattress for Single category
+	public WebElement singleBabyMattress52x28x4() {
+		return driver.findElement(SingleBabyMattress52x28x4);
+	}
+
+	public WebElement singleBabyMattress48x24x4() {
+		return driver.findElement(SingleBabyMattress48x24x4);
+	}
     
 	
 	// Xpath for custom lenght and width option when category is custom
@@ -274,6 +321,24 @@ public class ProductDetailsPage {
 
 	public WebElement doubleProtector78x48() {
 		return driver.findElement(DoubleProtector78x48);
+	}
+	
+	
+	// Mattress Protector size section on product details page
+	// Dropdown size option in Protector when category is Single
+	By SingleProtector75x48 = By.xpath("//ul[@class='protector']//li[@data-sku='SC-PROT-S-75x36']");
+	//Above Xpath can also be used when cm or feet is selected as dimension for 190 x 121 cm and 6.5' x 3' feet
+
+	By SingleProtector78x36 = By.xpath("//ul[@class='protector']//li[@data-sku='SC-PROT-S-78x36']");
+	//Above Xpath can also be used when cm or feet is selected as dimension for 198 x 121 cm and 6.5' x 3' feet
+
+	// Webelement when Inch is selected in Protector and when category is Single
+	public WebElement singleProtector75x48() {
+		return driver.findElement(SingleProtector75x48);
+	}
+
+	public WebElement singleProtector78x36() {
+		return driver.findElement(SingleProtector78x36);
 	}
 	
 	
@@ -329,10 +394,36 @@ public class ProductDetailsPage {
 		return driver.findElement(OrthopedicPetBed52x28);
 	}
 	
+	// Dropdown option for Pet Bed and when category is Original
+   	By OriginalPetBedMedium36x26 = By.xpath("//li[@data-sku='SC-PETBEDORIG-M-36x26']");
+	//Above xpath can also be used when cm or feet is selected as dimension for Medium - 91 x 66 cm and Medium - 3' x 2.17' feet
+				
+	By OriginalPetBedLarge46x32 = By.xpath("//li[@data-sku='SC-PETBEDORIG-L-46x32']");
+	//Above xpath can also be used when cm or feet is selected as dimension for Large - 116 x 81 cm and Large - 3.83' x 2.67' feet
+				
+    By OriginalPetBedExtraLarge54x36 = By.xpath("//li[@data-sku='SC-PETBEDORIG-XL-54x36']");
+	//Above xpath can also be used when cm or feet is selected as dimension for Extra Large - 137 x 91 cm and Extra Large - 4.5' x 3' feet
+
+	// Webelement option for Pet Bed and when category is Original
+	public WebElement originalPetBedMedium36x26() {
+		return driver.findElement(OriginalPetBedMedium36x26);
+	}
+
+	public WebElement originalPetBedLarge46x32() {
+		return driver.findElement(OriginalPetBedLarge46x32);
+	}
+				
+	public WebElement originalPetBedExtraLarge54x36() {
+		return driver.findElement(OriginalPetBedExtraLarge54x36);
+	}
+	
+	
 	//Xpath for Personalize Name Section,Stitch it button and name field on product details page
     By PersonalizeNameSection = By.xpath("//button[@id='personalize-toggle-btn']");
     By PersonalizeNameField = By.xpath("//input[@id='personalize-initials']");
     By StitchButton = By.xpath("//button[@id='stitch-it-btn']");
+    By EditButton = By.xpath("//button[@id='edit-btn']");
+    By RemoveButton = By.xpath("//button[@id='cancel-btn']");
 
 	
 	// Webelement for Personalize Name Section,Stitch it button and name field on product details page
@@ -346,6 +437,14 @@ public class ProductDetailsPage {
 	
 	public WebElement stitchButton() {
 		return driver.findElement(StitchButton);
+	}
+	
+	public WebElement editButton() {
+		return driver.findElement(EditButton);
+	}
+	
+	public WebElement removeButton() {
+		return driver.findElement(RemoveButton);
 	}
 	
 	//Xpath for different Pack size on product details page of Cloud Pillow
@@ -424,6 +523,23 @@ public class ProductDetailsPage {
 
 	public WebElement memoryFoamFourCases33x21() {
 		return driver.findElement(MemoryFoamFourCases33x21);
+	}
+	
+	// Size Dropdown option when Cloud pillow case category is selected on Pillow case product details page
+	By CloudPillowTwoCases33x21 = By.xpath("//ul[@class='pillow_case']//li[@data-sku='SC-GRPILWCS-P-33x21'][2]");
+	//Above xpath can also be used when cm or feet is selected as dimension for 182 x 182 x 17 cm and 6' x 6' x 0.58' feet
+					
+	By CloudPillowTwoCases28x18 = By.xpath("//ul[@class='pillow_case']//li[@data-sku='SC-GRPILWCS-S-28x18'][2]");
+	//Above xpath can also be used when cm or feet is selected as dimension for 190 x 182 x 17 cm and 6.5' x 6' x 0.58' feet
+					
+
+	// Webelement option for size dropdown when Cloud pillow case category is selected on Pillow case product details page
+	public WebElement cloudPillowTwoCases33x21() {
+		return driver.findElement(CloudPillowTwoCases33x21);
+	}
+
+	public WebElement cloudPillowTwoCases28x18() {
+		return driver.findElement(CloudPillowTwoCases28x18);
 	}
 	
 	
