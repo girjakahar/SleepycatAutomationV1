@@ -17,7 +17,7 @@ public class BaseSleepycat {
 
 	public RemoteWebDriver driver;
 	//public static final String USERNAME = "girjakahar_4kEVqO";
-	//public static final String AUTOMATE_KEY = "GWisE2vkz9cr2qDDg2nD";
+    //public static final String AUTOMATE_KEY = "GWisE2vkz9cr2qDDg2nD";
 	public static String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
 	public static String AUTOMATE_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
 
