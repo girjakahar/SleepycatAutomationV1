@@ -26,7 +26,7 @@ public class CartHandling extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
     @Test
@@ -34,38 +34,44 @@ public class CartHandling extends BaseSleepycat {
 	{
     	
  	   driver.get("https://sleepycat.in/");
-       log.info("Website opened Successfully");
+       log.error("Website opened Successfully");
        
   	   driver.manage().window().maximize();
-  	   log.info("Website is maximized");
+  	   log.error("Website is maximized");
   	   
   	   wait = new WebDriverWait(driver, 20);
   	   LandingPageObject landingPage = new LandingPageObject(driver);
 	   landingPage.offerModal();
-  	   log.info("Offer modal is closed");
+  	   log.error("Offer modal is closed");
 
   	   CartSlider cart = new CartSlider(driver);
 	   wait.until(ExpectedConditions.visibilityOf(landingPage.cartIcon()));
 	   landingPage.cartIcon().click();
-  	   log.info("Clicked on Cart icon");
+  	   log.error("Clicked on Cart icon");
        
        Thread.sleep(2000);
+	   landingPage.offerModal();
 	   wait.until(ExpectedConditions.visibilityOf(cart.addtocartSingleComforter()));
   	   cart.addtocartSingleComforter().click();
-  	   log.info("Click on Add to cart button for single comforter");
-  	   
+  	   log.error("Click on Add to cart button for single comforter");
+	   landingPage.offerModal();
+
+       Thread.sleep(2000);
+	   landingPage.offerModal();
 	   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-COMF-S-90x60']")));
   	   cart.incrementQuantity().click();
-  	   log.info("Increment product quantity");
+  	   log.error("Increment product quantity");
        
   	   Thread.sleep(2000L);
+	   landingPage.offerModal();
 	   wait.until(ExpectedConditions.visibilityOf(cart.decreseQuantity()));
   	   cart.decreseQuantity().click();
-  	   log.info("Decrese quantity by one");
+  	   log.error("Decrese quantity by one");
 
   	   Thread.sleep(2000L);
+	   landingPage.offerModal();
   	   cart.removeProduct().click();
-  	   log.info("Clicked on remove product icon from cart slider ");
+  	   log.error("Clicked on remove product icon from cart slider ");
 	   System.out.println("Product is removed from cart");
 
 }
@@ -74,7 +80,7 @@ public class CartHandling extends BaseSleepycat {
 	  public void closeDriver() throws IOException 
 	  {
 	    driver.quit();	  
-		log.info("Driver is closed");
+		log.error("Driver is closed");
 
 	  }
 	 

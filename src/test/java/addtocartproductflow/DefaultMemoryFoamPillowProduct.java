@@ -28,7 +28,7 @@ public class DefaultMemoryFoamPillowProduct extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	 @Test
@@ -36,47 +36,47 @@ public class DefaultMemoryFoamPillowProduct extends BaseSleepycat {
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
-	       log.info("Website opened Successfully");
+	       log.error("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
-	  	   log.info("Website is maximized");
+	  	   log.error("Website is maximized");
 	  	   
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
 	  	   landingpage.pillowHeader();
-		   log.info("Submenu link is opened");
+		   log.error("Submenu link is opened");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(landingpage.memoryFoamPillowMenu()));
 		   landingpage.memoryFoamPillowMenu().click();
-		   log.info("Clicked on Memory Foam Pillow Menu option");
+		   log.error("Clicked on Memory Foam Pillow Menu option");
 		   
 	  	   landingpage.offerModal();
 		   ProductDetailsPage productdetail = new ProductDetailsPage(driver);
 		   
 	  	   landingpage.offerModal();
 	  	   productdetail.pageScroll();
-		   log.info("Scrolled down to size section");
+		   log.error("Scrolled down to size section");
 		   
 		   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productdetail.personalizeNameSection()));
 		   productdetail.personalizeNameSection().click();
-		   log.info("Clicked on personalize Name Section");
+		   log.error("Clicked on personalize Name Section");
 		   
 		   Actions name =new Actions(driver);
 		   name.moveToElement(productdetail.personalizeNameField()).build().perform();
-		   log.info("Move to Name field");
+		   log.error("Move to Name field");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(productdetail.personalizeNameField()));
 		   productdetail.personalizeNameField().sendKeys("ME");
-		   log.info("Entered The Name");
+		   log.error("Entered The Name");
            
 		   wait.until(ExpectedConditions.visibilityOf(productdetail.stitchButton()));
 		   productdetail.stitchButton().click();
-		   log.info("Clicked on Stitch it button");
+		   log.error("Clicked on Stitch it button");
 		   
 		   productdetail.addToCart();
-		   log.info("Clicked on add to cart button");
+		   log.error("Clicked on add to cart button");
 		   
 		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PILLOW-S-26x16x4']")));
 			
@@ -84,11 +84,11 @@ public class DefaultMemoryFoamPillowProduct extends BaseSleepycat {
 			if(productname) 
 			{
 				System.out.println("Standard category Memory Foam pillow pack of one product is added in cart");
-				log.info("Standard category Memory Foam pillow pack of one product is added in cart");
+				log.error("Standard category Memory Foam pillow pack of one product is added in cart");
 			}else
 			{
 				System.out.println("Standard category Memory Foam pillow pack of one product is not added in cart");
-				log.info("Standard category Memory Foam pillow pack of one product is not added in cart");
+				log.error("Standard category Memory Foam pillow pack of one product is not added in cart");
 			}	
 		}
 	 
@@ -96,7 +96,7 @@ public class DefaultMemoryFoamPillowProduct extends BaseSleepycat {
 	  public void closeDriver() throws IOException 
 	  {
 	    driver.quit();	  
-		log.info("Driver is closed");
+		log.error("Driver is closed");
 	  }
 
 }

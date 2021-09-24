@@ -12,15 +12,169 @@
       </class> <!-- order.CartHandling -->
     </classes>
   </test> <!-- CartHandling(failed) -->
-  <test thread-count="5" name="BestsellingProductsCart(failed)">
+  <test thread-count="5" name="LatexMattressProductDetailsChanges(failed)">
     <classes>
-      <class name="order.BestsellingProductsCart">
+      <class name="addtocartproductflow.LatexMattressProductDetailsChanges">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="latexMattressAddToCart"/>
+          <include name="startingDriver"/>
+        </methods>
+      </class> <!-- addtocartproductflow.LatexMattressProductDetailsChanges -->
+    </classes>
+  </test> <!-- LatexMattressProductDetailsChanges(failed) -->
+  <test thread-count="5" name="BestSellingPlusMattressAddToCart(failed)">
+    <classes>
+      <class name="addtocartproductflow.BestSellingPlusMattressAddToCart">
         <methods>
           <include name="startingDriver"/>
           <include name="close"/>
-          <include name="addtocart"/>
+          <include name="bestsellingPlusMattressAddToCart"/>
         </methods>
-      </class> <!-- order.BestsellingProductsCart -->
+      </class> <!-- addtocartproductflow.BestSellingPlusMattressAddToCart -->
     </classes>
-  </test> <!-- BestsellingProductsCart(failed) -->
+  </test> <!-- BestSellingPlusMattressAddToCart(failed) -->
+  <test thread-count="5" name="OhayoBedProductDetailsChanges(failed)">
+    <classes>
+      <class name="addtocartproductflow.OhayoBedProductDetailsChanges">
+        <methods>
+          <include name="ohayoBedAddToCart"/>
+          <include name="closeDriver"/>
+          <include name="startingDriver"/>
+        </methods>
+      </class> <!-- addtocartproductflow.OhayoBedProductDetailsChanges -->
+    </classes>
+  </test> <!-- OhayoBedProductDetailsChanges(failed) -->
+  <test thread-count="5" name="MetalBedFrameProductDetailsChanges(failed)">
+    <classes>
+      <class name="addtocartproductflow.MetalBedFrameProductDetailsChanges">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="metalBedFrameAddToCart"/>
+          <include name="startingDriver"/>
+        </methods>
+      </class> <!-- addtocartproductflow.MetalBedFrameProductDetailsChanges -->
+    </classes>
+  </test> <!-- MetalBedFrameProductDetailsChanges(failed) -->
+  <test thread-count="5" name="DefaultProtectorProduct(failed)">
+    <classes>
+      <class name="addtocartproductflow.DefaultProtectorProduct">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="defaultProtectorsAddToCart"/>
+          <include name="startingDriver"/>
+        </methods>
+      </class> <!-- addtocartproductflow.DefaultProtectorProduct -->
+    </classes>
+  </test> <!-- DefaultProtectorProduct(failed) -->
+  <test thread-count="5" name="CloudPillowProductDetailsChanges(failed)">
+    <classes>
+      <class name="addtocartproductflow.CloudPillowProductDetailsChanges">
+        <methods>
+          <include name="cloudPillowAddToCart"/>
+          <include name="startingDriver"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- addtocartproductflow.CloudPillowProductDetailsChanges -->
+    </classes>
+  </test> <!-- CloudPillowProductDetailsChanges(failed) -->
+  <test thread-count="5" name="MemoryFoamPillowProductDetailsChanges(failed)">
+    <classes>
+      <class name="addtocartproductflow.MemoryFoamPillowProductDetailsChanges">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="startingDriver"/>
+          <include name="memoryFoamPillowAddToCart"/>
+        </methods>
+      </class> <!-- addtocartproductflow.MemoryFoamPillowProductDetailsChanges -->
+    </classes>
+  </test> <!-- MemoryFoamPillowProductDetailsChanges(failed) -->
+  <test thread-count="5" name="PillowCaseProductDetailsChanges(failed)">
+    <classes>
+      <class name="addtocartproductflow.PillowCaseProductDetailsChanges">
+        <methods>
+          <include name="startingDriver"/>
+          <include name="pillowCaseAddToCart"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- addtocartproductflow.PillowCaseProductDetailsChanges -->
+    </classes>
+  </test> <!-- PillowCaseProductDetailsChanges(failed) -->
+  <test thread-count="5" name="PlusMattressCustomCategory(failed)">
+    <classes>
+      <class name="addtocartproductflow.PlusMattressCustomCategory">
+        <methods>
+          <include name="plusMattessCustomAddToCart"/>
+          <include name="startingDriver"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- addtocartproductflow.PlusMattressCustomCategory -->
+    </classes>
+  </test> <!-- PlusMattressCustomCategory(failed) -->
+  <test thread-count="5" name="OriginalMattressChangeMultipleOption(failed)">
+    <classes>
+      <class name="productdetailspagemultipleoptionchange.OriginalMattressChangeMultipleOption">
+        <methods>
+          <include name="startingDriver"/>
+          <include name="originalMattressChangeOption"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- productdetailspagemultipleoptionchange.OriginalMattressChangeMultipleOption -->
+    </classes>
+  </test> <!-- OriginalMattressChangeMultipleOption(failed) -->
+  <test thread-count="5" name="PlusMattressChangeMultipleOption(failed)">
+    <classes>
+      <class name="productdetailspagemultipleoptionchange.PlusMattressChangeMultipleOption">
+        <methods>
+          <include name="startingDriver"/>
+          <include name="plusMattressChangeoption"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- productdetailspagemultipleoptionchange.PlusMattressChangeMultipleOption -->
+    </classes>
+  </test> <!-- PlusMattressChangeMultipleOption(failed) -->
+  <test thread-count="5" name="OhayoBedChangeMultipleOption(failed)">
+    <classes>
+      <class name="productdetailspagemultipleoptionchange.OhayoBedChangeMultipleOption">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="ohayoBedChangeOption"/>
+          <include name="startingDriver"/>
+        </methods>
+      </class> <!-- productdetailspagemultipleoptionchange.OhayoBedChangeMultipleOption -->
+    </classes>
+  </test> <!-- OhayoBedChangeMultipleOption(failed) -->
+  <test thread-count="5" name="MetalBedFrameChangeMultipleOption(failed)">
+    <classes>
+      <class name="productdetailspagemultipleoptionchange.MetalBedFrameChangeMultipleOption">
+        <methods>
+          <include name="startingDriver"/>
+          <include name="metalBedFrameChangeOption"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- productdetailspagemultipleoptionchange.MetalBedFrameChangeMultipleOption -->
+    </classes>
+  </test> <!-- MetalBedFrameChangeMultipleOption(failed) -->
+  <test thread-count="5" name="CloudPillowChangeMultipleOption(failed)">
+    <classes>
+      <class name="productdetailspagemultipleoptionchange.CloudPillowChangeMultipleOption">
+        <methods>
+          <include name="cloudPillowChangeOption"/>
+          <include name="startingDriver"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- productdetailspagemultipleoptionchange.CloudPillowChangeMultipleOption -->
+    </classes>
+  </test> <!-- CloudPillowChangeMultipleOption(failed) -->
+  <test thread-count="5" name="MemoryFoamPillowChangeMultipleOption(failed)">
+    <classes>
+      <class name="productdetailspagemultipleoptionchange.MemoryFoamPillowChangeMultipleOption">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="memoryFoamPillowAddToCart"/>
+          <include name="startingDriver"/>
+        </methods>
+      </class> <!-- productdetailspagemultipleoptionchange.MemoryFoamPillowChangeMultipleOption -->
+    </classes>
+  </test> <!-- MemoryFoamPillowChangeMultipleOption(failed) -->
 </suite> <!-- Failed suite [Suite] -->

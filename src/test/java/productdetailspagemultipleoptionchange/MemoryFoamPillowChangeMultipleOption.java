@@ -30,7 +30,7 @@ public class MemoryFoamPillowChangeMultipleOption extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	 @Test
@@ -38,55 +38,60 @@ public class MemoryFoamPillowChangeMultipleOption extends BaseSleepycat {
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
-	       log.info("Website opened Successfully");
+	       log.error("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
-	  	   log.info("Website is maximized");
+	  	   log.error("Website is maximized");
 	  	   
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
 	  	   landingpage.pillowHeader();
-		   log.info("Submenu link is opened");
+		   log.error("Submenu link is opened");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(landingpage.memoryFoamPillowMenu()));
 		   landingpage.memoryFoamPillowMenu().click();
-		   log.info("Clicked on Memory Foam pillow menu option");
+		   log.error("Clicked on Memory Foam pillow menu option");
 		   
 		   landingpage.offerModal();
 		   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.presidentCategory()));
 		   productDetails.presidentCategory().click();
-		   log.info("Clicked on president category option");
+		   log.error("Clicked on president category option");
 		   
+		   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.standardCategory()));
 		   productDetails.standardCategory().click();
-		   log.info("Clicked on standard Category option");
+		   log.error("Clicked on standard Category option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.pageScroll();
-		   log.info("Scrolled down to size section");
+		   log.error("Scrolled down to size section");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.twoPillowPackSize()));
 		   productDetails.twoPillowPackSize().click();
-		   log.info("Clicked on Two Pillow pack size option");
+		   log.error("Clicked on Two Pillow pack size option");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.fourPillowPackSize()));
 		   productDetails.fourPillowPackSize().click();
-		   log.info("Clicked on four Pillow pack size option");
+		   log.error("Clicked on four Pillow pack size option");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.onePillowPackSize()));
 		   productDetails.onePillowPackSize().click();
-		   log.info("Clicked on One Pillow pack size option");
+		   log.error("Clicked on One Pillow pack size option");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.feetDimension()));
 		   productDetails.cmDimension().click();
-		   log.info("Clicked on cm dimension option");
+		   log.error("Clicked on cm dimension option");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.quantityField()));
 		   productDetails.quantityField().click();
-		   log.info("Clicked on Quantity field dropdown");
+		   log.error("Clicked on Quantity field dropdown");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@data-name='quantity']")));
@@ -98,8 +103,9 @@ public class MemoryFoamPillowChangeMultipleOption extends BaseSleepycat {
 	 		 quantityvalue.get(i).getText();
 	 		 if(quantityvalue.get(i).getText().contains("6"))
 	 		 {
+	 		  	 landingpage.offerModal();
 	 			 quantityvalue.get(i).click();
-	 			 log.info("Quantity is selected from drodown");
+	 			 log.error("Quantity is selected from drodown");
 	 			 break;
 	 		 }
 	 	   }
@@ -107,47 +113,47 @@ public class MemoryFoamPillowChangeMultipleOption extends BaseSleepycat {
 	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.personalizeNameSection()));
 		   productDetails.personalizeNameSection().click();
-		   log.info("Clicked on personalize Name Section");
+		   log.error("Clicked on personalize Name Section");
 		   
 		   Actions name =new Actions(driver);
 		   name.moveToElement(productDetails.personalizeNameField()).build().perform();
-		   log.info("Move to name field");
+		   log.error("Move to name field");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.personalizeNameField()));
 		   productDetails.personalizeNameField().sendKeys("TE");
-		   log.info("Entered the name in name field");
+		   log.error("Entered the name in name field");
           
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.stitchButton()));
 		   productDetails.stitchButton().click();
-		   log.info("Clicked on Stitch button");
+		   log.error("Clicked on Stitch button");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.editButton()));
 		   productDetails.editButton().click();
-		   log.info("Clicked on Edit button");
+		   log.error("Clicked on Edit button");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.removeButton()));
 		   productDetails.removeButton().click();
-		   log.info("Clicked on Remove button");
+		   log.error("Clicked on Remove button");
 		   
 		   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.personalizeNameSection()));
 		   landingpage.offerModal();
 		   productDetails.personalizeNameSection().click();
-		   log.info("Clicked on personalize Name Section");
+		   log.error("Clicked on personalize Name Section");
 		   
 		   name.moveToElement(productDetails.personalizeNameField()).build().perform();
-		   log.info("Move to name field");
+		   log.error("Move to name field");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.personalizeNameField()));
 		   productDetails.personalizeNameField().sendKeys("RE");
-		   log.info("Entered the name in name field");
+		   log.error("Entered the name in name field");
           
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.stitchButton()));
 		   productDetails.stitchButton().click();
-		   log.info("Clicked on Stitch button");
+		   log.error("Clicked on Stitch button");
 		   
 		   productDetails.addToCart();
-		   log.info("Clicked on add to cart button");
+		   log.error("Clicked on add to cart button");
 		   
 		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PILLOW-S-26x16x4']")));
 			
@@ -155,11 +161,11 @@ public class MemoryFoamPillowChangeMultipleOption extends BaseSleepycat {
 			if(productname) 
 			{
 				System.out.println("Standard category Memory Foam Pillow pack of 1 change option Product is added in cart");
-				log.info("Standard category Memory Foam Pillow pack of 1 change option Product is added in cart");
+				log.error("Standard category Memory Foam Pillow pack of 1 change option Product is added in cart");
 			}else
 			{
 				System.out.println("Standard category Memory Foam Pillow pack of 1 change option Product is not added in cart");
-				log.info("Standard category Memory Foam Pillow pack of 1 change option Product is not added in cart");
+				log.error("Standard category Memory Foam Pillow pack of 1 change option Product is not added in cart");
 			}	
 		}
 	    
@@ -167,7 +173,7 @@ public class MemoryFoamPillowChangeMultipleOption extends BaseSleepycat {
 		  public void closeDriver() throws IOException 
 		  {
 		    driver.quit();	  
-			log.info("Driver is closed");
+			log.error("Driver is closed");
 
 		  }
 }

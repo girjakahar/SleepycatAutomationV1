@@ -29,7 +29,7 @@ public class ProtectorChangeMultipleOption extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	    @Test
@@ -37,63 +37,69 @@ public class ProtectorChangeMultipleOption extends BaseSleepycat {
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
-	       log.info("Website opened Successfully");
+	       log.error("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
-	  	   log.info("Website is maximized");
+	  	   log.error("Website is maximized");
 	  	   
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
 	  	   landingpage.beddingHeader();
-		   log.info("Bedding Submenu link is opened");
+		   log.error("Bedding Submenu link is opened");
 		   
+	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(landingpage.protectorMenu()));
 		   landingpage.protectorMenu().click();
-		   log.info("Clicked on protector menu option");
+		   log.error("Clicked on protector menu option");
 		   
 		   landingpage.offerModal();
 		   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.doubleCategory()));
 		   productDetails.doubleCategory().click();
-		   log.info("Clicked on Double category option");
+		   log.error("Clicked on Double category option");
 		   
+	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.kingCategory()));
 		   productDetails.kingCategory().click();
-		   log.info("Clicked on King category option");
+		   log.error("Clicked on King category option");
 		   
+	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.singleCategory()));
 		   productDetails.singleCategory().click();
-		   log.info("Clicked on Single category option");
+		   log.error("Clicked on Single category option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.pageScroll();
-		   log.info("Scrolled down to size section");
+		   log.error("Scrolled down to size section");
 		   
+	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.cmDimension()));
 		   productDetails.cmDimension().click();
-		   log.info("Clicked on cm dimension option");
+		   log.error("Clicked on cm dimension option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.sizeDropdown().click();
-		   log.info("Clicked on sizedropdown field");
+		   log.error("Clicked on sizedropdown field");
 		   
+	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.singleProtector75x48()));
 		   productDetails.singleProtector75x48().click();
-		   log.info("Clicked on one size option from the dropdown");
+		   log.error("Clicked on one size option from the dropdown");
 		   
 		   landingpage.offerModal();
 	  	   productDetails.sizeDropdown().click();
-		   log.info("Clicked on sizedropdown field");
+		   log.error("Clicked on sizedropdown field");
 		   
+	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.singleProtector78x36()));
 		   productDetails.singleProtector78x36().click();
-		   log.info("Clicked on one size option from the dropdown");
+		   log.error("Clicked on one size option from the dropdown");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.quantityField()));
 		   productDetails.quantityField().click();
-		   log.info("Clicked on Quantity field dropdown");
+		   log.error("Clicked on Quantity field dropdown");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@data-name='quantity']")));
@@ -105,26 +111,29 @@ public class ProtectorChangeMultipleOption extends BaseSleepycat {
 	 		 quantityvalue.get(i).getText();
 	 		 if(quantityvalue.get(i).getText().contains("6"))
 	 		 {
+	 		  	 landingpage.offerModal();
 	 			 quantityvalue.get(i).click();
-	 			 log.info("Quantity is selected from drodown");
+	 			 log.error("Quantity is selected from drodown");
 	 			 break;
 	 		 }
 	 	   }
-		   
+	 	   
+	  	   landingpage.offerModal();
 		   productDetails.addToCart();
-		   log.info("Clicked on add to cart button");
+		   log.error("Clicked on add to cart button");
 		   
-		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PROT-S-78x36']")));
+	  	   landingpage.offerModal();
+		   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PROT-S-78x36']")));
 			
 			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PROT-S-78x36']")).isDisplayed();
 			if(productname) 
 			{
 				System.out.println("Single category Protector change option is added in cart");
-				log.info("Single category Protector change option is added in cart");
+				log.error("Single category Protector change option is added in cart");
 			}else
 			{
 				System.out.println("Single category Protector change option is added in cart");
-				log.info("Single category Protector change option is added in cart");
+				log.error("Single category Protector change option is added in cart");
 			}	
 		}
 	    
@@ -132,7 +141,7 @@ public class ProtectorChangeMultipleOption extends BaseSleepycat {
 		  public void closeDriver() throws IOException 
 		  {
 		    driver.quit();	  
-			log.info("Driver is closed");
+			log.error("Driver is closed");
 
 		  }  
 

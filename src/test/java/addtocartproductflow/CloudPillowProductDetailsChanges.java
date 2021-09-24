@@ -29,7 +29,7 @@ public class CloudPillowProductDetailsChanges extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	 @Test
@@ -37,47 +37,49 @@ public class CloudPillowProductDetailsChanges extends BaseSleepycat {
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
-	       log.info("Website opened Successfully");
+	       log.error("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
-	  	   log.info("Website is maximized");
+	  	   log.error("Website is maximized");
 	  	   
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
 	  	   landingpage.pillowHeader();
-		   log.info("Submenu link is opened");
+		   log.error("Submenu link is opened");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(landingpage.cloudPillowMenu()));
 		   landingpage.cloudPillowMenu().click();
-		   log.info("Clicked on Cloud pillow menu option");
+		   log.error("Clicked on Cloud pillow menu option");
 		   
 		   landingpage.offerModal();
 		   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.presidentCategory()));
 		   productDetails.presidentCategory().click();
-		   log.info("Clicked on president category option");
+		   log.error("Clicked on president category option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.pageScroll();
-		   log.info("Scrolled down to size section");
+		   log.error("Scrolled down to size section");
 		   
+	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.twoPillowPackSize()));
 		   productDetails.twoPillowPackSize().click();
-		   log.info("Clicked on Two Pillow pack size option");
+		   log.error("Clicked on Two Pillow pack size option");
 		   
+	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.feetDimension()));
 		   productDetails.feetDimension().click();
-		   log.info("Clicked on Feet dimension option");
+		   log.error("Clicked on Feet dimension option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.sizeDropdown().click();
-		   log.info("Clicked on sizedropdown field");
+		   log.error("Clicked on sizedropdown field");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.quantityField()));
 		   productDetails.quantityField().click();
-		   log.info("Clicked on Quantity field dropdown");
+		   log.error("Clicked on Quantity field dropdown");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@data-name='quantity']")));
@@ -89,26 +91,29 @@ public class CloudPillowProductDetailsChanges extends BaseSleepycat {
 	 		 quantityvalue.get(i).getText();
 	 		 if(quantityvalue.get(i).getText().contains("6"))
 	 		 {
+	 		  	 landingpage.offerModal();
 	 			 quantityvalue.get(i).click();
-	 			 log.info("Quantity is selected from drodown");
+	 			 log.error("Quantity is selected from drodown");
 	 			 break;
 	 		 }
 	 	   }
 		   
+	  	   landingpage.offerModal();
 		   productDetails.addToCart();
-		   log.info("Clicked on add to cart button");
+		   log.error("Clicked on add to cart button");
 		   
+	  	   landingpage.offerModal();
 		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-CLPILWSET2-P-32x20']")));
 			
 			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-CLPILWSET2-P-32x20']")).isDisplayed();
 			if(productname) 
 			{
 				System.out.println("President category Cloud Pillow pack of 2 Product is added in cart");
-				log.info("President category Cloud Pillow pack of 2 Product is added in cart");
+				log.error("President category Cloud Pillow pack of 2 Product is added in cart");
 			}else
 			{
 				System.out.println("President category Cloud Pillow pack of 2 Product is not added in cart");
-				log.info("President category Cloud Pillow pack of 2 Product is not added in cart");
+				log.error("President category Cloud Pillow pack of 2 Product is not added in cart");
 			}	
 		}
 	    
@@ -116,7 +121,7 @@ public class CloudPillowProductDetailsChanges extends BaseSleepycat {
 		  public void closeDriver() throws IOException 
 		  {
 		    driver.quit();	  
-			log.info("Driver is closed");
+			log.error("Driver is closed");
 
 		  }    
 	  

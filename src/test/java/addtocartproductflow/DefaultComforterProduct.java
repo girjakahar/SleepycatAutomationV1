@@ -27,7 +27,7 @@ public class DefaultComforterProduct extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	 @Test
@@ -35,30 +35,30 @@ public class DefaultComforterProduct extends BaseSleepycat {
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
-	       log.info("Website opened Successfully");
+	       log.error("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
-	  	   log.info("Website is maximized");
+	  	   log.error("Website is maximized");
 	  	   
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
 	  	   landingpage.beddingHeader();
-		   log.info("Bedding Submenu link is opened");
+		   log.error("Bedding Submenu link is opened");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(landingpage.protectorMenu()));
 		   landingpage.comforterMenu().click();
-		   log.info("Clicked on Comforter menu option");
+		   log.error("Clicked on Comforter menu option");
 		   
 	  	   landingpage.offerModal();
 		   ProductDetailsPage productdetail = new ProductDetailsPage(driver);
 		   
 	  	   landingpage.offerModal();
 	  	   productdetail.pageScroll();
-		   log.info("Scrolled down to size section");
+		   log.error("Scrolled down to size section");
 		   
 		   productdetail.addToCart();
-		   log.info("Clicked on add to cart button");
+		   log.error("Clicked on add to cart button");
 		   
 		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-COMF-S-90x60']")));
 			
@@ -66,11 +66,11 @@ public class DefaultComforterProduct extends BaseSleepycat {
 			if(productname) 
 			{
 				System.out.println("Default Rhino Grey Coconut White color Comforter Product is added in cart");
-				log.info("Default Rhino Grey Coconut White color Comforter Product is added in cart");
+				log.error("Default Rhino Grey Coconut White color Comforter Product is added in cart");
 			}else
 			{
 				System.out.println("Default Rhino Grey Coconut White color Comforter Product is not added in cart");
-				log.info("Default Rhino Grey Coconut White color Comforter Product is not added in cart");
+				log.error("Default Rhino Grey Coconut White color Comforter Product is not added in cart");
 			}	
 		}
 	 
@@ -78,7 +78,7 @@ public class DefaultComforterProduct extends BaseSleepycat {
 	  public void closeDriver() throws IOException 
 	  {
 	    driver.quit();	  
-		log.info("Driver is closed");
+		log.error("Driver is closed");
 	  }
 
 }

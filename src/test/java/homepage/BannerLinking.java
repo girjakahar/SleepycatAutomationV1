@@ -19,7 +19,7 @@ public class BannerLinking extends BaseSleepycat {
 	public void startingDriver() throws IOException 
 	{
 		driver = initializeChrome();
-		log.info("Starting driver");
+		log.error("Starting driver");
 
 	}
 
@@ -27,23 +27,23 @@ public class BannerLinking extends BaseSleepycat {
 	public void firstBanner() throws Exception 
 	{
 	    driver.get("https://sleepycat.in/");
-		log.info("Website is opened");
+		log.error("Website is opened");
 
 		LandingPageObject landingPage = new LandingPageObject(driver);
 		landingPage.offerModal();
-		log.info("Offer Modal is closed");
+		log.error("Offer Modal is closed");
 
 		landingPage.firstBanner().click();
-		log.info("Clicked on first banner");
+		log.error("Clicked on first banner");
 
 		String url = driver.getCurrentUrl();
-		log.info("Fetching the current url");
+		log.error("Fetching the current url");
 
 		System.out.println(url);
-		log.info("Printing the current opened url");
+		log.error("Printing the current opened url");
 
 		verifyLinkActive(url);
-		log.info("checking the response code for the opened url");
+		log.error("checking the response code for the opened url");
 
 	}
 
@@ -51,26 +51,26 @@ public class BannerLinking extends BaseSleepycat {
 	public void secondBanner() throws Exception {
 
 	    driver.get("https://sleepycat.in/");
-		log.info("Website is opened");
+		log.error("Website is opened");
 
 		LandingPageObject landingPage = new LandingPageObject(driver);
 		landingPage.offerModal();
-		log.info("Offer Modal is closed");
+		log.error("Offer Modal is closed");
 
 		landingPage.nextbanner().click();
-		log.info("Clicked on next banner icon on first banner");
+		log.error("Clicked on next banner icon on first banner");
 
 		landingPage.secondBanner().click();
-		log.info("Clicked on Second banner");
+		log.error("Clicked on Second banner");
 
 		String url = driver.getCurrentUrl();
-		log.info("Fetching the current url");
+		log.error("Fetching the current url");
 
 		System.out.println(url);
-		log.info("Printing the Current opened URL");
+		log.error("Printing the Current opened URL");
 
 		verifyLinkActive(url);
-		log.info("checking the response code for the opened url");
+		log.error("checking the response code for the opened url");
 
 	}
 
@@ -78,29 +78,29 @@ public class BannerLinking extends BaseSleepycat {
 	public void thirdBanner() throws Exception {
 
 	    driver.get("https://sleepycat.in/");
-		log.info("Website is opened");
+		log.error("Website is opened");
 
 		LandingPageObject landingPage = new LandingPageObject(driver);
 		landingPage.offerModal();
-		log.info("Offer Modal is closed");
+		log.error("Offer Modal is closed");
 
 		landingPage.nextbanner().click();
-		log.info("Clicked on next banner icon on first banner");
+		log.error("Clicked on next banner icon on first banner");
 
 		landingPage.nextbanner().click();
-		log.info("Clicked on next banner icon on Second banner");
+		log.error("Clicked on next banner icon on Second banner");
 
 		landingPage.thirdBanner().click();
-		log.info("Clicked on Third banner");
+		log.error("Clicked on Third banner");
 
 		String url = driver.getCurrentUrl();
-		log.info("Fetching the current url");
+		log.error("Fetching the current url");
 
 		System.out.println(url);
-		log.info("Printing the Current opened URL");
+		log.error("Printing the Current opened URL");
 
 		verifyLinkActive(url);
-		log.info("checking the response code for the opened url");
+		log.error("checking the response code for the opened url");
 
 	}
 
@@ -108,32 +108,32 @@ public class BannerLinking extends BaseSleepycat {
 	public void fourthBanner() throws Exception {
 
 	    driver.get("https://sleepycat.in/");
-		log.info("Website is opened");
+		log.error("Website is opened");
 
 		LandingPageObject landingPage = new LandingPageObject(driver);
 		landingPage.offerModal();
-		log.info("Offer Modal is closed");
+		log.error("Offer Modal is closed");
 
 		landingPage.nextbanner().click();
-		log.info("Clicked on next banner icon on first banner");
+		log.error("Clicked on next banner icon on first banner");
 
 		landingPage.nextbanner().click();
-		log.info("Clicked on next banner icon on Second banner");
+		log.error("Clicked on next banner icon on Second banner");
 
 		landingPage.nextbanner().click();
-		log.info("Clicked on next banner icon on third banner");
+		log.error("Clicked on next banner icon on third banner");
 
 		landingPage.fourthBanner().click();
-		log.info("Clicked on fourth banner");
+		log.error("Clicked on fourth banner");
 
 		String url = driver.getCurrentUrl();
-		log.info("Fetching the current url");
+		log.error("Fetching the current url");
 
 		System.out.println(url);
-		log.info("Printing the Current opened URL");
+		log.error("Printing the Current opened URL");
 
 		verifyLinkActive(url);
-		log.info("checking the response code for the opened url");
+		log.error("checking the response code for the opened url");
 
 
 	}
@@ -142,35 +142,35 @@ public class BannerLinking extends BaseSleepycat {
 	public void fifthBanner() throws Exception {
 
 	    driver.get("https://sleepycat.in/");
-		log.info("Website is opened");
+		log.error("Website is opened");
 
 		LandingPageObject landingPage = new LandingPageObject(driver);
 		landingPage.offerModal();
-		log.info("Offer Modal is closed");
+		log.error("Offer Modal is closed");
 
 		landingPage.nextbanner().click();
-		log.info("Clicked on next banner icon on first banner");
+		log.error("Clicked on next banner icon on first banner");
 
 		landingPage.nextbanner().click();
-		log.info("Clicked on next banner icon on Second banner");
+		log.error("Clicked on next banner icon on Second banner");
 
 		landingPage.nextbanner().click();
-		log.info("Clicked on next banner icon on Third banner");
+		log.error("Clicked on next banner icon on Third banner");
 
 		landingPage.nextbanner().click();
-		log.info("Clicked on next banner icon on fourth banner");
+		log.error("Clicked on next banner icon on fourth banner");
 
 		landingPage.fifthBanner().click();
-		log.info("Clicked on fifth banner");
+		log.error("Clicked on fifth banner");
 
 		String url = driver.getCurrentUrl();
-		log.info("Fetching the current url");
+		log.error("Fetching the current url");
 
 		System.out.println(url);
-		log.info("Printing the Current opened URL");
+		log.error("Printing the Current opened URL");
 
 		verifyLinkActive(url);
-		log.info("checking the response code for the opened url");
+		log.error("checking the response code for the opened url");
 
 	}
 
@@ -178,7 +178,7 @@ public class BannerLinking extends BaseSleepycat {
 	public void closeDriver() throws IOException
 	{
 		driver.quit();
-		log.info("Driver is closed");
+		log.error("Driver is closed");
 
 	}
 

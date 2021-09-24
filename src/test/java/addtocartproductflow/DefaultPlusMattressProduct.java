@@ -26,7 +26,7 @@ public class DefaultPlusMattressProduct extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
     @Test
@@ -34,31 +34,31 @@ public class DefaultPlusMattressProduct extends BaseSleepycat {
 	{
     	
 	   driver.get("https://sleepycat.in/");
-       log.info("Website opened Successfully");
+       log.error("Website opened Successfully");
        
   	   driver.manage().window().maximize();
-  	   log.info("Website is maximized");
+  	   log.error("Website is maximized");
   	   
   	   wait = new WebDriverWait(driver, 20);
   	   LandingPageObject landingPage = new LandingPageObject(driver);
   	   landingPage.offerModal();
   	   landingPage.maattheader();
-	   log.info("Submenu link is opened");
+	   log.error("Submenu link is opened");
 	   
 	   wait.until(ExpectedConditions.visibilityOf(landingPage.plusMattressMenu()));
 	   landingPage.plusMattressMenu().click();
-	   log.info("Clicked on Plus mattress submenu option");
+	   log.error("Clicked on Plus mattress submenu option");
 	   
   	   landingPage.offerModal();
 	   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
 	  
   	   landingPage.offerModal();
   	   productDetails.pageScroll();
-	   log.info("Scrolled down to size section");
+	   log.error("Scrolled down to size section");
 	   
   	   landingPage.offerModal();
        productDetails.addToCart();
-	   log.info("Clicked on add to cart button");
+	   log.error("Clicked on add to cart button");
 	   
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PLUS-S-72x30x8']")));
 		
@@ -66,11 +66,11 @@ public class DefaultPlusMattressProduct extends BaseSleepycat {
 		if(productname) 
 		{
 			System.out.println("Single category Plus Mattress Product is added in cart");
-			log.info("Single category Plus Mattress Product is added in cart");
+			log.error("Single category Plus Mattress Product is added in cart");
 		}else
 		{
 			System.out.println("Single category Plus Mattress Product is not added in cart");
-			log.info("Single category Plus Mattress Product is not added in cart");
+			log.error("Single category Plus Mattress Product is not added in cart");
 		}	
 	   
 	}
@@ -79,7 +79,7 @@ public class DefaultPlusMattressProduct extends BaseSleepycat {
 	  public void closeDriver() throws IOException 
 	  {
 	    driver.quit();	  
-		log.info("Driver is closed");
+		log.error("Driver is closed");
 
 	  }
 }

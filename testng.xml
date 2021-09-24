@@ -13,7 +13,7 @@
        </classes>
         </test> 
         
-      <test name="ForgetPasswordFlow"> 
+   <test name="ForgetPasswordFlow"> 
       <classes>  
       <class name="login.ForgetPasswordFlow"/>
        </classes>
@@ -23,13 +23,25 @@
     <classes>  
       <class name="homepage.BannerLinking"/>
     </classes>
-  </test> 
+     </test> 
   
-     <test name="DefaultOriginalMattressProduct"> 
+   <test name="CartHandling"> 
+    <classes>  
+      <class name="order.CartHandling"/>
+    </classes>
+     </test> 
+  
+   <test name="RazorPayPaymentGateway"> 
+    <classes>  
+      <class name="order.RazorPayPaymentGateway"/>
+    </classes>
+      </test> 
+  
+   <test name="DefaultOriginalMattressProduct"> 
     <classes>  
       <class name="addtocartproductflow.DefaultOriginalMattressProduct"/>
     </classes>
-  </test> 
+     </test> 
   
   <test name="OriginalMattessProductDetailsChanges"> 
     <classes>  
@@ -49,28 +61,252 @@
     </classes>
   </test> 
   
-     <test name="CartHandling"> 
+  <test name="DefaultPlusMattressProduct"> 
     <classes>  
-      <class name="order.CartHandling"/>
+      <class name="addtocartproductflow.DefaultPlusMattressProduct"/>
     </classes>
   </test> 
   
-     <test name="RazorPayPaymentGateway"> 
+  <test name="PlusMattressProductDetailsChanges"> 
     <classes>  
-      <class name="order.RazorPayPaymentGateway"/>
+      <class name="addtocartproductflow.PlusMattressProductDetailsChanges"/>
     </classes>
-      </test> 
-    
-    <test name="BestSellingPlusMattressAddToCart"> 
+  </test> 
+  
+  <test name="BestSellingPlusMattressAddToCart"> 
     <classes>  
       <class name="addtocartproductflow.BestSellingPlusMattressAddToCart"/>
     </classes>
   </test> 
   
-  <test name="BabyMattressCrossSelling"> 
+  <test name="DefaultBabyMattressProduct"> 
     <classes>  
-      <class name="addtocartproductflow.BabyMattressCrossSelling"/>
+      <class name="addtocartproductflow.DefaultBabyMattressProduct"/>
     </classes>
   </test> 
+  
+  <test name="BabyMattressCustomProductDetailsChanges"> 
+    <classes>  
+      <class name="addtocartproductflow.BabyMattressCustomProductDetailsChanges"/>
+    </classes>
+  </test> 
+  
+  <test name="DefaultOhayoBedroduct"> 
+    <classes>  
+      <class name="addtocartproductflow.DefaultOhayoBedroduct"/>
+    </classes>
+  </test>
+  
+  <test name="OhayoBedProductDetailsChanges"> 
+    <classes>  
+      <class name="addtocartproductflow.OhayoBedProductDetailsChanges"/>
+    </classes>
+  </test> 
+  
+  <test name="DefaultMetalBedFrameProduct"> 
+    <classes>  
+      <class name="addtocartproductflow.DefaultMetalBedFrameProduct"/>
+    </classes>
+  </test>
+  
+  <test name="MetalBedFrameProductDetailsChanges"> 
+    <classes>  
+      <class name="addtocartproductflow.MetalBedFrameProductDetailsChanges"/>
+    </classes>
+  </test> 
+  
+  <test name="DefaultProtectorProduct"> 
+    <classes>  
+      <class name="addtocartproductflow.DefaultProtectorProduct"/>
+    </classes>
+  </test>
+  
+  <test name="ProtectorProductDetailsChanges"> 
+    <classes>  
+      <class name="addtocartproductflow.ProtectorProductDetailsChanges"/>
+    </classes>
+  </test> 
+  
+  <test name="DefaultComforterProduct"> 
+    <classes>  
+      <class name="addtocartproductflow.DefaultComforterProduct"/>
+    </classes>
+  </test>
+  
+  <test name="ComforterProductDetailsChanges"> 
+    <classes>  
+      <class name="addtocartproductflow.ComforterProductDetailsChanges"/>
+    </classes>
+  </test> 
+  
+  <test name="DefaultWeightedBlanketProduct"> 
+    <classes>  
+      <class name="addtocartproductflow.DefaultWeightedBlanketProduct"/>
+    </classes>
+  </test>
+  
+  <test name="WeightedBlanketProductDetailsChanges"> 
+    <classes>  
+      <class name="addtocartproductflow.WeightedBlanketProductDetailsChanges"/>
+    </classes>
+  </test> 
+  
+   <test name="DefaultPetBedProduct"> 
+    <classes>  
+      <class name="addtocartproductflow.DefaultPetBedProduct"/>
+    </classes>
+  </test>
+  
+  <test name="PetBedProductDetailsChanges"> 
+    <classes>  
+      <class name="addtocartproductflow.PetBedProductDetailsChanges"/>
+    </classes>
+  </test> 
+  
+  <test name="DefaultCloudPillowProduct"> 
+    <classes>  
+      <class name="addtocartproductflow.DefaultCloudPillowProduct"/>
+    </classes>
+  </test>
+  
+  <test name="CloudPillowProductDetailsChanges"> 
+    <classes>  
+      <class name="addtocartproductflow.CloudPillowProductDetailsChanges"/>
+    </classes>
+  </test> 
+  
+  <test name="DefaultMemoryFoamPillowProduct"> 
+    <classes>  
+      <class name="addtocartproductflow.DefaultMemoryFoamPillowProduct"/>
+    </classes>
+  </test>
+  
+  <test name="MemoryFoamPillowProductDetailsChanges"> 
+    <classes>  
+      <class name="addtocartproductflow.MemoryFoamPillowProductDetailsChanges"/>
+    </classes>
+  </test> 
+  
+  <test name="DefaultCuddlePillowProduct"> 
+    <classes>  
+      <class name="addtocartproductflow.DefaultCuddlePillowProduct"/>
+    </classes>
+  </test>
+  
+  <test name="CuddlePillowProductDetailsChanges"> 
+    <classes>  
+      <class name="addtocartproductflow.CuddlePillowProductDetailsChanges"/>
+    </classes>
+  </test> 
+  
+  <test name="DefaultPillowCaseProduct"> 
+    <classes>  
+      <class name="addtocartproductflow.DefaultPillowCaseProduct"/>
+    </classes>
+  </test>
+  
+  <test name="PillowCaseProductDetailsChanges"> 
+    <classes>  
+      <class name="addtocartproductflow.PillowCaseProductDetailsChanges"/>
+    </classes>
+  </test> 
+  
+  <test name="OriginalMattressCustomCategory"> 
+    <classes>  
+      <class name="addtocartproductflow.OriginalMattressCustomCategory"/>
+    </classes>
+  </test>
+  
+  <test name="LatexMattressCustomCategory"> 
+    <classes>  
+      <class name="addtocartproductflow.LatexMattressCustomCategory"/>
+    </classes>
+  </test> 
+  
+  <test name="PlusMattressCustomCategory"> 
+    <classes>  
+      <class name="addtocartproductflow.PlusMattressCustomCategory"/>
+    </classes>
+  </test> 
+  
+  <test name="OriginalMattressChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.OriginalMattressChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+  <test name="LatexMattressChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.LatexMattressChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+  <test name="PlusMattressChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.PlusMattressChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+  <test name="BabyMattressChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.BabyMattressChangeMultipleOption"/>
+    </classes>
+  </test>
+  
+  <test name="OhayoBedChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.OhayoBedChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+  <test name="MetalBedFrameChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.MetalBedFrameChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+  <test name="ProtectorChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.ProtectorChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+  <test name="ComforterChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.ComforterChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+   <test name="WeightedBlanketChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.WeightedBlanketChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+  <test name="PetBedChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.PetBedChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+  <test name="CloudPillowChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.CloudPillowChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+   <test name="MemoryFoamPillowChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.MemoryFoamPillowChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+  <test name="PillowCasesChangeMultipleOption"> 
+    <classes>  
+      <class name="productdetailspagemultipleoptionchange.PillowCasesChangeMultipleOption"/>
+    </classes>
+  </test> 
+  
+  
   
 </suite> <!-- Suite -->
