@@ -9,7 +9,7 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <name>SleepycatAutomationV1</name>
-  <!-- FIXME change it to the project's website -->
+  <!-- FIXME change it to the project's websites -->
   <url>http://www.example.com</url>
 
   <properties>
@@ -27,14 +27,7 @@
       </resources>
 </build>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-    
+  <dependencies> 
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
@@ -78,7 +71,11 @@
     <version>1.0.3</version>
 </dependency>
 
-    
+<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+</dependency>
     
   </dependencies>
 

@@ -30,7 +30,7 @@ public class OhayoBedChangeMultipleOption extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	 @Test
@@ -38,43 +38,44 @@ public class OhayoBedChangeMultipleOption extends BaseSleepycat {
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
-	       log.info("Website opened Successfully");
+	       log.error("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
-	  	   log.info("Website is maximized");
+	  	   log.error("Website is maximized");
 	  	   
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
 	  	   landingpage.bedHeader();
-		   log.info("Submenu link is opened");
+		   log.error("Submenu link is opened");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(landingpage.ohayoBedMenu()));
 		   landingpage.ohayoBedMenu().click();
-		   log.info("Clicked on Ohayo Bed menu option");
+		   log.error("Clicked on Ohayo Bed menu option");
 		   
 		   landingpage.offerModal();
 		   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.kingCategory()));
 		   productDetails.kingCategory().click();
-		   log.info("Clicked on King category option");
+		   log.error("Clicked on King category option");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.queenCategory()));
 		   productDetails.queenCategory().click();
-		   log.info("Clicked on Queen category option");
+		   log.error("Clicked on Queen category option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.pageScroll();
-		   log.info("Scrolled down to size section");
+		   log.error("Scrolled down to size section");
 		   
+	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.feetDimension()));
 		   productDetails.feetDimension().click();
-		   log.info("Clicked on Feet dimension option");
+		   log.error("Clicked on Feet dimension option");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.quantityField()));
 		   productDetails.quantityField().click();
-		   log.info("Clicked on Quantity field dropdown");
+		   log.error("Clicked on Quantity field dropdown");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@data-name='quantity']")));
@@ -86,26 +87,29 @@ public class OhayoBedChangeMultipleOption extends BaseSleepycat {
 	 		 quantityvalue.get(i).getText();
 	 		 if(quantityvalue.get(i).getText().contains("6"))
 	 		 {
+	 			 landingpage.offerModal();
 	 			 quantityvalue.get(i).click();
-	 			 log.info("Quantity is selected from drodown");
+	 			 log.error("Quantity is selected from drodown");
 	 			 break;
 	 		 }
 	 	   }
 		   
+		   landingpage.offerModal();
 		   productDetails.addToCart();
-		   log.info("Clicked on add to cart button");
+		   log.error("Clicked on add to cart button");
 		   
-		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-OHAYOBED-Q-84x65x13']")));
+	  	   landingpage.offerModal();
+		   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-OHAYOBED-Q-84x65x13']")));
 			
 			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-OHAYOBED-Q-84x65x13']")).isDisplayed();
 			if(productname) 
 			{
 				System.out.println("Queen category Ohayo Bed Change option Product is added in cart");
-				log.info("Queen category Ohayo Bed Change option Product is added in cart");
+				log.error("Queen category Ohayo Bed Change option Product is added in cart");
 			}else
 			{
 				System.out.println("Queen category Ohayo Bed Change option Product is not added in cart");
-				log.info("Queen category Ohayo Bed Change option Product is not added in cart");
+				log.error("Queen category Ohayo Bed Change option Product is not added in cart");
 			}	
 		}
 	    
@@ -113,7 +117,7 @@ public class OhayoBedChangeMultipleOption extends BaseSleepycat {
 		  public void closeDriver() throws IOException 
 		  {
 		    driver.quit();	  
-			log.info("Driver is closed");
+			log.error("Driver is closed");
 
 		  } 
 

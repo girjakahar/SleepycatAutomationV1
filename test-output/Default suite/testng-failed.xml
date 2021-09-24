@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="productdetailspagemultipleoptionchange.PillowCasesChangeMultipleOption">
+      <class name="order.CartHandling">
         <methods>
-          <include name="pillowCasesChangeOption"/>
-          <include name="startingDriver"/>
+          <include name="cartHandling"/>
           <include name="closeDriver"/>
+          <include name="startingDriver"/>
         </methods>
-      </class> <!-- productdetailspagemultipleoptionchange.PillowCasesChangeMultipleOption -->
+      </class> <!-- order.CartHandling -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

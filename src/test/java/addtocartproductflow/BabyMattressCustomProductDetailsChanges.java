@@ -18,18 +18,18 @@ import pageobject.LandingPageObject;
 import pageobject.ProductDetailsPage;
 import resources.BaseSleepycat;
 
-public class BabyMattressProductDetailsChanges extends BaseSleepycat {
+public class BabyMattressCustomProductDetailsChanges extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(BabyMattressProductDetailsChanges.class);
+	public static Logger log =LogManager.getLogger(BabyMattressCustomProductDetailsChanges.class);
 
 	
 	@BeforeTest
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	    @Test
@@ -37,43 +37,43 @@ public class BabyMattressProductDetailsChanges extends BaseSleepycat {
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
-	       log.info("Website opened Successfully");
+	       log.error("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
-	  	   log.info("Website is maximized");
+	  	   log.error("Website is maximized");
 	  	   
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
 	  	   landingpage.maattheader();
-		   log.info("Submenu link is opened");
+		   log.error("Submenu link is opened");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(landingpage.babyMattressMenu()));
 		   landingpage.babyMattressMenu().click();
-		   log.info("Clicked on Baby mattress menu option");
+		   log.error("Clicked on Baby mattress menu option");
 		   
 		   landingpage.offerModal();
 		   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.customCategory()));
 		   productDetails.customCategory().click();
-		   log.info("Clicked on Custom category option");
+		   log.error("Clicked on Custom category option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.pageScroll();
-		   log.info("Scrolled down on page");
+		   log.error("Scrolled down on page");
 		   
 		   landingpage.offerModal();
 	  	   productDetails.customLength().sendKeys("45");
-		   log.info("Length value is entered");
+		   log.error("Length value is entered");
 		   
 		   landingpage.offerModal();
 	  	   productDetails.customWidth().sendKeys("25");
-		   log.info("Width value is entered");
+		   log.error("Width value is entered");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.quantityField()));
 		   productDetails.quantityField().click();
-		   log.info("Clicked on Quantity field dropdown");
+		   log.error("Clicked on Quantity field dropdown");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@data-name='quantity']")));
@@ -85,14 +85,16 @@ public class BabyMattressProductDetailsChanges extends BaseSleepycat {
 	 		 quantityvalue.get(i).getText();
 	 		 if(quantityvalue.get(i).getText().contains("6"))
 	 		 {
+	 		  	 landingpage.offerModal();
 	 			 quantityvalue.get(i).click();
-	 			 log.info("Quantity is selected from drodown");
+	 			 log.error("Quantity is selected from drodown");
 	 			 break;
 	 		 }
 	 	   }
 		   
+	  	   landingpage.offerModal();
 		   productDetails.addToCart();
-		   log.info("Clicked on add to cart button");
+		   log.error("Clicked on add to cart button");
 		   
 		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-BABY-S-52x28x4']")));
 			
@@ -100,11 +102,11 @@ public class BabyMattressProductDetailsChanges extends BaseSleepycat {
 			if(productname) 
 			{
 				System.out.println("Custome Baby mattress Product is added in cart");
-				log.info("Custome Baby mattress Product is added in cart");
+				log.error("Custome Baby mattress Product is added in cart");
 			}else
 			{
 				System.out.println("Custome Baby mattress Product is not added in cart");
-				log.info("Custome Baby mattress Product is not added in cart");
+				log.error("Custome Baby mattress Product is not added in cart");
 			}	
 		}
 	    
@@ -112,7 +114,7 @@ public class BabyMattressProductDetailsChanges extends BaseSleepycat {
 		  public void closeDriver() throws IOException 
 		  {
 		    driver.quit();	  
-			log.info("Driver is closed");
+			log.error("Driver is closed");
 
 		  }
 }

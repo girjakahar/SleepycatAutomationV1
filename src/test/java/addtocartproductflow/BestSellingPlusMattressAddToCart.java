@@ -32,54 +32,54 @@ public class BestSellingPlusMattressAddToCart extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
     @Test
 	public void bestsellingPlusMattressAddToCart() throws Exception
 	{
  	   driver.get("https://sleepycat.in/");
-       log.info("Website opened Successfully");
+       log.error("Website opened Successfully");
      
  	   driver.manage().window().maximize();
- 	   log.info("Website is maximized");
+ 	   log.error("Website is maximized");
  	   
  	   wait = new WebDriverWait(driver, 20);
  	   LandingPageObject landingPage = new LandingPageObject(driver);
  	   landingPage.offerModal();
- 	   log.info("Offer modal is closed");
+ 	   log.error("Offer modal is closed");
  	   
  	   Actions scroll=new Actions(driver);
  	   scroll.moveToElement(landingPage.plusMattressText()).click().build().perform();
- 	   log.info("clicked on shop now button of plus mattress");
+ 	   log.error("clicked on shop now button of plus mattress");
  	   
  	   landingPage.offerModal();
  	   ProductDetailsPage productdetails = new ProductDetailsPage(driver);
  	   wait.until(ExpectedConditions.visibilityOf(productdetails.kingCategory()));
  	   productdetails.kingCategory().click();
- 	   log.info("Clicked on king category option");
+ 	   log.error("Clicked on king category option");
  	   
  	   landingPage.offerModal();
  	   productdetails.pageScroll();
- 	   log.info("Scrolled down to size section");
+ 	   log.error("Scrolled down to size section");
  	   
  	   landingPage.offerModal();
  	   productdetails.cmDimension().click();
- 	   log.info("Clicked on cm option");
+ 	   log.error("Clicked on cm option");
  	   
  	   landingPage.offerModal();
  	   productdetails.sizeDropdown().click();
  	   landingPage.offerModal();
- 	   log.info("Clicked on sizedropdown field");
+ 	   log.error("Clicked on sizedropdown field");
  	   
  	   landingPage.offerModal();
  	   wait.until(ExpectedConditions.visibilityOf(productdetails.kingPlus198x182x20()));
  	   productdetails.kingPlus198x182x20().click();
- 	   log.info("Clicked on one size option from the dropdown");
+ 	   log.error("Clicked on one size option from the dropdown");
  	   
  	   landingPage.offerModal();
  	   productdetails.quantityField().click();
- 	   log.info("Clicked on quantity field");
+ 	   log.error("Clicked on quantity field");
  	   
  	   List<WebElement> quantityvalue =driver.findElements(By.xpath("//li[@data-name='quantity']"));
  	   System.out.println(quantityvalue.size());
@@ -89,27 +89,30 @@ public class BestSellingPlusMattressAddToCart extends BaseSleepycat {
  		 quantityvalue.get(i).getText();
  		 if(quantityvalue.get(i).getText().contains("7"))
  		 {
+ 		 	 landingPage.offerModal();
  			 quantityvalue.get(i).click();
- 			 log.info("Quantity is selected from drodown");
+ 			 log.error("Quantity is selected from drodown");
  			 break;
  		 }
  	   }
  	   
+ 	   landingPage.offerModal();
  	   productdetails.addToCart();
- 	   log.info("Clicked on add to cart button");
+ 	   log.error("Clicked on add to cart button");
 
+ 	   landingPage.offerModal();
  	   CartSlider cart = new CartSlider(driver);	   
  	   wait.until(ExpectedConditions.visibilityOf(cart.addtocartSingleComforter()));
  	   cart.addtocartSingleComforter().click();
- 	   log.info("Click on Add to cart button for single comforter");
+ 	   log.error("Click on Add to cart button for single comforter");
  	   landingPage.offerModal();
  	   
 	   wait.until(ExpectedConditions.visibilityOf(cart.incrementQuantity()));
  	   cart.incrementQuantity().click();
- 	   log.info("Increment product quantity");
+ 	   log.error("Increment product quantity");
  	   
        cart.secureCheckout().click();
- 	   log.info("Clicked on securecheckout button");
+ 	   log.error("Clicked on securecheckout button");
         
  	   CheckoutPage check=new CheckoutPage(driver);
  	   wait.until(ExpectedConditions.visibilityOf(check.billingFirstName()));
@@ -118,11 +121,11 @@ public class BestSellingPlusMattressAddToCart extends BaseSleepycat {
  		if(firstname) 
  		{
  			System.out.println("checkout page is opened with Plus mattress and comforter product");
- 			log.info("checkout page is opened with Plus mattress and comforter product");
+ 			log.error("checkout page is opened with Plus mattress and comforter product");
  		}else
  		{
  			System.out.println("checkout page is not opened with Plus mattress and comforter product");
- 			log.info("checkout page is not opened with Plus mattress and comforter product");
+ 			log.error("checkout page is not opened with Plus mattress and comforter product");
  		}	
  		
 	}		
@@ -131,7 +134,7 @@ public class BestSellingPlusMattressAddToCart extends BaseSleepycat {
  	    public void close() 
  	    	{
  	    		driver.quit();
- 	    		log.info("Driver is closed");
+ 	    		log.error("Driver is closed");
 
  	    	}	
 }

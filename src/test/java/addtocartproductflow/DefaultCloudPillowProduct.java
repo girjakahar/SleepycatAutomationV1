@@ -27,7 +27,7 @@ public class DefaultCloudPillowProduct extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	 @Test
@@ -35,30 +35,30 @@ public class DefaultCloudPillowProduct extends BaseSleepycat {
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
-	       log.info("Website opened Successfully");
+	       log.error("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
-	  	   log.info("Website is maximized");
+	  	   log.error("Website is maximized");
 	  	   
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
 	  	   landingpage.pillowHeader();
-		   log.info("Submenu link is opened");
+		   log.error("Submenu link is opened");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(landingpage.cloudPillowMenu()));
 		   landingpage.cloudPillowMenu().click();
-		   log.info("Clicked on cloud Pillow Menu option");
+		   log.error("Clicked on cloud Pillow Menu option");
 		   
 	  	   landingpage.offerModal();
 		   ProductDetailsPage productdetail = new ProductDetailsPage(driver);
 		   
 	  	   landingpage.offerModal();
 	  	   productdetail.pageScroll();
-		   log.info("Scrolled down to size section");
+		   log.error("Scrolled down to size section");
 		   
 		   productdetail.addToCart();
-		   log.info("Clicked on add to cart button");
+		   log.error("Clicked on add to cart button");
 		   
 		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-CLPILW-S-27x18']")));
 			
@@ -66,11 +66,11 @@ public class DefaultCloudPillowProduct extends BaseSleepycat {
 			if(productname) 
 			{
 				System.out.println("Standard category Cloud pillow pack of one product is added in cart");
-				log.info("Standard category Cloud pillow pack of one product is added in cart");
+				log.error("Standard category Cloud pillow pack of one product is added in cart");
 			}else
 			{
 				System.out.println("Standard category Cloud pillow pack of one product is Not added in cart");
-				log.info("Standard category Cloud pillow pack of one product is Not added in cart");
+				log.error("Standard category Cloud pillow pack of one product is Not added in cart");
 			}	
 		}
 	 
@@ -78,6 +78,6 @@ public class DefaultCloudPillowProduct extends BaseSleepycat {
 	  public void closeDriver() throws IOException 
 	  {
 	    driver.quit();	  
-		log.info("Driver is closed");
+		log.error("Driver is closed");
 	  }
 }

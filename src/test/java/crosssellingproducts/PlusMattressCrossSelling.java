@@ -1,4 +1,4 @@
-package addtocartproductflow;
+package crosssellingproducts;
 
 import java.io.IOException;
 
@@ -18,18 +18,18 @@ import pageobject.LandingPageObject;
 import pageobject.ProductDetailsPage;
 import resources.BaseSleepycat;
 
-public class PlusMattressCrossSell extends BaseSleepycat {
+public class PlusMattressCrossSelling extends BaseSleepycat {
 	
 	static RemoteWebDriver driver;
 	static WebDriverWait wait;
-	public static Logger log =LogManager.getLogger(PlusMattressCrossSell.class);
+	public static Logger log =LogManager.getLogger(PlusMattressCrossSelling.class);
 
 	
 	@BeforeTest
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	@Test
@@ -37,20 +37,20 @@ public class PlusMattressCrossSell extends BaseSleepycat {
 	{
     	
        driver.get("https://sleepycat.in/");
-       log.info("Website opened Successfully");
+       log.error("Website opened Successfully");
        
   	   driver.manage().window().maximize();
-  	   log.info("Website is maximized");
+  	   log.error("Website is maximized");
   	   
   	   wait = new WebDriverWait(driver, 20);
   	   LandingPageObject landingpage = new LandingPageObject(driver);
   	   landingpage.offerModal();
   	   landingpage.maattheader();
-	   log.info("Submenu link is opened");
+	   log.error("Submenu link is opened");
 	   
 	   wait.until(ExpectedConditions.visibilityOf(landingpage.plusMattressMenu()));
 	   landingpage.plusMattressMenu().click();
-	   log.info("Clicked on Plus mattress menu option");
+	   log.error("Clicked on Plus mattress menu option");
 	   
   	   landingpage.offerModal();
   	   ProductDetailsPage productdetail = new ProductDetailsPage(driver);
@@ -59,44 +59,49 @@ public class PlusMattressCrossSell extends BaseSleepycat {
 	   WebElement CrossSellSection = driver.findElement(By.xpath("//span[text()='10 years warranty']"));
 	   Actions move =new Actions(driver);
 	   move.moveToElement(CrossSellSection).build().perform();
-	   log.info("Scrolled down to cross selling product section");
+	   log.error("Scrolled down to cross selling product section");
   	   landingpage.offerModal();
 	   
   	   productdetail.crossSellCloudPillowCategoryField().click();
-	   log.info("Clicked on category field for cloud pillow");
+	   log.error("Clicked on category field for cloud pillow");
 	   
 	   wait.until(ExpectedConditions.visibilityOf(productdetail.crossSellPresidentCategoryCloudPillow()));
 	   productdetail.crossSellPresidentCategoryCloudPillow().click();
-	   log.info("Clicked on President type option from the dropdown");
+	   log.error("Clicked on President type option from the dropdown");
 	   
 	   wait.until(ExpectedConditions.visibilityOf(productdetail.crossSellPresidentCloudPillowSet1()));
 	   productdetail.crossSellPresidentCloudPillowSet1().click();
-	   log.info("Click on add to cart product button of Cloud pillow");
+	   log.error("Click on add to cart product button of Cloud pillow");
 	   
 	   Thread.sleep(2000);
+  	   landingpage.offerModal();
 	   productdetail.CrossSellNextproduct().click();
-	   log.info("Click on next product icon in cross selling product section");
+	   log.error("Click on next product icon in cross selling product section");
 	   
 	   Thread.sleep(2000);
+  	   landingpage.offerModal();
 	   productdetail.crossSellSingleComforter().click();
-	   log.info("Click on add to cart product button of Comforter");
+	   log.error("Click on add to cart product button of Comforter");
 	   
 	   Thread.sleep(2000);
+  	   landingpage.offerModal();
 	   productdetail.crossSellSingleProtector75x36().click();
-	   log.info("Click on add to cart product button of Protector");
+	   log.error("Click on add to cart product button of Protector");
        
 	   Thread.sleep(2000);
+  	   landingpage.offerModal();
 	   productdetail.CrossSellNextproduct().click();
-	   log.info("Click on next product icon in cross selling product section");
+	   log.error("Click on next product icon in cross selling product section");
        
 	   Thread.sleep(2000);
+  	   landingpage.offerModal();
 	   productdetail.crossSellCuddlePillow().click();
-	   log.info("Click on add to cart product button of cuddle pillow");
+	   log.error("Click on add to cart product button of cuddle pillow");
 
   	   landingpage.offerModal();
 	   Thread.sleep(2000);
 	   landingpage.cartIcon().click();
-	   log.info("Click on cart icon");
+	   log.error("Click on cart icon");
 	   
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Reversible Comforter']")));
 		
@@ -104,11 +109,11 @@ public class PlusMattressCrossSell extends BaseSleepycat {
 		if(productname) 
 		{
 			System.out.println("Cross sell products present on Plus mattress page is added in cart");
-			log.info("Cross sell products present on Plus mattress page is added in cart");
+			log.error("Cross sell products present on Plus mattress page is added in cart");
 		}else
 		{
 			System.out.println("Cross sell products present on Plus mattress page is not added in cart");
-			log.info("Cross sell products present on Plus mattress page is not added in cart");
+			log.error("Cross sell products present on Plus mattress page is not added in cart");
 		}	
 	}
 	
@@ -116,7 +121,7 @@ public class PlusMattressCrossSell extends BaseSleepycat {
 	public void closeDriver() throws IOException 
 	  {
 	    driver.quit();	  
-		log.info("Driver is closed");
+		log.error("Driver is closed");
 
 	  }
 }

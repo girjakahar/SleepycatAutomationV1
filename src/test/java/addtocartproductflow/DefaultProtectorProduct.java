@@ -27,7 +27,7 @@ public class DefaultProtectorProduct extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	 @Test
@@ -35,42 +35,44 @@ public class DefaultProtectorProduct extends BaseSleepycat {
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
-	       log.info("Website opened Successfully");
+	       log.error("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
-	  	   log.info("Website is maximized");
+	  	   log.error("Website is maximized");
 	  	   
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
 	  	   landingpage.beddingHeader();
-		   log.info("Bedding Submenu link is opened");
+		   log.error("Bedding Submenu link is opened");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(landingpage.protectorMenu()));
 		   landingpage.protectorMenu().click();
-		   log.info("Clicked on protector menu option");
+		   log.error("Clicked on protector menu option");
 		   
 	  	   landingpage.offerModal();
 		   ProductDetailsPage productdetail = new ProductDetailsPage(driver);
 		   
 	  	   landingpage.offerModal();
 	  	   productdetail.pageScroll();
-		   log.info("Scrolled down to size section");
+		   log.error("Scrolled down to size section");
 		   
+	  	   landingpage.offerModal();
 		   productdetail.addToCart();
-		   log.info("Clicked on add to cart button");
+		   log.error("Clicked on add to cart button");
 		   
+	  	   landingpage.offerModal();
 		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PROT-S-72x36']")));
 			
 			boolean productname = driver.findElement(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PROT-S-72x36']")).isDisplayed();
 			if(productname) 
 			{
 				System.out.println("Default protector Product is added in cart");
-				log.info("Default protector Product is added in cart");
+				log.error("Default protector Product is added in cart");
 			}else
 			{
 				System.out.println("Default protector Product is not added in cart");
-				log.info("Default protector Product is not added in cart");
+				log.error("Default protector Product is not added in cart");
 			}	
 		}
 	 
@@ -78,7 +80,7 @@ public class DefaultProtectorProduct extends BaseSleepycat {
 	  public void closeDriver() throws IOException 
 	  {
 	    driver.quit();	  
-		log.info("Driver is closed");
+		log.error("Driver is closed");
 	  }
 
 }

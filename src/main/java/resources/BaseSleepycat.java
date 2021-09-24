@@ -51,11 +51,13 @@ public class BaseSleepycat {
 		caps.setCapability("os", "OS X");
 		caps.setCapability("os_version", "Catalina");
 		caps.setCapability("browser", "Safari");
-		caps.setCapability("browser_version", "13.0");
+		caps.setCapability("browser_version", "13.1");
 		caps.setCapability("browserstack.local", "false");
 		caps.setCapability("browserstack.debug", "true");
 		caps.setCapability("browserstack.networkLogs", "true");
 		caps.setCapability("browserstack.selenium_version", "3.14.0");
+		caps.setCapability("browserstack.use_w3c", "true");
+		caps.setBrowserName("Safari");
 
 
 		try {

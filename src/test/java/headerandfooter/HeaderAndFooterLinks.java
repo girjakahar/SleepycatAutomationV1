@@ -24,7 +24,7 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 		public void startingDriver() throws IOException
 		{
 			driver=initializeChrome();
-			log.info("Starting driver");
+			log.error("Starting driver");
 
 		  }
 		
@@ -32,15 +32,15 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 		public void homepageLink() throws Exception
 		{
 		    driver.get("https://sleepycat.in/");
-		    log.info("Website opened Successfully");
+		    log.error("Website opened Successfully");
 
 			LandingPageObject landingpage = new LandingPageObject(driver);
 			landingpage.offerModal();
-		    log.info("Offer modal is closed");
+		    log.error("Offer modal is closed");
 
 			List<WebElement> links=driver.findElements(By.tagName("a"));//This is for complete homepage
 			System.out.println("Total Homepagelink are "+links.size());
-		    log.info("Total Homepage links are calculated");
+		    log.error("Total Homepage links are calculated");
 			
 			for(int i=0;i<links.size();i++)
 			{
@@ -52,22 +52,22 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 				verifyLinkActive(url);
 				
 			}
-			log.info("Homepage links are done");
+			log.error("Homepage links are done");
 		}
 		
 		@Test
 		public void headerLink() throws Exception
 		{
 		    driver.get("https://sleepycat.in/");
-			log.info("Website opened Successfully");
+			log.error("Website opened Successfully");
 			
 			LandingPageObject landingpage = new LandingPageObject(driver);
 			landingpage.offerModal();
-		    log.info("Offer modal is closed");
+		    log.error("Offer modal is closed");
 
 		    List<WebElement> links=driver.findElements(By.xpath("//div[@class='header_row_1 sec']//a"));//This is for checking Header only
 			System.out.println("Total Headerlink are "+links.size());
-		    log.info("Total  HeaderLinks are calculated");
+		    log.error("Total  HeaderLinks are calculated");
 
 			for(int i=0;i<links.size();i++)
 			{
@@ -79,7 +79,7 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 				verifyLinkActive(url);
 				
 			}
-			log.info("Header links are done");
+			log.error("Header links are done");
 
 		}
 		
@@ -87,15 +87,15 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 		public void menuLink() throws Exception
 		{
 		    driver.get("https://sleepycat.in/");
-			log.info("Website opened Successfully");
+			log.error("Website opened Successfully");
 
 			LandingPageObject landingpage = new LandingPageObject(driver);
 			landingpage.offerModal();
-		    log.info("Offer modal is closed");
+		    log.error("Offer modal is closed");
 
 			List<WebElement> links=driver.findElements(By.xpath("//div[@class='header_row_3']//a"));//This is for menu links only
 			System.out.println("Total menulink are "+links.size());
-		    log.info("Total Menu Links are calculated");
+		    log.error("Total Menu Links are calculated");
 
 			for(int i=0;i<links.size();i++)
 			{
@@ -107,7 +107,7 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 				verifyLinkActive(url);
 				
 			}
-			log.info("Menu links are done");
+			log.error("Menu links are done");
 
 		}
 		
@@ -115,15 +115,15 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 		public void Footerlink() throws Exception
 		{
 		    driver.get("https://sleepycat.in/");
-			log.info("Website opened Successfully");
+			log.error("Website opened Successfully");
 
 			LandingPageObject landingpage = new LandingPageObject(driver);
 			landingpage.offerModal();
-		    log.info("Offer modal is closed");
+		    log.error("Offer modal is closed");
 
 			List<WebElement> links=driver.findElements(By.xpath("//div[@class='footer-bottom clearfix']//a"));//this is only for footer only
 			System.out.println("Total Footerlink are "+links.size());
-		    log.info("Total Footer Links are calculated");
+		    log.error("Total Footer Links are calculated");
 			
 			for(int i=0;i<links.size();i++)
 			{
@@ -135,7 +135,7 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 				verifyLinkActive(url);
 				
 			}
-			log.info("Footer links are done");
+			log.error("Footer links are done");
 
 		}
 		
@@ -143,7 +143,7 @@ public class HeaderAndFooterLinks extends BaseSleepycat {
 		  public void closeDriver() throws IOException 
 		  {
 		    driver.quit();	  
-			log.info("Driver is closed");
+			log.error("Driver is closed");
 
 		  }
 		 

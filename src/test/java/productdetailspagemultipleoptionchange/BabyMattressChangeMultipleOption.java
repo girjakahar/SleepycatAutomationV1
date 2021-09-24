@@ -29,63 +29,63 @@ public class BabyMattressChangeMultipleOption extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	    @Test
 		public void babyMattressChangeoption() throws Exception
 		{
-	    	
+	       
 	       driver.get("https://sleepycat.in/");
-	       log.info("Website opened Successfully");
+	       log.error("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
-	  	   log.info("Website is maximized");
+	  	   log.error("Website is maximized");
 	  	   
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
 	  	   landingpage.maattheader();
-		   log.info("Submenu link is opened");
+		   log.error("Submenu link is opened");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(landingpage.babyMattressMenu()));
 		   landingpage.babyMattressMenu().click();
-		   log.info("Clicked on Baby mattress menu option");
+		   log.error("Clicked on Baby mattress menu option");
 		   
 		   landingpage.offerModal();
 		   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.customCategory()));
 		   productDetails.customCategory().click();
-		   log.info("Clicked on Custom category option");
+		   log.error("Clicked on Custom category option");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.singleCategory()));
 		   productDetails.singleCategory().click();
-		   log.info("Clicked on Single category option");
+		   log.error("Clicked on Single category option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.pageScroll();
-		   log.info("Scrolled down on page");
+		   log.error("Scrolled down on page");
 		   
 		   landingpage.offerModal();
 	  	   productDetails.sizeDropdown().click();
-		   log.info("Clicked on sizedropdown field");
+		   log.error("Clicked on sizedropdown field");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.singleBabyMattress52x28x4()));
 		   productDetails.singleBabyMattress52x28x4().click();
-		   log.info("Clicked on one size option from the dropdown");
+		   log.error("Clicked on one size option from the dropdown");
 		   
 		   landingpage.offerModal();
 	  	   productDetails.sizeDropdown().click();
-		   log.info("Clicked on sizedropdown field");
+		   log.error("Clicked on sizedropdown field");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.singleBabyMattress48x24x4()));
 		   productDetails.singleBabyMattress48x24x4().click();
-		   log.info("Clicked on one size option from the dropdown");
+		   log.error("Clicked on one size option from the dropdown");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.quantityField()));
 		   productDetails.quantityField().click();
-		   log.info("Clicked on Quantity field dropdown");
+		   log.error("Clicked on Quantity field dropdown");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@data-name='quantity']")));
@@ -98,13 +98,13 @@ public class BabyMattressChangeMultipleOption extends BaseSleepycat {
 	 		 if(quantityvalue.get(i).getText().contains("6"))
 	 		 {
 	 			 quantityvalue.get(i).click();
-	 			 log.info("Quantity is selected from drodown");
+	 			 log.error("Quantity is selected from drodown");
 	 			 break;
 	 		 }
 	 	   }
 		   
 		   productDetails.addToCart();
-		   log.info("Clicked on add to cart button");
+		   log.error("Clicked on add to cart button");
 		   
 		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-BABY-S-48x24x4']")));
 			
@@ -112,11 +112,11 @@ public class BabyMattressChangeMultipleOption extends BaseSleepycat {
 			if(productname) 
 			{
 				System.out.println("Single Baby mattress change option Product is added in cart");
-				log.info("Single Baby mattress change option Product is added in cart");
+				log.error("Single Baby mattress change option Product is added in cart");
 			}else
 			{
 				System.out.println("Single Baby mattress change option Product is not added in cart");
-				log.info("Single Baby mattress change option Product is not added in cart");
+				log.error("Single Baby mattress change option Product is not added in cart");
 			}	
 		}
 	    
@@ -124,7 +124,7 @@ public class BabyMattressChangeMultipleOption extends BaseSleepycat {
 		  public void closeDriver() throws IOException 
 		  {
 		    driver.quit();	  
-			log.info("Driver is closed");
+			log.error("Driver is closed");
 
 		  }
 }

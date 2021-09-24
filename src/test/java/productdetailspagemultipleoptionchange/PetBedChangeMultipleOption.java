@@ -30,7 +30,7 @@ public class PetBedChangeMultipleOption extends BaseSleepycat {
 	public void startingDriver() throws IOException
 	{
 	   driver=initializeChrome();
-	   log.info("Starting driver");
+	   log.error("Starting driver");
 	}
 	
 	    @Test
@@ -38,59 +38,63 @@ public class PetBedChangeMultipleOption extends BaseSleepycat {
 		{
 	    	
 	       driver.get("https://sleepycat.in/");
-	       log.info("Website opened Successfully");
+	       log.error("Website opened Successfully");
 	       
 	  	   driver.manage().window().maximize();
-	  	   log.info("Website is maximized");
+	  	   log.error("Website is maximized");
 	  	   
 	  	   wait = new WebDriverWait(driver, 20);
 	  	   LandingPageObject landingpage = new LandingPageObject(driver);
 	  	   landingpage.offerModal();
 	  	   landingpage.beddingHeader();
-		   log.info("Bedding Submenu link is opened");
+		   log.error("Bedding Submenu link is opened");
 		   
 		   wait.until(ExpectedConditions.visibilityOf(landingpage.petBedMenu()));
 		   landingpage.petBedMenu().click();
-		   log.info("Clicked on Pet Bed menu option");
+		   log.error("Clicked on Pet Bed menu option");
 		   
 		   landingpage.offerModal();
 		   ProductDetailsPage productDetails = new ProductDetailsPage(driver);
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.orthopedicCategory()));
 		   productDetails.orthopedicCategory().click();
-		   log.info("Clicked on orthopedic category option");
+		   log.error("Clicked on orthopedic category option");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.originalCategory()));
 		   productDetails.originalCategory().click();
-		   log.info("Clicked on original category option");
+		   log.error("Clicked on original category option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.pageScroll();
-		   log.info("Scrolled down to size section");
+		   log.error("Scrolled down to size section");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.cmDimension()));
 		   productDetails.cmDimension().click();
-		   log.info("Clicked on cm dimension option");
+		   log.error("Clicked on cm dimension option");
 		   
 	  	   landingpage.offerModal();
 	  	   productDetails.sizeDropdown().click();
-		   log.info("Clicked on sizedropdown field");
+		   log.error("Clicked on sizedropdown field");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.originalPetBedLarge46x32()));
 		   productDetails.originalPetBedLarge46x32().click();
-		   log.info("Clicked on one size option from the dropdown");
+		   log.error("Clicked on one size option from the dropdown");
 		   
 		   landingpage.offerModal();
 	  	   productDetails.sizeDropdown().click();
-		   log.info("Clicked on sizedropdown field");
+		   log.error("Clicked on sizedropdown field");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.originalPetBedExtraLarge54x36()));
 		   productDetails.originalPetBedExtraLarge54x36().click();
-		   log.info("Clicked on one size option from the dropdown");
+		   log.error("Clicked on one size option from the dropdown");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.quantityField()));
 		   productDetails.quantityField().click();
-		   log.info("Clicked on Quantity field dropdown");
+		   log.error("Clicked on Quantity field dropdown");
 		   
 	  	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@data-name='quantity']")));
@@ -103,7 +107,7 @@ public class PetBedChangeMultipleOption extends BaseSleepycat {
 	 		 if(quantityvalue.get(i).getText().contains("6"))
 	 		 {
 	 			 quantityvalue.get(i).click();
-	 			 log.info("Quantity is selected from drodown");
+	 			 log.error("Quantity is selected from drodown");
 	 			 break;
 	 		 }
 	 	   }
@@ -111,46 +115,53 @@ public class PetBedChangeMultipleOption extends BaseSleepycat {
 	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.personalizeNameSection()));
 		   productDetails.personalizeNameSection().click();
-		   log.info("Clicked on personalize Name Section");
+		   log.error("Clicked on personalize Name Section");
 		   
 		   Actions name =new Actions(driver);
 		   name.moveToElement(productDetails.personalizeNameField()).build().perform();
-		   log.info("Move to Pet name field");
+		   log.error("Move to Pet name field");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.personalizeNameField()));
 		   productDetails.personalizeNameField().sendKeys("Testone");
-		   log.info("Enter the name in pet name field");
+		   log.error("Enter the name in pet name field");
            
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.stitchButton()));
 		   productDetails.stitchButton().click();
-		   log.info("Clicked on Stitch button");
+		   log.error("Clicked on Stitch button");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.editButton()));
 		   productDetails.editButton().click();
-		   log.info("Clicked on Edit button");
+		   log.error("Clicked on Edit button");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.removeButton()));
 		   productDetails.removeButton().click();
-		   log.info("Clicked on Remove button");
+		   log.error("Clicked on Remove button");
 		   
 		   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.personalizeNameSection()));
 		   productDetails.personalizeNameSection().click();
-		   log.info("Clicked on personalize Name Section");
+		   log.error("Clicked on personalize Name Section");
 		   
 		   name.moveToElement(productDetails.personalizeNameField()).build().perform();
-		   log.info("Move to Pet name field");
+		   log.error("Move to Pet name field");
 		   
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.personalizeNameField()));
 		   productDetails.personalizeNameField().sendKeys("Testtwo");
-		   log.info("Enter the name in pet name field");
+		   log.error("Enter the name in pet name field");
            
+	 	   landingpage.offerModal();
 		   wait.until(ExpectedConditions.visibilityOf(productDetails.stitchButton()));
 		   productDetails.stitchButton().click();
-		   log.info("Clicked on Stitch button");
+		   log.error("Clicked on Stitch button");
 		   
+	 	   landingpage.offerModal();
 		   productDetails.addToCart();
-		   log.info("Clicked on add to cart button");
+		   log.error("Clicked on add to cart button");
 		   
 		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart_item_mid']//div[@data-product_sku='SC-PETBEDORIG-XL-54x36']")));
 			
@@ -158,11 +169,11 @@ public class PetBedChangeMultipleOption extends BaseSleepycat {
 			if(productname) 
 			{
 				System.out.println("Personalized Original category Pet Bed change option product is added in cart");
-				log.info("Personalized Original category Pet Bed change option product is added in cart");
+				log.error("Personalized Original category Pet Bed change option product is added in cart");
 			}else
 			{
 				System.out.println("Personalized Original category Pet Bed change option product is not added in cart");
-				log.info("Personalized Original category Pet Bed change option product is not added in cart");
+				log.error("Personalized Original category Pet Bed change option product is not added in cart");
 			}	
 		}
 	    
@@ -170,7 +181,7 @@ public class PetBedChangeMultipleOption extends BaseSleepycat {
 		  public void closeDriver() throws IOException 
 		  {
 		    driver.quit();	  
-			log.info("Driver is closed");
+			log.error("Driver is closed");
 
 		  }
 }

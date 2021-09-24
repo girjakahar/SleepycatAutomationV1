@@ -272,7 +272,27 @@ public class ProductDetailsPage {
 
 	public WebElement queenLatex78x60x7() {
 		return driver.findElement(QueenLatex78x60x7);
-	}//input[@name='custom_length']
+	}
+	
+	//Xpath for error messages for lenght and width field for Original,plus and Latex mattress
+	By LenghtError = By.xpath("//div[text()='Length customization is allowed between 68 - 84 inch']");
+	By LatexLenghtError = By.xpath("//div[text()='Length customization is allowed between 70 - 78 inch']");
+	By WidthError = By.xpath("//div[text()='Width customization is allowed between 30 - 72 inch']");
+
+	
+	// Webelement for error messages for lenght and width field for Original,plus and Latex mattress
+	public WebElement lenghtError() {
+		return driver.findElement(LenghtError);
+	}
+	
+	public WebElement latexLenghtError() {
+		return driver.findElement(LatexLenghtError);
+	}
+	
+	public WebElement widthError() {
+		return driver.findElement(WidthError);
+	}
+
 	
 	 // Baby mattress Different Size sections
 	// Drop down option when Inch,cm or feet is selected in Baby mattress for Single category
@@ -604,7 +624,7 @@ public class ProductDetailsPage {
 		return driver.findElement(CrossSellStandardMemoryPillowSet1);
 	}
 	
-	
+	//Cross selling cloud pillow section
 	//Xpath for category field of cloud pillow cross selling product section
 	By CrossSellCloudPillowCategoryField= By.xpath("//div[@class='container_cross_sell cloud_pillow ']//div[@data-value='Standard']");
 
@@ -643,6 +663,122 @@ public class ProductDetailsPage {
 	public WebElement CrossSellPackTwoOfCloudPillow() {
 		return driver.findElement(CrossSellPackTwoOfCloudPillow);
 	}
+	
+	
+	//Xpath for increment and decrement product quantity icon of cloud pillow in cross selling product section
+    By CrossSellCloudPillowIncrementQuantity = By.xpath("//div[@class='container_cross_sell cloud_pillow ']//input[@class='plus']");
+    By CrossSellCloudPillowDecreaseQuantity = By.xpath("//div[@class='container_cross_sell cloud_pillow ']//input[@class='minus']");
+	
+	// Webelement option for increment and decrement product quantity icon of cloud pillow in cross selling product section
+	public WebElement crossSellCloudPillowIncrementQuantity() {
+		return driver.findElement(CrossSellCloudPillowIncrementQuantity);
+	}
+	
+	public WebElement crossSellCloudPillowDecreaseQuantity() {
+		return driver.findElement(CrossSellCloudPillowDecreaseQuantity);
+	}
+	
+	//Cross selling section for Comforter
+	//Xpath for category Type field of comforter cross selling product section
+	By CrossSellComforterCategoryField= By.xpath("//div[@class='container_cross_sell comforter ']//div[@data-value='Single']");
+
+	// Webelement option for category Type field of comforter cross selling product section
+	public WebElement crossSellComforterCategoryField() {
+		return driver.findElement(CrossSellComforterCategoryField);
+	}
+		
+	//Xpath for Double category of comforter cross selling product section
+	By CrossSellDoubleCategoryComforter = By.xpath("//div[@class='container_cross_sell comforter ']//span[text()='Double']");
+		
+	// Webelement option for Double category of comforter cross selling product section
+	public WebElement crossSellDoubleCategoryComforter() {
+		return driver.findElement(CrossSellDoubleCategoryComforter);
+	}
+	
+	//Xpath for Color options of Comforter on cross selling product section
+    By CrossSellComforterCoffeeColor = By.xpath("//div[@class='container_cross_sell comforter ']//li[@data-value='coffee']");
+    By CrossSellComforterPinkColor = By.xpath("//div[@class='container_cross_sell comforter ']//li[@data-value='pink']");
+	
+	// Webelement for Color options of Comforter on cross selling product section
+	public WebElement crossSellComforterCoffeeColor() {
+		return driver.findElement(CrossSellComforterCoffeeColor);
+	}
+			
+	public WebElement crossSellComforterPinkColor() {
+		return driver.findElement(CrossSellComforterPinkColor);
+	}
+	
+	//Xpath for Add to cart of Double category pink color comforter cross selling product 
+	By CrossSellDoubleCategoryPinkComforter = By.xpath("//div[@class='container_cross_sell comforter ']//span[@data-sku='SC-PKCOMF-D-90x100']");
+			
+	// Webelement option for Add to cart of Double category pink color comforter cross selling product 
+	public WebElement crossSellDoubleCategoryPinkComforter() {
+		return driver.findElement(CrossSellDoubleCategoryPinkComforter);
+	}
+	
+	
+	//Cross selling section for Protector
+	//Xpath for category Type field of comforter cross selling product section
+	By CrossSellProtectorCategoryField= By.xpath("//div[@class='container_cross_sell protector on-sale']//div[@data-value='Single']");
+
+	// Webelement option for category Type field of comforter cross selling product section
+	public WebElement crossSellProtectorCategoryField() {
+		return driver.findElement(CrossSellProtectorCategoryField);
+	}
+			
+	//Xpath for different category field of comforter cross selling product section
+	By CrossSellSingleCategoryProtector = By.xpath("//div[@class='container_cross_sell protector on-sale']//span[text()='Single']");
+	By CrossSellDoubleCategoryProtector = By.xpath("//div[@class='container_cross_sell protector on-sale']//span[text()='Double']");
+	By CrossSellKingCategoryProtector = By.xpath("//div[@class='container_cross_sell protector on-sale']//span[text()='King']");
+			
+	// Webelement option for Double category of comforter cross selling product section
+	public WebElement crossSellSingleCategoryProtector() {
+		return driver.findElement(CrossSellSingleCategoryProtector);
+	}
+	
+	public WebElement crossSellDoubleCategoryProtector() {
+		return driver.findElement(CrossSellDoubleCategoryProtector);
+	}
+	
+	public WebElement crossSellKingCategoryProtector() {
+		return driver.findElement(CrossSellKingCategoryProtector);
+	}
+	
+	//Xpath for Size field of Protector cross selling product section
+	By CrossSellProtectorSizeField= By.xpath("//div[@class='container_cross_sell protector on-sale']//div[@name='variations protector']");
+
+	// Webelement option for category Type field of comforter cross selling product section
+	public WebElement crossSellProtectorSizeField() {
+		return driver.findElement(CrossSellProtectorSizeField);
+	}
+	
+	//Xpath for Different Size dropdown field of Protector in cross selling product section
+	By CrossSellDoubleProtector75x48= By.xpath("//*[@id='product_cross_sell_wrap_slider']//li[@data-sku='SC-PROT-D-75x48']");
+	By CrossSellDoubleProtector78x48= By.xpath("//*[@id='product_cross_sell_wrap_slider']//li[@data-sku='SC-PROT-D-78x48']");
+
+	// Webelement for Different Size dropdown field of Protector in cross selling product section
+	public WebElement crossSellDoubleProtector75x48() {
+		return driver.findElement(CrossSellDoubleProtector75x48);
+	}
+	
+	public WebElement crossSellDoubleProtector78x48() {
+		return driver.findElement(CrossSellDoubleProtector78x48);
+	}
+	
+	//Xpath for Different Size dropdown field of Protector in cross selling product section
+	By CrossSellAddToCartDoubleProtector75x48= By.xpath("//span[@data-sku='SC-PROT-D-75x48']");
+	By CrossSellAddToCartDoubleProtector78x48= By.xpath("//span[@data-sku='SC-PROT-D-78x48']");
+
+	// Webelement for Different Size dropdown field of Protector in cross selling product section
+	public WebElement crossSellAddToCartDoubleProtector75x48() {
+		return driver.findElement(CrossSellAddToCartDoubleProtector75x48);
+	}
+		
+	public WebElement crossSellAddToCartDoubleProtector78x48() {
+		return driver.findElement(CrossSellAddToCartDoubleProtector78x48);
+	}
+	
+	
 	
 	
 	public void pageScroll() {

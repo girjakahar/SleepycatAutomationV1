@@ -37,15 +37,15 @@ public class SocialMedia extends BaseSleepycat
 	{
 		
 	   driver.get("https://sleepycat.in/");
-	   log.info("Website opened Successfully");
+	   log.error("Website opened Successfully");
 	       
 	   driver.manage().window().maximize();
-	   log.info("Website is maximized");
+	   log.error("Website is maximized");
 	  	   
 	   wait = new WebDriverWait(driver, 20);
 	   LandingPageObject landingPage = new LandingPageObject(driver);
 	   landingPage.offerModal();
-	   log.info("Offer modal is closed");
+	   log.error("Offer modal is closed");
 	   
 	   WebElement facebook = landingPage.facebook();
 	   //JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -54,17 +54,17 @@ public class SocialMedia extends BaseSleepycat
 	   Actions move=new Actions(driver);
 	   move.moveToElement(facebook).click().build().perform();
 	   //landingPage.facebook().click();
-	   log.info("Clicked on facebook");
+	   log.error("Clicked on facebook");
        
 	   LoginPageObject loginpage = new LoginPageObject(driver);
 	   loginpage.switchingWindow();
-	   log.info("Switched to facebook window");
+	   log.error("Switched to facebook window");
 
 	   String url = driver.getCurrentUrl();
-	   log.info("Saving the current opened URL");
+	   log.error("Saving the current opened URL");
 
 	   verifyLinkActive(url);
-	   log.info("Verifying the opened URL Response code");
+	   log.error("Verifying the opened URL Response code");
 	   
 	   System.out.println("Link verified");
 
@@ -76,30 +76,30 @@ public class SocialMedia extends BaseSleepycat
 	{
 		
 	   driver.get("https://sleepycat.in/");
-	   log.info("Website opened Successfully");
+	   log.error("Website opened Successfully");
 	       
 	   driver.manage().window().maximize();
-	   log.info("Website is maximized");
+	   log.error("Website is maximized");
 	  	   
 	   wait = new WebDriverWait(driver, 20);
 	   LandingPageObject landingPage = new LandingPageObject(driver);
 	   landingPage.offerModal();
-	   log.info("Offer modal is closed");
+	   log.error("Offer modal is closed");
 	   
 	   WebElement instagram = landingPage.instagram();
 	   Actions move=new Actions(driver);
 	   move.moveToElement(instagram).click().build().perform();
-	   log.info("Clicked on instagram");
+	   log.error("Clicked on instagram");
        
 	   LoginPageObject loginpage = new LoginPageObject(driver);
 	   loginpage.switchingWindow();
-	   log.info("Switched to instagram window");
+	   log.error("Switched to instagram window");
 
 	   String url = driver.getCurrentUrl();
-	   log.info("Saving the current opened URL");
+	   log.error("Saving the current opened URL");
 
 	   verifyLinkActive(url);
-	   log.info("Verifying the opened URL Response code");
+	   log.error("Verifying the opened URL Response code");
 	   
 	   System.out.println("Link verified");
 	   
@@ -110,30 +110,30 @@ public class SocialMedia extends BaseSleepycat
 	{
 		
 	   driver.get("https://sleepycat.in/");
-	   log.info("Website opened Successfully");
+	   log.error("Website opened Successfully");
 	       
 	   driver.manage().window().maximize();
-	   log.info("Website is maximized");
+	   log.error("Website is maximized");
 	  	   
 	   wait = new WebDriverWait(driver, 20);
 	   LandingPageObject landingPage = new LandingPageObject(driver);
 	   landingPage.offerModal();
-	   log.info("Offer modal is closed");
+	   log.error("Offer modal is closed");
 	   
 	   WebElement twitter = landingPage.twitter();
 	   Actions move=new Actions(driver);
 	   move.moveToElement(twitter).click().build().perform();
-	   log.info("Clicked on Twitter");
+	   log.error("Clicked on Twitter");
        
 	   LoginPageObject loginpage = new LoginPageObject(driver);
 	   loginpage.switchingWindow();
-	   log.info("Switched to Twitter window");
+	   log.error("Switched to Twitter window");
 
 	   String url = driver.getCurrentUrl();
-	   log.info("Saving the current opened URL");
+	   log.error("Saving the current opened URL");
 
 	   verifyLinkActive(url);
-	   log.info("Verifying the opened URL Response code");
+	   log.error("Verifying the opened URL Response code");
 	   
 	   System.out.println("Link verified");
 	   
@@ -144,30 +144,30 @@ public class SocialMedia extends BaseSleepycat
 	{
 		
 	   driver.get("https://sleepycat.in/");
-	   log.info("Website opened Successfully");
+	   log.error("Website opened Successfully");
 	       
 	   driver.manage().window().maximize();
-	   log.info("Website is maximized");
+	   log.error("Website is maximized");
 	  	   
 	   wait = new WebDriverWait(driver, 20);
 	   LandingPageObject landingPage = new LandingPageObject(driver);
 	   landingPage.offerModal();
-	   log.info("Offer modal is closed");
+	   log.error("Offer modal is closed");
 	   
 	   WebElement youtube = landingPage.youtube();
 	   Actions move=new Actions(driver);
 	   move.moveToElement(youtube).click().build().perform();
-	   log.info("Clicked on Youtube");
+	   log.error("Clicked on Youtube");
        
 	   LoginPageObject loginpage = new LoginPageObject(driver);
 	   loginpage.switchingWindow();
-	   log.info("Switched to Youtube window");
+	   log.error("Switched to Youtube window");
 
 	   String url = driver.getCurrentUrl();
-	   log.info("Saving the current opened URL");
+	   log.error("Saving the current opened URL");
 
 	   verifyLinkActive(url);
-	   log.info("Verifying the opened URL Response code");
+	   log.error("Verifying the opened URL Response code");
 	   
 	   System.out.println("Link verified");
 	   
@@ -177,6 +177,8 @@ public class SocialMedia extends BaseSleepycat
 	public void close() throws IOException
 	{
 	   driver.quit();
+	   log.error("Driver is closed");
+
 	}
 	
 }
