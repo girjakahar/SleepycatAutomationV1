@@ -19,7 +19,7 @@
        </classes>
         </test> 
         
-   <test name="BannerLinking"> 
+<test name="BannerLinking"> 
     <classes>  
       <class name="homepage.BannerLinking"/>
     </classes>
@@ -307,6 +307,4 @@
     </classes>
   </test> 
   
-  
-  
-</suite> <!-- Suite -->
+</suite> <!-- Suite test cases-->
